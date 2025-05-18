@@ -3,28 +3,1144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stellar AI</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>STELLAR AI - Tecnología Satelital para Minería Digital</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"></script>
+    <!-- Añadido Chart.js para gráficos -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <img src="logo.png" alt="Stellar AI Logo">
-        <h1>Explorando el Futuro con Stellar AI</h1>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <div class="logo-icon">
+                        <div class="planet"></div>
+                        <div class="satellite"></div>
+                        <div class="panel-left"></div>
+                        <div class="panel-right"></div>
+                        <div class="star"></div>
+                    </div>
+                    <div class="logo-text">STELLAR AI</div>
+                </div>
+                <ul class="menu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#tecnologia">Tecnología</a></li>
+                    <li><a href="#planes">Planes</a></li>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <div class="toggle-container">
+                    <div class="toggle-theme">
+                        <input type="checkbox" id="theme-toggle">
+                        <label for="theme-toggle">
+                            <i class="fas fa-moon"></i>
+                            <i class="fas fa-sun"></i>
+                        </label>
+                    </div>
+                </div>
+                <a href="dashboard.html" class="cta-button">Solicitar Demo</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section class="about">
-            <h2>¿Quiénes Somos?</h2>
-            <p>Innovamos en inteligencia artificial y exploramos la tecnología espacial.</p>
-        </section>
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Revolucionando la Minería <span>Digital</span> con Tecnología Satelital</h1>
+                <p>STELLAR AI utiliza inteligencia artificial avanzada y tecnología satelital para optimizar operaciones de minería digital, maximizando tus ganancias con inversiones pasivas y sostenibles.</p>
+                <div class="hero-buttons">
+                    <a href="#planes" class="cta-button">Comienza a Invertir</a>
+                    <a href="#calculadora" class="cta-button cta-secondary">Calcula tu Retorno</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="earth-container">
+                    <div class="earth"></div>
+                    <div class="satellite-orbit">
+                        <div class="satellite-hero">
+                            <div class="satellite-panel-left"></div>
+                            <div class="satellite-panel-right"></div>
+                        </div>
+                    </div>
+                    <div class="stars" id="stars-container">
+                        <!-- JavaScript generará estrellas aquí -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <span>Descubre más</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
 
-        <button id="exploreBtn">Descubre Más</button>
-    </main>
+    <!-- Counters Section -->
+    <section class="counters">
+        <div class="container">
+            <div class="counters-grid">
+                <div class="counter-item">
+                    <div class="counter-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="counter-number" data-target="15000">0</div>
+                    <div class="counter-text">Inversores Activos</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="counter-number" data-target="98">0</div>
+                    <div class="counter-text">% de Rentabilidad Media Anual</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="counter-number" data-target="45">0</div>
+                    <div class="counter-text">Países con Presencia</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="counter-number" data-target="850">0</div>
+                    <div class="counter-text">Millones $ Gestionados</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Features Section -->
+    <section class="features" id="servicios">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestros <span>Servicios</span></h2>
+                <p>Soluciones avanzadas basadas en tecnología satelital para optimizar cada etapa de la minería digital y maximizar tus inversiones.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Análisis Predictivo</h3>
+                    <p>Identificación de oportunidades de inversión mediante algoritmos de IA que analizan patrones de mercado y optimizan la distribución de activos.</p>
+                    <a href="#" class="learn-more">Saber más <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Monitoreo en Tiempo Real</h3>
+                    <p>Seguimiento continuo de tus inversiones con datos actualizados cada hora para optimizar rendimientos y detectar oportunidades de crecimiento.</p>
+                    <a href="#" class="learn-more">Saber más <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Minería Sostenible</h3>
+                    <p>Nuestros procesos de minería digital utilizan energías renovables y tecnologías eficientes, minimizando el impacto ambiental de tus inversiones.</p>
+                    <a href="#" class="learn-more">Saber más <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Seguridad Avanzada</h3>
+                    <p>Protección de tus activos digitales mediante sistemas de encriptación de última generación y protocolos de seguridad multicapa.</p>
+                    <a href="#" class="learn-more">Saber más <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Inteligencia Artificial</h3>
+                    <p>Algoritmos de aprendizaje automático que optimizan tus inversiones adaptándose a condiciones de mercado cambiantes en tiempo real.</p>
+                    <a href="#" class="learn-more">Saber más <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Crecimiento Compuesto</h3>
+                    <p>Estrategias de reinversión automática que maximizan el interés compuesto, multiplicando tus ganancias de forma exponencial a largo plazo.</p>
+                    <a href="#" class="learn-more">Saber más <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="how-it-works" id="tecnologia">
+        <div class="container">
+            <div class="section-header">
+                <h2>Cómo <span>Funciona</span></h2>
+                <p>Nuestra tecnología innovadora transforma datos satelitales en ganancias reales para nuestros inversores.</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-line"></div>
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Selecciona tu Plan</h3>
+                    <p>Elige entre nuestros planes de inversión según tu capital y objetivos financieros.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Activa tu Inversión</h3>
+                    <p>Realiza tu depósito inicial y activa tu plan para comenzar a generar rendimientos pasivos.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Monitorea tus Ganancias</h3>
+                    <p>Sigue el crecimiento de tu inversión en tiempo real a través de nuestro dashboard personalizado.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Retira o Reinvierte</h3>
+                    <p>Retira tus ganancias cuando lo desees o reinvierte para maximizar el interés compuesto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Plans Section -->
+    <section class="investment-plans" id="planes">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestros <span>Planes de Inversión</span></h2>
+                <p>Selecciona el plan que mejor se adapte a tus objetivos financieros y comienza a generar ingresos pasivos.</p>
+            </div>
+            <div class="plans-grid">
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <div class="plan-name">Starter</div>
+                        <div class="plan-price">$100 - $500</div>
+                        <div class="plan-duration">Inversión Inicial</div>
+                    </div>
+                    <div class="plan-features">
+                        <div class="plan-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>0.8% Retorno Diario</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Duración: 12 meses</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Retiro Mensual</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>1 Nivel de Referidos</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Soporte Básico</span>
+                        </div>
+                    </div>
+                    <div class="plan-footer">
+                        <a href="#contacto" class="cta-button">Comenzar Ahora</a>
+                    </div>
+                </div>
+                <div class="plan-card featured">
+                    <div class="plan-tag">Más Popular</div>
+                    <div class="plan-header">
+                        <div class="plan-name">Growth</div>
+                        <div class="plan-price">$500 - $2,000</div>
+                        <div class="plan-duration">Inversión Inicial</div>
+                    </div>
+                    <div class="plan-features">
+                        <div class="plan-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>1.2% Retorno Diario</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Duración: 18 meses</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Retiro Semanal</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>3 Niveles de Referidos</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Soporte Prioritario</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Booster Mensual +5%</span>
+                        </div>
+                    </div>
+                    <div class="plan-footer">
+                        <a href="#contacto" class="cta-button">Comenzar Ahora</a>
+                    </div>
+                </div>
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <div class="plan-name">Enterprise</div>
+                        <div class="plan-price">$2,000 - $10,000</div>
+                        <div class="plan-duration">Inversión Inicial</div>
+                    </div>
+                    <div class="plan-features">
+                        <div class="plan-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>1.8% Retorno Diario</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Duración: 24 meses</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Retiro Diario</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>5 Niveles de Referidos</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Asesor Personal</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Booster Semanal +10%</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Acceso a Inversiones VIP</span>
+                        </div>
+                    </div>
+                    <div class="plan-footer">
+                        <a href="#contacto" class="cta-button">Comenzar Ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator Section -->
+    <section class="calculator" id="calculadora">
+        <div class="container">
+            <div class="section-header">
+                <h2>Calculadora de <span>Rendimiento</span></h2>
+                <p>Calcula tu potencial de ganancias basado en tu inversión y plazo.</p>
+            </div>
+            <div class="calculator-container">
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="investment-amount">Inversión Inicial ($)</label>
+                        <input type="range" id="investment-amount" min="100" max="10000" step="100" value="1000">
+                        <span id="investment-value">$1,000</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="investment-plan">Plan de Inversión</label>
+                        <select id="investment-plan" class="form-control">
+                            <option value="starter">Starter (0.8% diario)</option>
+                            <option value="growth" selected>Growth (1.2% diario)</option>
+                            <option value="enterprise">Enterprise (1.8% diario)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="investment-time">Plazo de Inversión (meses)</label>
+                        <input type="range" id="investment-time" min="1" max="24" step="1" value="12">
+                        <span id="time-value">12 meses</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Reinversión de Ganancias</label>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="compound-toggle" checked>
+                            <label for="compound-toggle"></label>
+                            <span id="compound-status">Activado</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="referral-number">Número de Referidos</label>
+                        <input type="range" id="referral-number" min="0" max="10" step="1" value="0">
+                        <span id="referral-value">0 referidos</span>
+                    </div>
+                </div>
+                <div class="calculator-results">
+                    <div class="result-card">
+                        <h3>Resumen de tu Inversión</h3>
+                        <div class="result-item">
+                            <span>Inversión Inicial:</span>
+                            <span id="summary-investment">$1,000</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Retorno Mensual:</span>
+                            <span id="monthly-return">$360</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Retorno Total:</span>
+                            <span id="total-return">$4,320</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Ganancias Netas:</span>
+                            <span id="net-profit">$3,320</span>
+                        </div>
+                        <div class="result-item">
+                            <span>ROI:</span>
+                            <span id="roi">332%</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Ingresos por Referidos:</span>
+                            <span id="referral-income">$0</span>
+                        </div>
+                        <div class="canvas-container">
+                            <canvas id="profit-chart"></canvas>
+                        </div>
+                        <a href="#planes" class="cta-button">Invertir Ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Demo Section -->
+    <section class="dashboard-demo" id="dashboard">
+        <div class="container">
+            <div class="section-header">
+                <h2>Conoce Nuestro <span>Dashboard</span></h2>
+                <p>Una interfaz intuitiva para monitorear y gestionar tus inversiones en tiempo real.</p>
+            </div>
+            <div class="dashboard-container">
+                <div class="dashboard-tabs">
+                    <button class="tab-button active" data-tab="overview">Vista General</button>
+                    <button class="tab-button" data-tab="investments">Inversiones</button>
+                    <button class="tab-button" data-tab="referrals">Referidos</button>
+                    <button class="tab-button" data-tab="withdrawals">Retiros</button>
+                </div>
+                <div class="dashboard-content">
+                    <div class="tab-content active" id="overview">
+                        <div class="dashboard-overview">
+                            <div class="overview-header">
+                                <h3>Bienvenido, <span>Usuario Demo</span></h3>
+                                <p>Última actualización: <span>08 Mayo, 2025 14:30 GMT</span></p>
+                            </div>
+                            <div class="overview-cards">
+                                <div class="overview-card">
+                                    <div class="card-icon">
+                                        <i class="fas fa-wallet"></i>
+                                    </div>
+                                    <div class="card-info">
+                                        <h4>Balance Total</h4>
+                                        <div class="card-value">$6,843.25</div>
+                                        <div class="card-change positive">+5.8% <i class="fas fa-arrow-up"></i></div>
+                                    </div>
+                                </div>
+                                <div class="overview-card">
+                                    <div class="card-icon">
+                                        <i class="fas fa-chart-pie"></i>
+                                    </div>
+                                    <div class="card-info">
+                                        <h4>Ganancias Acumuladas</h4>
+                                        <div class="card-value">$2,143.80</div>
+                                        <div class="card-change positive">+12.3% <i class="fas fa-arrow-up"></i></div>
+                                    </div>
+                                </div>
+                                <div class="overview-card">
+                                    <div class="card-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div class="card-info">
+                                        <h4>Equipo Activo</h4>
+                                        <div class="card-value">23 personas</div>
+                                        <div class="card-change positive">+2 <i class="fas fa-arrow-up"></i></div>
+                                    </div>
+                                </div>
+                                <div class="overview-card">
+                                    <div class="card-icon">
+                                        <i class="fas fa-donate"></i>
+                                    </div>
+                                    <div class="card-info">
+                                        <h4>Próximo Pago</h4>
+                                        <div class="card-value">$385.20</div>
+                                        <div class="card-date">10 Mayo, 2025</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="overview-charts">
+                                <div class="chart-container">
+                                    <h4>Rendimiento Mensual</h4>
+                                    <canvas id="monthly-performance"></canvas>
+                                </div>
+                                <div class="chart-container">
+                                    <h4>Distribución de Inversiones</h4>
+                                    <canvas id="investment-distribution"></canvas>
+                                </div>
+                            </div>
+                            <div class="recent-activities">
+                                <h4>Actividad Reciente</h4>
+                                <div class="activity-list">
+                                    <div class="activity-item">
+                                        <div class="activity-icon deposit">
+                                            <i class="fas fa-arrow-down"></i>
+                                        </div>
+                                        <div class="activity-details">
+                                            <h5>Depósito Recibido</h5>
+                                            <p>Se ha confirmado tu depósito de $500</p>
+                                            <span class="activity-time">Hoy, 10:25 AM</span>
+                                        </div>
+                                        <div class="activity-amount deposit">+$500.00</div>
+                                    </div>
+                                    <div class="activity-item">
+                                        <div class="activity-icon earning">
+                                            <i class="fas fa-coins"></i>
+                                        </div>
+                                        <div class="activity-details">
+                                            <h5>Ganancia Diaria</h5>
+                                            <p>Has recibido tu ganancia diaria</p>
+                                            <span class="activity-time">Hoy, 00:01 AM</span>
+                                        </div>
+                                        <div class="activity-amount earning">+$42.50</div>
+                                    </div>
+                                    <div class="activity-item">
+                                        <div class="activity-icon referral">
+                                            <i class="fas fa-user-plus"></i>
+                                        </div>
+                                        <div class="activity-details">
+                                            <h5>Nuevo Referido</h5>
+                                            <p>Carlos M. se ha unido usando tu código</p>
+                                            <span class="activity-time">Ayer, 3:45 PM</span>
+                                        </div>
+                                        <div class="activity-amount referral">+$25.00</div>
+                                    </div>
+                                    <div class="activity-item">
+                                        <div class="activity-icon withdrawal">
+                                            <i class="fas fa-arrow-up"></i>
+                                        </div>
+                                        <div class="activity-details">
+                                            <h5>Retiro Procesado</h5>
+                                            <p>Tu solicitud de retiro ha sido procesada</p>
+                                            <span class="activity-time">07 Mayo, 11:30 AM</span>
+                                        </div>
+                                        <div class="activity-amount withdrawal">-$350.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="investments">
+                        <div class="dashboard-investments">
+                            <h3>Tus Planes Activos</h3>
+                            <div class="investment-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Plan</th>
+                                            <th>Inversión</th>
+                                            <th>Fecha inicio</th>
+                                            <th>Caducidad</th>
+                                            <th>ROI Diario</th>
+                                            <th>Estado</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Growth</td>
+                                            <td>$2,000.00</td>
+                                            <td>01/03/2025</td>
+                                            <td>01/09/2026</td>
+                                            <td>$24.00 (1.2%)</td>
+                                            <td><span class="status active">Activo</span></td>
+                                            <td>
+                                                <button class="action-button"><i class="fas fa-sync-alt"></i></button>
+                                                <button class="action-button"><i class="fas fa-chart-line"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Starter</td>
+                                            <td>$500.00</td>
+                                            <td>15/04/2025</td>
+                                            <td>15/04/2026</td>
+                                            <td>$4.00 (0.8%)</td>
+                                            <td><span class="status active">Activo</span></td>
+                                            <td>
+                                                <button class="action-button"><i class="fas fa-sync-alt"></i></button>
+                                                <button class="action-button"><i class="fas fa-chart-line"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Enterprise</td>
+                                            <td>$5,000.00</td>
+                                            <td>10/01/2025</td>
+                                            <td>10/01/2027</td>
+                                            <td>$90.00 (1.8%)</td>
+                                            <td><span class="status boosted">Boosted +10%</span></td>
+                                            <td>
+                                                <button class="action-button"><i class="fas fa-sync-alt"></i></button>
+                                                <button class="action-button"><i class="fas fa-chart-line"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="referrals">
+                        <div class="dashboard-referrals">
+                            <div class="referral-header">
+                                <div>
+                                    <h3>Tu Programa de Referidos</h3>
+                                    <p>Comparte tu link único y gana comisiones por cada nuevo inversor.</p>
+                                </div>
+                                <div class="referral-stats">
+                                    <div class="stat-card">
+                                        <div class="stat-title">Total Referidos</div>
+                                        <div class="stat-value">23</div>
+                                    </div>
+                                    <div class="stat-card">
+                                        <div class="stat-title">Ingresos de Referidos</div>
+                                        <div class="stat-value">$1,245.80</div>
+                                    </div>
+                                    <div class="stat-card">
+                                        <div class="stat-title">Nivel Más Activo</div>
+                                        <div class="stat-value">Nivel 1</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="referral-link">
+                                <h4>Tu Link de Referido</h4>
+                                <div class="link-container">
+                                    <input type="text" value="https://stellar-ai.com/ref/user123" readonly>
+                                    <button class="copy-button"><i class="fas fa-copy"></i> Copiar</button>
+                                </div>
+                                <div class="share-buttons">
+                                    <button class="share-button facebook"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-button twitter"><i class="fab fa-twitter"></i></button>
+                                    <button class="share-button whatsapp"><i class="fab fa-whatsapp"></i></button>
+                                    <button class="share-button telegram"><i class="fab fa-telegram-plane"></i></button>
+                                </div>
+                            </div>
+                            <div class="commission-structure">
+                                <h4>Estructura de Comisiones</h4>
+                                <div class="commission-levels">
+                                    <div class="commission-level">
+                                        <div class="level-icon">1</div>
+                                        <div class="level-details">
+                                            <h5>Nivel 1</h5>
+                                            <p>10% de comisión directa</p>
+                                        </div>
+                                        <div class="level-value">10%</div>
+                                    </div>
+                                    <div class="commission-level">
+                                        <div class="level-icon">2</div>
+                                        <div class="level-details">
+                                            <h5>Nivel 2</h5>
+                                            <p>5% de comisión indirecta</p>
+                                        </div>
+                                        <div class="level-value">5%</div>
+                                    </div>
+                                    <div class="commission-level">
+                                        <div class="level-icon">3</div>
+                                        <div class="level-details">
+                                            <h5>Nivel 3</h5>
+                                            <p>3% de comisión indirecta</p>
+                                        </div>
+                                        <div class="level-value">3%</div>
+                                    </div>
+                                    <div class="commission-level">
+                                        <div class="level-icon">4</div>
+                                        <div class="level-details">
+                                            <h5>Nivel 4</h5>
+                                            <p>2% de comisión indirecta</p>
+                                        </div>
+                                        <div class="level-value">2%</div>
+                                    </div>
+                                    <div class="commission-level">
+                                        <div class="level-icon">5</div>
+                                        <div class="level-details">
+                                            <h5>Nivel 5</h5>
+                                            <p>1% de comisión indirecta</p>
+                                        </div>
+                                        <div class="level-value">1%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="referral-team">
+                                <h4>Tu Equipo de Referidos</h4>
+                                <div class="team-filters">
+                                    <select class="filter-select">
+                                        <option value="all">Todos los niveles</option>
+                                        <option value="1">Nivel 1</option>
+                                        <option value="2">Nivel 2</option>
+                                        <option value="3">Nivel 3+</option>
+                                    </select>
+                                    <select class="filter-select">
+                                        <option value="all">Todos los estados</option>
+                                        <option value="active">Activos</option>
+                                        <option value="inactive">Inactivos</option>
+                                    </select>
+                                </div>
+                                <div class="team-table">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Usuario</th>
+                                                <th>Nivel</th>
+                                                <th>Fecha de unión</th>
+                                                <th>Inversión</th>
+                                                <th>Comisión ganada</th>
+                                                <th>Estado</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="user-info">
+                                                        <div class="user-avatar">CM</div>
+                                                        <div>Carlos M.</div>
+                                                    </div>
+                                                </td>
+                                                <td>Nivel 1</td>
+                                                <td>07/05/2025</td>
+                                                <td>$1,000</td>
+                                                <td>$100</td>
+                                                <td><span class="status active">Activo</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="user-info">
+                                                        <div class="user-avatar">LS</div>
+                                                        <div>Laura S.</div>
+                                                    </div>
+                                                </td>
+                                                <td>Nivel 1</td>
+                                                <td>02/05/2025</td>
+                                                <td>$2,500</td>
+                                                <td>$250</td>
+                                                <td><span class="status active">Activo</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="user-info">
+                                                        <div class="user-avatar">RD</div>
+                                                        <div>Roberto D.</div>
+                                                    </div>
+                                                </td>
+                                                <td>Nivel 2</td>
+                                                <td>15/04/2025</td>
+                                                <td>$500</td>
+                                                <td>$25</td>
+                                                <td><span class="status active">Activo</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="user-info">
+                                                        <div class="user-avatar">AM</div>
+                                                        <div>Ana M.</div>
+                                                    </div>
+                                                </td>
+                                                <td>Nivel 1</td>
+                                                <td>10/03/2025</td>
+                                                <td>$1,000</td>
+                                                <td>$100</td>
+                                                <td><span class="status inactive">Inactivo</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="withdrawals">
+                        <div class="dashboard-withdrawals">
+                            <div class="withdrawal-header">
+                                <h3>Gestión de Retiros</h3>
+                                <button class="cta-button">Nuevo Retiro</button>
+                            </div>
+                            <div class="balance-cards">
+                                <div class="balance-card">
+                                    <div class="balance-title">Balance Disponible</div>
+                                    <div class="balance-amount">$1,843.25</div>
+                                    <div class="balance-description">Fondos disponibles para retiro</div>
+                                </div>
+                                <div class="balance-card">
+                                    <div class="balance-title">Balance Bloqueado</div>
+                                    <div class="balance-amount">$5,000.00</div>
+                                    <div class="balance-description">Fondos invertidos en planes activos</div>
+                                </div>
+                                <div class="balance-card">
+                                    <div class="balance-title">Próximo Desbloqueo</div>
+                                    <div class="balance-amount">$500.00</div>
+                                    <div class="balance-description">Disponible el 15/05/2025</div>
+                                </div>
+                            </div>
+                            <div class="withdrawal-history">
+                                <h4>Historial de Retiros</h4>
+                                <div class="history-table">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Fecha</th>
+                                                <th>Método</th>
+                                                <th>Monto</th>
+                                                <th>Comisión</th>
+                                                <th>Total</th>
+                                                <th>Estado</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>#W1234</td>
+                                                <td>07/05/2025</td>
+                                                <td>Bitcoin</td>
+                                                <td>$350.00</td>
+                                                <td>$7.00 (2%)</td>
+                                                <td>$343.00</td>
+                                                <td><span class="status completed">Completado</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>#W1201</td>
+                                                <td>01/05/2025</td>
+                                                <td>Ethereum</td>
+                                                <td>$500.00</td>
+                                                <td>$10.00 (2%)</td>
+                                                <td>$490.00</td>
+                                                <td><span class="status completed">Completado</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>#W1185</td>
+                                                <td>15/04/2025</td>
+                                                <td>USDT</td>
+                                                <td>$200.00</td>
+                                                <td>$4.00 (2%)</td>
+                                                <td>$196.00</td>
+                                                <td><span class="status completed">Completado</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonios">
+        <div class="container">
+            <div class="section-header">
+                <h2>Lo que dicen nuestros <span>Inversores</span></h2>
+                <p>Descubre cómo STELLAR AI está cambiando la forma en que las personas invierten.</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-item active">
+                    <div class="testimonial-content">
+                        <div class="testimonial-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>Después de probar varias plataformas de inversión, STELLAR AI es la única que me ha entregado resultados consistentes mes tras mes. La transparencia y el soporte al cliente son excepcionales.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-info">
+                            <h4>Miguel Rodríguez</h4>
+                            <p>Inversor desde 2024</p>
+                        </div>
+                        <div class="author-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="testimonial-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>Lo que más me impresiona de STELLAR AI es la precisión de sus algoritmos. He podido generar ingresos pasivos que superan por mucho mis expectativas iniciales. Definitivamente recomendado.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SG</div>
+                        <div class="author-info">
+                            <h4>Sofia Gómez</h4>
+                            <p>Inversor desde 2023</p>
+                        </div>
+                        <div class="author-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="testimonial-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>Como emprendedor, siempre busco formas de diversificar mis ingresos. El programa de referidos de STELLAR AI ha sido clave para crear un flujo de ingresos adicional sustancial y predecible.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JL</div>
+                        <div class="author-info">
+                            <h4>Javier López</h4>
+                            <p>Inversor desde 2024</p>
+                        </div>
+                        <div class="author-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-indicators">
+                    <span class="indicator active"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Preguntas <span>Frecuentes</span></h2>
+                <p>Encuentra respuestas a las preguntas más comunes sobre nuestra plataforma de inversión.</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cómo funciona exactamente STELLAR AI?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>STELLAR AI utiliza algoritmos avanzados de inteligencia artificial que analizan datos satelitales y de mercado para identificar oportunidades de inversión óptimas. Nuestro sistema distribuye tus fondos en diferentes estrategias de minería digital para maximizar rendimientos mientras minimiza riesgos. Recibimos datos continuamente de nuestros satélites y sensores distribuidos globalmente, permitiéndonos tomar decisiones en tiempo real.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cuál es la inversión mínima para comenzar?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nuestra inversión mínima para comenzar es de $100 con nuestro plan Starter. Esto permite a nuevos inversores probar nuestra plataforma con un capital inicial accesible. Para obtener mayores beneficios y tasas de rendimiento, recomendamos nuestros planes Growth ($500 mínimo) o Enterprise ($2,000 mínimo).</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cómo puedo retirar mis ganancias?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Puedes solicitar retiros directamente desde tu dashboard. Dependiendo de tu plan, tendrás la opción de retiros diarios, semanales o mensuales. Procesamos todos los retiros en un plazo de 24 horas y ofrecemos múltiples métodos de pago, incluyendo criptomonedas (Bitcoin, Ethereum, USDT) y transferencias bancarias en algunos países. Existe una pequeña comisión del 2% para cubrir gastos de procesamiento.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cómo funciona el programa de referidos?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nuestro programa de referidos te permite ganar comisiones por cada nuevo inversor que se una a través de tu enlace de referido. Las comisiones varían según tu plan: el plan Starter ofrece comisiones del 10% en el primer nivel, mientras que el plan Enterprise ofrece comisiones en hasta 5 niveles (10%, 5%, 3%, 2% y 1% respectivamente). Estas comisiones se calculan sobre el monto de inversión de tus referidos y se acreditan automáticamente en tu cuenta.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Existen riesgos en esta inversión?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Como en toda inversión, existen riesgos asociados. Sin embargo, en STELLAR AI trabajamos para minimizarlos mediante diversificación, algoritmos avanzados y gestión profesional. Nuestro historial muestra una estabilidad consistente en los rendimientos. Recomendamos siempre invertir capital que no necesites a corto plazo y diversificar tus inversiones en general. Ofrecemos total transparencia sobre nuestras operaciones y puedes monitorear tus inversiones en tiempo real.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Qué son los boosters y cómo funcionan?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Los boosters son multiplicadores temporales que aumentan tus rendimientos por un período determinado. Dependiendo de tu plan, puedes recibir boosters semanales o mensuales que incrementan tus ganancias entre un 5% y un 10%. También ofrecemos boosters especiales por eventos como aniversarios, campañas promocionales o por alcanzar ciertos hitos en tu red de referidos. Los boosters se aplican automáticamente y puedes ver su estado actual en tu dashboard.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contacta con <span>Nosotros</span></h2>
+                <p>Estamos aquí para responder tus preguntas y ayudarte a comenzar tu camino hacia la libertad financiera.</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" class="form-control" placeholder="Tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" class="form-control" placeholder="tu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="text" id="phone" class="form-control" placeholder="Tu número de teléfono">
+                    </div>
+                    <div class="form-group">
+                        <label for="investment">Monto de inversión estimado</label>
+                        <select id="investment" class="form-control">
+                            <option value="">Selecciona un rango</option>
+                            <option value="100-500">$100 - $500</option>
+                            <option value="500-2000">$500 - $2,000</option>
+                            <option value="2000-10000">$2,000 - $10,000</option>
+                            <option value="10000+">Más de $10,000</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" class="form-control" placeholder="¿En qué podemos ayudarte?"></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Enviar Mensaje</button>
+                </div>
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h3>Información de Contacto</h3>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Dirección</h4>
+                                <p>Av. Tecnológica 1250, Torre Digital, Piso 15</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Teléfono</h4>
+                                <a href="tel:+123456789">+1 (234) 567-890</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Email</h4>
+                                <a href="mailto:info@stellarai.com">info@stellarai.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <h3>Horario de Atención</h3>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Lunes - Viernes</h4>
+                                <p>9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-calendar"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Sábados</h4>
+                                <p>10:00 AM - 2:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Stellar AI - Todos los derechos reservados.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <div class="planet"></div>
+                            <div class="satellite"></div>
+                            <div class="panel-left"></div>
+                            <div class="panel-right"></div>
+                            <div class="star"></div>
+                        </div>
+                        <div class="logo-text">STELLAR AI</div>
+                    </div>
+                    <p>La plataforma de inversión más avanzada con tecnología satelital e inteligencia artificial para maximizar tus rendimientos.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram-plane"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Enlaces Rápidos</h3>
+                        <ul>
+                            <li><a href="#inicio">Inicio</a></li>
+                            <li><a href="#servicios">Servicios</a></li>
+                            <li><a href="#planes">Planes</a></li>
+                            <li><a href="#calculadora">Calculadora</a></li>
+                            <li><a href="#testimonios">Testimonios</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                            <li><a href="#contacto">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Servicios</h3>
+                        <ul>
+                            <li><a href="#">Inversión Pasiva</a></li>
+                            <li><a href="#">Programa de Referidos</a></li>
+                            <li><a href="#">Análisis de Mercado</a></li>
+                            <li><a href="#">Asesoría Personalizada</a></li>
+                            <li><a href="#">Retiros Automáticos</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="#">Términos y Condiciones</a></li>
+                            <li><a href="#">Política de Privacidad</a></li>
+                            <li><a href="#">Política KYC/AML</a></li>
+                            <li><a href="#">Aviso de Riesgo</a></li>
+                            <li><a href="#">Licencias y Regulación</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 STELLAR AI. Todos los derechos reservados.</p>
+            </div>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Script para separar en archivo externo -->
+    <script src="/assets/js/scripts.js"></script>
 </body>
 </html>
