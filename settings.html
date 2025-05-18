@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Configuración - STELLAR AI</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/sidebar.css">
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/settings.css">
+    
+</head>
+<body> 
+    <!-- Header -->
+    <script src="/assets/js/header.js"></script>
+    
+    <!-- Botón de menú para móviles -->
+    <button id="mobile-menu-button">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <script src="/assets/js/sidebar.js"></script>
+        
+        <main class="main-content">
+            <!-- Header de la página se carga mediante el script -->
+            
+            <!-- Contenido principal -->
+            <div class="content-body">
+                <!-- Navegación de configuración -->
+               <!-- Botón para mostrar/ocultar sidebar en móviles -->
+<button id="toggleSidebarBtn" class="toggle-sidebar-btn">
+    <i class="fas fa-bars"></i>
+</button>
+
+<!-- Overlay para cuando el sidebar está visible en móviles -->
+<div class="sidebar-overlay"></div>
+
+<!-- Sidebar de configuración -->
+<div class="settings-sidebar">
+    <!-- Encabezado del sidebar -->
+    <div class="settings-sidebar-header">
+        <h2>Configuración</h2>
+    </div>
+    
+    <!-- Enlaces de navegación -->
+     <ul class="settings-nav-links">
+            <li class="settings-nav-item active" data-section="profile-tab">
+                <i class="fas fa-user"></i>
+                <span>Perfil</span>
+            </li>
+            <li class="settings-nav-item" data-section="security-tab">
+                <i class="fas fa-lock"></i>
+                <span>Seguridad</span>
+            </li>
+            <li class="settings-nav-item" data-section="notifications-tab">
+                <i class="fas fa-bell"></i>
+                <span>Notificaciones</span>
+            </li>
+            <li class="settings-nav-item" data-section="payment-methods-tab">
+                <i class="fas fa-credit-card"></i>
+                <span>Métodos de Pago</span>
+            </li>
+            <li class="settings-nav-item" data-section="preferences-tab">
+                <i class="fas fa-sliders-h"></i>
+                <span>Preferencias</span>
+            </li>
+            <li class="settings-nav-item" data-section="verification-tab">
+                <i class="fas fa-check-circle"></i>
+                <span>Verificación</span>
+            </li>
+            <li class="settings-nav-item" data-section="referrals-tab">
+                <i class="fas fa-user-plus"></i>
+                <span>Referidos</span>
+            </li>
+            <li class="settings-nav-item" data-section="api-section-tab">
+                <i class="fas fa-code"></i>
+                <span>API</span>
+            </li>
+        </ul>
+    
+    <!-- Footer del sidebar con botones de acción -->
+    <div class="settings-nav-footer">
+        <button class="btn-support">
+            <i class="fas fa-headset"></i>
+            <span>Soporte</span>
+        </button>
+        <button class="btn-logout">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Cerrar Sesión</span>
+        </button>
+    </div>
+</div>
+
+                
+                <!-- Contenido de configuración -->
+                <div class="settings-content">
+                    <!-- Panel de Perfil -->
+                    <div class="settings-tab-content active" id="profile-tab">
+                        <div class="settings-tab-header">
+                            <h2>Perfil de Usuario</h2>
+                            <p>Gestiona tu información personal y configura tu cuenta</p>
+                        </div>
+                        
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Información Personal</h3>
+                                <button class="btn-text">
+                                    <i class="fas fa-pencil-alt"></i> Editar
+                                </button>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="profile-image-section">
+                                    <div class="profile-image">
+                                        <img src="/assets/img/avatar-placeholder.png" alt="Foto de perfil">
+                                        <div class="profile-upload-overlay">
+                                            <i class="fas fa-camera"></i>
+                                        </div>
+                                    </div>
+                                    <button class="btn-upload-photo">Cambiar Foto</button>
+                                </div>
+                                
+                                <div class="profile-form">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="first-name">Nombre</label>
+                                            <input type="text" id="first-name" value="Carlos" disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="last-name">Apellido</label>
+                                            <input type="text" id="last-name" value="Martínez" disabled>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="email">Correo Electrónico</label>
+                                        <input type="email" id="email" value="carlos.martinez@ejemplo.com" disabled>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="phone">Teléfono</label>
+                                            <input type="tel" id="phone" value="+34 612 345 678" disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="date-birth">Fecha de Nacimiento</label>
+                                            <input type="date" id="date-birth" value="1990-05-15" disabled>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="address">Dirección</label>
+                                        <input type="text" id="address" value="Calle Principal 123, 28001" disabled>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="city">Ciudad</label>
+                                            <input type="text" id="city" value="Madrid" disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="country">País</label>
+                                            <select id="country" disabled>
+                                                <option value="es" selected>España</option>
+                                                <option value="mx">México</option>
+                                                <option value="ar">Argentina</option>
+                                                <option value="co">Colombia</option>
+                                                <option value="cl">Chile</option>
+                                                <option value="pe">Perú</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Preferencias de Cuenta</h3>
+                                <div class="card-actions">
+                                    <button class="btn-text">
+                                        <i class="fas fa-save"></i> Guardar Cambios
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="form-group">
+                                    <label for="language">Idioma</label>
+                                    <select id="language">
+                                        <option value="es" selected>Español</option>
+                                        <option value="en">English</option>
+                                        <option value="pt">Português</option>
+                                        <option value="fr">Français</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="timezone">Zona Horaria</label>
+                                    <select id="timezone">
+                                        <option value="europe-madrid" selected>(GMT+1) Europa/Madrid</option>
+                                        <option value="america-mexico">(GMT-6) América/Ciudad de México</option>
+                                        <option value="america-bogota">(GMT-5) América/Bogotá</option>
+                                        <option value="america-buenos">(GMT-3) América/Buenos Aires</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="toggle-switch">
+                                        <span class="toggle-label">Tema Oscuro</span>
+                                        <input type="checkbox" id="dark-mode" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="toggle-switch">
+                                        <span class="toggle-label">Recibir Newsletter</span>
+                                        <input type="checkbox" id="newsletter" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-card danger-zone">
+                            <div class="settings-card-header">
+                                <h3>Zona de Peligro</h3>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="danger-action">
+                                    <div class="danger-action-info">
+                                        <h4>Desactivar Cuenta</h4>
+                                        <p>Tu cuenta será desactivada temporalmente y podrás reactivarla en cualquier momento.</p>
+                                    </div>
+                                    <button class="btn-outline-danger">Desactivar</button>
+                                </div>
+                                
+                                <div class="danger-action">
+                                    <div class="danger-action-info">
+                                        <h4>Eliminar Cuenta</h4>
+                                        <p>Todos tus datos serán eliminados permanentemente. Esta acción no se puede deshacer.</p>
+                                    </div>
+                                    <button class="btn-danger">Eliminar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Panel de Seguridad -->
+                    <div class="settings-tab-content" id="security-tab">
+                        <div class="settings-tab-header">
+                            <h2>Seguridad</h2>
+                            <p>Administra tus credenciales y configura la autenticación de dos factores</p>
+                        </div>
+                        
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Cambiar Contraseña</h3>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="form-group">
+                                    <label for="current-password">Contraseña Actual</label>
+                                    <div class="password-input">
+                                        <input type="password" id="current-password" placeholder="Ingresa tu contraseña actual">
+                                        <button class="password-toggle">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="new-password">Nueva Contraseña</label>
+                                    <div class="password-input">
+                                        <input type="password" id="new-password" placeholder="Ingresa tu nueva contraseña">
+                                        <button class="password-toggle">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                    <div class="password-strength">
+                                        <div class="strength-meter">
+                                            <span class="meter-segment weak active"></span>
+                                            <span class="meter-segment medium"></span>
+                                            <span class="meter-segment strong"></span>
+                                            <span class="meter-segment very-strong"></span>
+                                        </div>
+                                        <span class="strength-text">Débil</span>
+                                    </div>
+                                    <ul class="password-requirements">
+                                        <li class="requirement-met"><i class="fas fa-check"></i> Al menos 8 caracteres</li>
+                                        <li><i class="fas fa-times"></i> Al menos una letra mayúscula</li>
+                                        <li><i class="fas fa-times"></i> Al menos un número</li>
+                                        <li><i class="fas fa-times"></i> Al menos un carácter especial</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="confirm-password">Confirmar Contraseña</label>
+                                    <div class="password-input">
+                                        <input type="password" id="confirm-password" placeholder="Confirma tu nueva contraseña">
+                                        <button class="password-toggle">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <button class="btn-confirm">Cambiar Contraseña</button>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Autenticación de Dos Factores (2FA)</h3>
+                                <div class="card-badge success">Activo</div>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="two-factor-info">
+                                    <div class="two-factor-icon">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div class="two-factor-details">
+                                        <p>La autenticación de dos factores está activada, proporcionando una capa adicional de seguridad a tu cuenta.</p>
+                                        <p>Método actual: <strong>Aplicación de Autenticación</strong></p>
+                                        <p>Último uso: <strong>15 Mayo, 2025</strong></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="two-factor-methods">
+                                    <div class="method-selector">
+                                        <div class="method-option active">
+                                            <i class="fas fa-mobile-alt"></i>
+                                            <span>App Autenticador</span>
+                                        </div>
+                                        <div class="method-option">
+                                            <i class="fas fa-sms"></i>
+                                            <span>SMS</span>
+                                        </div>
+                                        <div class="method-option">
+                                            <i class="fas fa-envelope"></i>
+                                            <span>Email</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="backup-codes">
+                                        <h4>Códigos de Respaldo</h4>
+                                        <p>Guarda estos códigos en un lugar seguro para acceder a tu cuenta en caso de perder tu dispositivo.</p>
+                                        <div class="backup-codes-container">
+                                            <div class="backup-code">STLR-84729</div>
+                                            <div class="backup-code">STLR-92183</div>
+                                            <div class="backup-code">STLR-37655</div>
+                                            <div class="backup-code">STLR-18472</div>
+                                            <div class="backup-code">STLR-59201</div>
+                                            <div class="backup-code used">STLR-63891</div>
+                                        </div>
+                                        <button class="btn-outline">Generar Nuevos Códigos</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-actions-2fa">
+                                    <button class="btn-outline-danger">Desactivar 2FA</button>
+                                    <button class="btn-confirm">Guardar Cambios</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Sesiones Activas</h3>
+                                <button class="btn-text danger">
+                                    <i class="fas fa-sign-out-alt"></i> Cerrar Todas
+                                </button>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="sessions-list">
+                                    <div class="session-item current">
+                                        <div class="session-icon">
+                                            <i class="fas fa-laptop"></i>
+                                        </div>
+                                        <div class="session-info">
+                                            <h4>Windows 11 · Chrome 123</h4>
+                                            <p>Madrid, España · IP: 82.198.xx.xx</p>
+                                            <span class="session-time">Activo ahora · Sesión actual</span>
+                                        </div>
+                                        <div class="session-actions">
+                                            <button class="btn-icon" title="Cerrar Sesión" disabled>
+                                                <i class="fas fa-sign-out-alt"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="session-item">
+                                        <div class="session-icon">
+                                            <i class="fas fa-mobile-alt"></i>
+                                        </div>
+                                        <div class="session-info">
+                                            <h4>iOS 18 · Safari</h4>
+                                            <p>Madrid, España · IP: 82.198.xx.xx</p>
+                                            <span class="session-time">Hace 2 horas</span>
+                                        </div>
+                                        <div class="session-actions">
+                                            <button class="btn-icon" title="Cerrar Sesión">
+                                                <i class="fas fa-sign-out-alt"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="session-item">
+                                        <div class="session-icon">
+                                            <i class="fas fa-tablet-alt"></i>
+                                        </div>
+                                        <div class="session-info">
+                                            <h4>iPadOS 18 · Safari</h4>
+                                            <p>Barcelona, España · IP: 83.54.xx.xx</p>
+                                            <span class="session-time">Ayer, 18:45</span>
+                                        </div>
+                                        <div class="session-actions">
+                                            <button class="btn-icon" title="Cerrar Sesión">
+                                                <i class="fas fa-sign-out-alt"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Panel de Notificaciones -->
+                    <div class="settings-tab-content" id="notifications-tab">
+                        <div class="settings-tab-header">
+                            <h2>Notificaciones</h2>
+                            <p>Configura qué notificaciones quieres recibir y cómo</p>
+                        </div>
+                        
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Canales de Notificación</h3>
+                                <div class="card-actions">
+                                    <button class="btn-text">
+                                        <i class="fas fa-save"></i> Guardar Cambios
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="notification-channels">
+                                    <div class="channel-item">
+                                        <div class="channel-info">
+                                            <div class="channel-icon">
+                                                <i class="fas fa-envelope"></i>
+                                            </div>
+                                            <div class="channel-details">
+                                                <h4>Email</h4>
+                                                <p>carlos.martinez@ejemplo.com</p>
+                                            </div>
+                                        </div>
+                                        <div class="channel-status">
+                                            <span class="status-badge success">Verificado</span>
+                                            <div class="toggle-container">
+                                                <label class="toggle-switch">
+                                                    <input type="checkbox" checked>
+                                                    <span class="toggle-slider"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="channel-item">
+                                        <div class="channel-info">
+                                            <div class="channel-icon">
+                                                <i class="fas fa-mobile-alt"></i>
+                                            </div>
+                                            <div class="channel-details">
+                                                <h4>SMS</h4>
+                                                <p>+34 612 345 678</p>
+                                            </div>
+                                        </div>
+                                        <div class="channel-status">
+                                            <span class="status-badge success">Verificado</span>
+                                            <div class="toggle-container">
+                                                <label class="toggle-switch">
+                                                    <input type="checkbox" checked>
+                                                    <span class="toggle-slider"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="channel-item">
+                                        <div class="channel-info">
+                                            <div class="channel-icon">
+                                                <i class="fas fa-bell"></i>
+                                            </div>
+                                            <div class="channel-details">
+                                                <h4>Navegador</h4>
+                                                <p>Notificaciones del navegador</p>
+                                            </div>
+                                        </div>
+                                        <div class="channel-status">
+                                            <span class="status-badge warning">Pendiente</span>
+                                            <div class="toggle-container">
+                                                <label class="toggle-switch">
+                                                    <input type="checkbox">
+                                                    <span class="toggle-slider"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="channel-item">
+                                        <div class="channel-info">
+                                            <div class="channel-icon">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </div>
+                                            <div class="channel-details">
+                                                <h4>WhatsApp</h4>
+                                                <p>+34 612 345 678</p>
+                                            </div>
+                                        </div>
+                                        <div class="channel-status">
+                                            <span class="status-badge danger">No configurado</span>
+                                            <button class="btn-text">
+                                                <i class="fas fa-link"></i> Configurar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Preferencias de Notificaciones</h3>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="notification-preferences">
+                                    <div class="notification-category">
+                                        <h4>Seguridad</h4>
+                                        <div class="notification-preferences-list">
+                                            <div class="preference-item">
+                                                <div class="preference-info">
+                                                    <h5>Inicios de sesión</h5>
+                                                    <p>Recibe alertas cuando se detecte un inicio de sesión desde un nuevo dispositivo o ubicación.</p>
+                                                </div>
+                                                <div class="preference-channels">
+                                                    <label class="checkbox-container">
+                                                        <input type="checkbox" checked>
+                                                        <span class="checkmark"></span>
+                                                        <span>Email</span>
+                                                    </label>
+                                                    <label class="checkbox-container">
+                                                        <input type="checkbox" checked>
+                                                        <span class="checkmark"></span>
+                                                        <span>SMS</span>
+                                                    </label>
+                                                    <label class="checkbox-container">
+                                                        <input type="checkbox">
+                                                        <span class="checkmark"></span>
+                                                        <span>App</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="preference-item">
+                                                <div class="preference-info">
+                                                    <h5>Cambios en la cuenta</h5>
+                                                    <p>Recibe alertas cuando se realicen cambios importantes en tu cuenta.</p>
+                                                </div>
+                                                <div class="preference-channels">
+                                                    <label class="checkbox-container">
+                                                        <input type="checkbox" checked>
+                                                        <span class="checkmark"></span>
+                                                        <span>Email</span>
+                                                    </label>
+                                                    <label class="checkbox-container">
+                                                        <input type="checkbox" checked>
+                                                        <span class="checkmark"></span>
+                                                        <span>SMS</span>
+                                                    </label>
+                                                    <label class="checkbox-container">
+                                                        <input type="checkbox">
+                                                        <span class="checkmark"></span>
+                                                        <span>App</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="notification-category">
+                                        <h4>Transacciones</h4>
+                                        <div class="notification-preferences-list">
+                                            <div class="preference-item">
+                                                <div class="preference-info">
+                                                    <h5>Depósitos</h5>
+                                                    <p>Recibe notificaciones cuando se acrediten fondos en tu cuenta.</p>
+                                                </div>
+                                                <div class="preference-channels">
+                                                    <label class="checkbox-container">
+                                                        <input type="checkbox" checked>
+                                                        <span class="checkmark"></span>
+                                                        <span>Email</span>
+                                                    </label>
+                                                    <label class="checkbox-container">
+                                                        <input type="checkbox">
+                                                        <span class="checkmark"></span>
+                                                        <span>SMS</span>
+                                                    </label>
+                                                    <label class="checkbox-container">
+                                                        <input type="checkbox" checked>
+                                                        <span class="checkmark"></span>
+                                                        <span>App</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="preference-item">
+                                                <div class="preference-info">
+                                                    <h5>Noticias y actualizaciones</h5>
+                                                    <p>Recibe información sobre nuevas características, promociones y mejoras de la plataforma.</p>
+                                                </div>
+                                                <div class="preference-channels">
+                                                    <label class="checkbox-container">
+                                                        <input type="checkbox" checked>
+                                                        <span class="checkmark"></span>
+                                                        <span>Email</span>
+                                                    </label>
+                                                    <label class="checkbox-container">
+                                                        <input type="checkbox">
+                                                        <span class="checkmark"></span>
+                                                        <span>SMS</span>
+                                                    </label>
+                                                    <label class="checkbox-container">
+                                                        <input type="checkbox" checked>
+                                                        <span class="checkmark"></span>
+                                                        <span>App</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button class="btn-cancel">Cancelar</button>
+                                    <button class="btn-confirm">Guardar Cambios</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Panel de Métodos de Pago -->
+                    <div class="settings-tab-content" id="payment-methods-tab">
+                        <div class="settings-tab-header">
+                            <h2>Métodos de Pago</h2>
+                            <p>Administra tus métodos de pago para depósitos y retiros</p>
+                        </div>
+                        
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Métodos de Pago</h3>
+                                <button class="btn-text">
+                                    <i class="fas fa-plus"></i> Añadir Método
+                                </button>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="payment-methods-container">
+                                    <div class="payment-method-item active">
+                                        <div class="payment-method-icon">
+                                            <i class="fab fa-cc-visa"></i>
+                                        </div>
+                                        <div class="payment-method-details">
+                                            <h4>Visa terminada en 4587</h4>
+                                            <p>Banco Nacional • Predeterminada</p>
+                                        </div>
+                                        <div class="payment-method-actions">
+                                            <button class="btn-icon" title="Editar">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </button>
+                                            <button class="btn-icon" title="Eliminar">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="payment-method-item">
+                                        <div class="payment-method-icon">
+                                            <i class="fas fa-university"></i>
+                                        </div>
+                                        <div class="payment-method-details">
+                                            <h4>Cuenta Bancaria ****5732</h4>
+                                            <p>Banco del Estado</p>
+                                        </div>
+                                        <div class="payment-method-actions">
+                                            <button class="btn-icon" title="Editar">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </button>
+                                            <button class="btn-icon" title="Eliminar">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="payment-method-item">
+                                        <div class="payment-method-icon">
+                                            <i class="fab fa-bitcoin"></i>
+                                        </div>
+                                        <div class="payment-method-details">
+                                            <h4>Bitcoin Wallet</h4>
+                                            <p>bc1q...e8f9</p>
+                                        </div>
+                                        <div class="payment-method-actions">
+                                            <button class="btn-icon" title="Editar">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </button>
+                                            <button class="btn-icon" title="Eliminar">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Historial de Transacciones</h3>
+                                <div class="card-actions">
+                                    <select class="select-period">
+                                        <option value="all">Todas las transacciones</option>
+                                        <option value="month">Últimos 30 días</option>
+                                        <option value="quarter">Últimos 3 meses</option>
+                                        <option value="year">Último año</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="transactions-table">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Fecha</th>
+                                                <th>Tipo</th>
+                                                <th>Método</th>
+                                                <th>Monto</th>
+                                                <th>Estado</th>
+                                                <th>Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="date-cell">
+                                                        <div class="date-primary">15 May, 2025</div>
+                                                        <div class="date-secondary">14:32</div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="transaction-type deposit">Depósito</span>
+                                                </td>
+                                                <td>
+                                                    <div class="method-info">
+                                                        <i class="fab fa-cc-visa method-icon"></i>
+                                                        <span>Visa ****4587</span>
+                                                    </div>
+                                                </td>
+                                                <td class="amount">+$1,500.00</td>
+                                                <td>
+                                                    <span class="status completed">Completado</span>
+                                                </td>
+                                                <td>
+                                                    <div class="table-actions">
+                                                        <button class="btn-icon" title="Ver Detalles">
+                                                            <i class="fas fa-eye"></i>
+                                                        </button>
+                                                        <button class="btn-icon" title="Descargar Recibo">
+                                                            <i class="fas fa-download"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="date-cell">
+                                                        <div class="date-primary">28 Abr, 2025</div>
+                                                        <div class="date-secondary">10:15</div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="transaction-type withdrawal">Retiro</span>
+                                                </td>
+                                                <td>
+                                                    <div class="method-info">
+                                                        <i class="fas fa-university method-icon"></i>
+                                                        <span>Banco ****5732</span>
+                                                    </div>
+                                                </td>
+                                                <td class="amount">-$3,500.00</td>
+                                                <td>
+                                                    <span class="status completed">Completado</span>
+                                                </td>
+                                                <td>
+                                                    <div class="table-actions">
+                                                        <button class="btn-icon" title="Ver Detalles">
+                                                            <i class="fas fa-eye"></i>
+                                                        </button>
+                                                        <button class="btn-icon" title="Descargar Recibo">
+                                                            <i class="fas fa-download"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="date-cell">
+                                                        <div class="date-primary">15 Abr, 2025</div>
+                                                        <div class="date-secondary">09:47</div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="transaction-type deposit">Depósito</span>
+                                                </td>
+                                                <td>
+                                                    <div class="method-info">
+                                                        <i class="fab fa-bitcoin method-icon"></i>
+                                                        <span>Bitcoin Wallet</span>
+                                                    </div>
+                                                </td>
+                                                <td class="amount">+$2,750.00</td>
+                                                <td>
+                                                    <span class="status completed">Completado</span>
+                                                </td>
+                                                <td>
+                                                    <div class="table-actions">
+                                                        <button class="btn-icon" title="Ver Detalles">
+                                                            <i class="fas fa-eye"></i>
+                                                        </button>
+                                                        <button class="btn-icon" title="Descargar Recibo">
+                                                            <i class="fas fa-download"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="pagination-container">
+                                    <div class="pagination">
+                                        <button class="btn-page" disabled><i class="fas fa-chevron-left"></i></button>
+                                        <button class="btn-page active">1</button>
+                                        <button class="btn-page">2</button>
+                                        <button class="btn-page">3</button>
+                                        <button class="btn-page"><i class="fas fa-chevron-right"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Panel de Preferencias -->
+                    <div class="settings-tab-content" id="preferences-tab">
+                        <div class="settings-tab-header">
+                            <h2>Preferencias</h2>
+                            <p>Personaliza tu experiencia en la plataforma</p>
+                        </div>
+                        
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Apariencia</h3>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="theme-preferences">
+                                    <h4>Tema</h4>
+                                    <div class="theme-options">
+                                        <div class="theme-option active">
+                                            <div class="theme-preview dark"></div>
+                                            <span>Oscuro</span>
+                                        </div>
+                                        <div class="theme-option">
+                                            <div class="theme-preview light"></div>
+                                            <span>Claro</span>
+                                        </div>
+                                        <div class="theme-option">
+                                            <div class="theme-preview system"></div>
+                                            <span>Sistema</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <h4>Acentos de Color</h4>
+                                    <div class="color-options">
+                                        <div class="color-option active" style="--accent-color: #6b33c5;">
+                                            <div class="color-circle"></div>
+                                            <span>Púrpura</span>
+                                        </div>
+                                        <div class="color-option" style="--accent-color: #3b82f6;">
+                                            <div class="color-circle"></div>
+                                            <span>Azul</span>
+                                        </div>
+                                        <div class="color-option" style="--accent-color: #10b981;">
+                                            <div class="color-circle"></div>
+                                            <span>Verde</span>
+                                        </div>
+                                        <div class="color-option" style="--accent-color: #f59e0b;">
+                                            <div class="color-circle"></div>
+                                            <span>Ámbar</span>
+                                        </div>
+                                        <div class="color-option" style="--accent-color: #ef4444;">
+                                            <div class="color-circle"></div>
+                                            <span>Rojo</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="layout-preferences">
+                                    <h4>Preferencias de Diseño</h4>
+                                    
+                                    <div class="form-group">
+                                        <label class="toggle-switch">
+                                            <span class="toggle-label">Mostrar Gráficos en el Dashboard</span>
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="toggle-switch">
+                                            <span class="toggle-label">Sidebar Compacta</span>
+                                            <input type="checkbox">
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="card-density">Densidad de Contenido</label>
+                                        <select id="card-density">
+                                            <option value="comfortable">Cómodo</option>
+                                            <option value="default" selected>Estándar</option>
+                                            <option value="compact">Compacto</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button class="btn-cancel">Cancelar</button>
+                                    <button class="btn-confirm">Guardar Cambios</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Accesibilidad</h3>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="form-group">
+                                    <label for="font-size">Tamaño de Fuente</label>
+                                    <select id="font-size">
+                                        <option value="small">Pequeño</option>
+                                        <option value="medium" selected>Mediano</option>
+                                        <option value="large">Grande</option>
+                                        <option value="xlarge">Extra Grande</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="toggle-switch">
+                                        <span class="toggle-label">Modo de Alto Contraste</span>
+                                        <input type="checkbox">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="toggle-switch">
+                                        <span class="toggle-label">Reducir Animaciones</span>
+                                        <input type="checkbox">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="toggle-switch">
+                                        <span class="toggle-label">Soporte para Lectores de Pantalla</span>
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button class="btn-cancel">Cancelar</button>
+                                    <button class="btn-confirm">Guardar Cambios</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Panel de Verificación -->
+                    <div class="settings-tab-content" id="verification-tab">
+                        <div class="settings-tab-header">
+                            <h2>Verificación</h2>
+                            <p>Verifica tu identidad para desbloquear todas las funciones</p>
+                        </div>
+                        
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Estado de Verificación</h3>
+                                <div class="card-badge success">Verificado</div>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="verification-status">
+                                    <div class="verification-progress">
+                                        <div class="progress-steps">
+                                            <div class="progress-step completed">
+                                                <div class="step-icon">
+                                                    <i class="fas fa-envelope"></i>
+                                                </div>
+                                                <div class="step-info">
+                                                    <h4>Email</h4>
+                                                    <p>Verificado el 12/03/2025</p>
+                                                </div>
+                                                <div class="step-status">
+                                                    <i class="fas fa-check-circle"></i>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="progress-step completed">
+                                                <div class="step-icon">
+                                                    <i class="fas fa-mobile-alt"></i>
+                                                </div>
+                                                <div class="step-info">
+                                                    <h4>Teléfono</h4>
+                                                    <p>Verificado el 12/03/2025</p>
+                                                </div>
+                                                <div class="step-status">
+                                                    <i class="fas fa-check-circle"></i>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="progress-step completed">
+                                                <div class="step-icon">
+                                                    <i class="fas fa-id-card"></i>
+                                                </div>
+                                                <div class="step-info">
+                                                    <h4>Identidad</h4>
+                                                    <p>Verificado el 15/03/2025</p>
+                                                </div>
+                                                <div class="step-status">
+                                                    <i class="fas fa-check-circle"></i>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="progress-step completed">
+                                                <div class="step-icon">
+                                                    <i class="fas fa-home"></i>
+                                                </div>
+                                                <div class="step-info">
+                                                    <h4>Dirección</h4>
+                                                    <p>Verificado el 20/03/2025</p>
+                                                </div>
+                                                <div class="step-status">
+                                                    <i class="fas fa-check-circle"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="verification-level">
+                                        <h4>Nivel de Verificación: Premium</h4>
+                                        <div class="level-benefits">
+                                            <div class="benefit-item">
+                                                <i class="fas fa-check"></i>
+                                                <span>Límite de retiro de hasta $100,000</span>
+                                            </div>
+                                            <div class="benefit-item">
+                                                <i class="fas fa-check"></i>
+                                                <span>Acceso a todos los métodos de pago</span>
+                                            </div>
+                                            <div class="benefit-item">
+                                                <i class="fas fa-check"></i>
+                                                <span>Comisiones reducidas</span>
+                                            </div>
+                                            <div class="benefit-item">
+                                                <i class="fas fa-check"></i>
+                                                <span>Soporte prioritario</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Documentos Verificados</h3>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="documents-list">
+                                    <div class="document-item">
+                                        <div class="document-icon">
+                                            <i class="fas fa-id-card"></i>
+                                        </div>
+                                        <div class="document-info">
+                                            <h4>Documento Nacional de Identidad</h4>
+                                            <p>Subido el 15/03/2025</p>
+                                        </div>
+                                        <div class="document-actions">
+                                            <button class="btn-icon" title="Ver Documento">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn-icon" title="Reemplazar">
+                                                <i class="fas fa-sync-alt"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="document-item">
+                                        <div class="document-icon">
+                                            <i class="fas fa-file-invoice"></i>
+                                        </div>
+                                        <div class="document-info">
+                                            <h4>Factura de Servicios</h4>
+                                            <p>Subido el 20/03/2025</p>
+                                        </div>
+                                        <div class="document-actions">
+                                            <button class="btn-icon" title="Ver Documento">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn-icon" title="Reemplazar">
+                                                <i class="fas fa-sync-alt"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="document-item">
+                                        <div class="document-icon">
+                                            <i class="fas fa-image"></i>
+                                        </div>
+                                        <div class="document-info">
+                                            <h4>Foto de Verificación</h4>
+                                            <p>Subido el 15/03/2025</p>
+                                        </div>
+                                        <div class="document-actions">
+                                            <button class="btn-icon" title="Ver Documento">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn-icon" title="Reemplazar">
+                                                <i class="fas fa-sync-alt"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Panel de Referidos -->
+                    <div class="settings-tab-content" id="referrals-tab">
+                        <div class="settings-tab-header">
+                            <h2>Programa de Referidos</h2>
+                            <p>Invita a amigos y gana recompensas</p>
+                        </div>
+                        
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Tu Enlace de Referido</h3>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="referral-link-container">
+                                    <p>Comparte este enlace con tus amigos y gana un 10% de comisión por cada nuevo usuario que se registre.</p>
+                                    
+                                    <div class="referral-link">
+                                        <input type="text" value="https://stellarai.com/ref/carlos92" readonly>
+                                        <button class="btn-copy">
+                                            <i class="fas fa-copy"></i> Copiar
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="referral-social">
+                                        <p>O comparte directamente en:</p>
+                                        <div class="social-buttons">
+                                            <button class="btn-social whatsapp">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                            <button class="btn-social telegram">
+                                                <i class="fab fa-telegram"></i>
+                                            </button>
+                                            <button class="btn-social twitter">
+                                                <i class="fab fa-twitter"></i>
+                                            </button>
+                                            <button class="btn-social facebook">
+                                                <i class="fab fa-facebook"></i>
+                                            </button>
+                                            <button class="btn-social email">
+                                                <i class="fas fa-envelope"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Estadísticas de Referidos</h3>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="referral-stats">
+                                    <div class="stats-cards">
+                                        <div class="stat-card">
+                                            <div class="stat-icon">
+                                                <i class="fas fa-users"></i>
+                                            </div>
+                                            <div class="stat-info">
+                                                <h4>Total Referidos</h4>
+                                                <div class="stat-value">24</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="stat-card">
+                                            <div class="stat-icon">
+                                                <i class="fas fa-user-check"></i>
+                                            </div>
+                                            <div class="stat-info">
+                                                <h4>Referidos Activos</h4>
+                                                <div class="stat-value">18</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="stat-card">
+                                            <div class="stat-icon">
+                                                <i class="fas fa-coins"></i>
+                                            </div>
+                                            <div class="stat-info">
+                                                <h4>Ganancias Totales</h4>
+                                                <div class="stat-value">$1,250.00</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="stat-card">
+                                            <div class="stat-icon">
+                                                <i class="fas fa-chart-line"></i>
+                                            </div>
+                                            <div class="stat-info">
+                                                <h4>Este Mes</h4>
+                                                <div class="stat-value">$350.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="referral-chart-container">
+                                        <canvas id="referralChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Tus Referidos</h3>
+                                <div class="card-actions">
+                                    <select class="select-period">
+                                        <option value="all">Todos los referidos</option>
+                                        <option value="month">Últimos 30 días</option>
+                                        <option value="quarter">Últimos 3 meses</option>
+                                        <option value="year">Último año</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="referrals-table">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Usuario</th>
+                                                <th>Fecha de Registro</th>
+                                                <th>Estado</th>
+                                                <th>Plan</th>
+                                                <th>Comisión</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="user-info">
+                                                        <div class="user-avatar">
+                                                            <span>LR</span>
+                                                        </div>
+                                                        <div class="user-details">
+                                                            <h4>Laura Rodríguez</h4>
+                                                            <p>laura.rod@ejemplo.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="date-cell">
+                                                        <div class="date-primary">12 May, 2025</div>
+                                                        <div class="date-secondary">09:20</div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="status completed">Activo</span>
+                                                </td>
+                                                <td>
+                                                    <span class="plan-badge premium">Premium</span>
+                                                </td>
+                                                <td class="amount">$125.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="user-info">
+                                                        <div class="user-avatar">
+                                                            <span>JG</span>
+                                                        </div>
+                                                        <div class="user-details">
+                                                            <h4>Javier García</h4>
+                                                            <p>javier.g@ejemplo.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="date-cell">
+                                                        <div class="date-primary">05 May, 2025</div>
+                                                        <div class="date-secondary">14:45</div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="status completed">Activo</span>
+                                                </td>
+                                                <td>
+                                                    <span class="plan-badge standard">Estándar</span>
+                                                </td>
+                                                <td class="amount">$75.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="user-info">
+                                                        <div class="user-avatar">
+                                                            <span>MP</span>
+                                                        </div>
+                                                        <div class="user-details">
+                                                            <h4>María Pérez</h4>
+                                                            <p>maria.p@ejemplo.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="date-cell">
+                                                        <div class="date-primary">28 Abr, 2025</div>
+                                                        <div class="date-secondary">11:30</div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="status pending">Pendiente</span>
+                                                </td>
+                                                <td>
+                                                    <span class="plan-badge basic">Básico</span>
+                                                </td>
+                                                <td class="amount">$0.00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="pagination-container">
+                                    <div class="pagination">
+                                        <button class="btn-page" disabled><i class="fas fa-chevron-left"></i></button>
+                                        <button class="btn-page active">1</button>
+                                        <button class="btn-page">2</button>
+                                        <button class="btn-page">3</button>
+                                        <button class="btn-page"><i class="fas fa-chevron-right"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Panel de API -->
+                    <div class="settings-tab-content" id="api-tab">
+                        <div class="settings-tab-header">
+                            <h2>API</h2>
+                            <p>Administra tus claves de API y desarrolla integraciones personalizadas</p>
+                        </div>
+                        
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Claves de API</h3>
+                                <button class="btn-text">
+                                    <i class="fas fa-plus"></i> Crear Nueva Clave
+                                </button>
+                            </div>
+                            <div class="settings-card-body">
+                                <p class="api-description">Las claves de API te permiten conectar servicios externos a STELLAR AI de forma segura. Usa claves diferentes para cada integración.</p>
+                                
+                                <div class="api-keys">
+                                    <div class="api-key-item">
+                                        <div class="api-key-info">
+                                            <h4>Clave Principal</h4>
+                                            <div class="api-key-secret">
+                                                <code>stlr_pk_*****************************a95b</code>
+                                                <button class="btn-icon-small" title="Mostrar">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                                <button class="btn-icon-small" title="Copiar">
+                                                    <i class="fas fa-copy"></i>
+                                                </button>
+                                            </div>
+                                            <div class="api-key-meta">
+                                                <span>Creada: 20/03/2025</span>
+                                                <span>Último uso: Hace 2 días</span>
+                                            </div>
+                                        </div>
+                                        <div class="api-key-actions">
+                                            <button class="btn-outline-danger">
+                                                <i class="fas fa-sync-alt"></i> Regenerar
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="api-key-item">
+                                        <div class="api-key-info">
+                                            <h4>Web App</h4>
+                                            <div class="api-key-secret">
+                                                <code>stlr_app_*****************************c78d</code>
+                                                <button class="btn-icon-small" title="Mostrar">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                                <button class="btn-icon-small" title="Copiar">
+                                                    <i class="fas fa-copy"></i>
+                                                </button>
+                                            </div>
+                                            <div class="api-key-meta">
+                                                <span>Creada: 05/04/2025</span>
+                                                <span>Último uso: Hoy</span>
+                                            </div>
+                                        </div>
+                                        <div class="api-key-actions">
+                                            <button class="btn-outline-danger">
+                                                <i class="fas fa-trash-alt"></i> Eliminar
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="api-key-item">
+                                        <div class="api-key-info">
+                                            <h4>Análisis de Datos</h4>
+                                            <div class="api-key-secret">
+                                                <code>stlr_data_*****************************e45f</code>
+                                                <button class="btn-icon-small" title="Mostrar">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                                <button class="btn-icon-small" title="Copiar">
+                                                    <i class="fas fa-copy"></i>
+                                                </button>
+                                            </div>
+                                            <div class="api-key-meta">
+                                                <span>Creada: 10/04/2025</span>
+                                                <span>Último uso: Hace 3 días</span>
+                                            </div>
+                                        </div>
+                                        <div class="api-key-actions">
+                                            <button class="btn-outline-danger">
+                                                <i class="fas fa-trash-alt"></i> Eliminar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="api-webhooks">
+                                    <h4>Webhooks</h4>
+                                    <p>Configura URL de callback para recibir notificaciones en tiempo real sobre eventos en tu cuenta.</p>
+                                    
+                                    <div class="webhook-item">
+                                        <div class="webhook-info">
+                                            <h5>Notificaciones de Pago</h5>
+                                            <code>https://miapp.com/callbacks/payments</code>
+                                        </div>
+                                        <div class="webhook-events">
+                                            <span class="event-badge">payment.success</span>
+                                            <span class="event-badge">payment.failed</span>
+                                        </div>
+                                        <div class="webhook-actions">
+                                            <button class="btn-icon" title="Editar">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </button>
+                                            <button class="btn-icon" title="Eliminar">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="webhook-item">
+                                        <div class="webhook-info">
+                                            <h5>Alertas de Cuenta</h5>
+                                            <code>https://miapp.com/callbacks/account</code>
+                                        </div>
+                                        <div class="webhook-events">
+                                            <span class="event-badge">account.login</span>
+                                            <span class="event-badge">account.update</span>
+                                        </div>
+                                        <div class="webhook-actions">
+                                            <button class="btn-icon" title="Editar">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </button>
+                                            <button class="btn-icon" title="Eliminar">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <button class="btn-outline">
+                                        <i class="fas fa-plus"></i> Añadir Webhook
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Documentación de API</h3>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="api-docs-links">
+                                    <a href="#" class="api-doc-link">
+                                        <div class="doc-icon">
+                                            <i class="fas fa-book"></i>
+                                        </div>
+                                        <div class="doc-info">
+                                            <h4>Guía de Inicio Rápido</h4>
+                                            <p>Aprende a conectar tu primera integración en minutos</p>
+                                        </div>
+                                        <i class="fas fa-chevron-right"></i>
+                                    </a>
+                                    
+                                    <a href="#" class="api-doc-link">
+                                        <div class="doc-icon">
+                                            <i class="fas fa-code"></i>
+                                        </div>
+                                        <div class="doc-info">
+                                            <h4>Referencia Completa de API</h4>
+                                            <p>Documentación detallada de todos los endpoints y funciones</p>
+                                        </div>
+                                        <i class="fas fa-chevron-right"></i>
+                                    </a>
+                                    
+                                    <a href="#" class="api-doc-link">
+                                        <div class="doc-icon">
+                                            <i class="fas fa-laptop-code"></i>
+                                        </div>
+                                        <div class="doc-info">
+                                            <h4>SDK y Bibliotecas Cliente</h4>
+                                            <p>Implementaciones oficiales para diferentes lenguajes</p>
+                                        </div>
+                                        <i class="fas fa-chevron-right"></i>
+                                    </a>
+                                    
+                                    <a href="#" class="api-doc-link">
+                                        <div class="doc-icon">
+                                            <i class="fas fa-terminal"></i>
+                                        </div>
+                                        <div class="doc-info">
+                                            <h4>Ejemplos y Tutoriales</h4>
+                                            <p>Casos de uso reales e implementaciones paso a paso</p>
+                                        </div>
+                                        <i class="fas fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <script src="/assets/js/footer.js"></script>
+        </main>
+    </div>
+    
+    <!-- Notification Panel (Hidden by default) -->
+    <div class="notification-panel">
+        <div class="notification-header">
+            <h3>Notificaciones</h3>
+            <button class="close-panel">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="notification-list">
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-coins"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>Nueva Ganancia Acreditada</h4>
+                    <p>Has recibido $42.50 de ganancia diaria.</p>
+                    <span class="notification-time">Hoy, 00:01 AM</span>
+                </div>
+                <button class="mark-read">
+                    <i class="fas fa-check"></i>
+                </button>
+            </div>
+            
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>Nuevo Referido Registrado</h4>
+                    <p>Carlos M. se ha unido usando tu código de referido.</p>
+                    <span class="notification-time">Ayer, 3:45 PM</span>
+                </div>
+                <button class="mark-read">
+                    <i class="fas fa-check"></i>
+                </button>
+            </div>
+            
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>¡Bono Semanal Activado!</h4>
+                    <p>Tu plan Enterprise ha recibido un bono del 10% esta semana.</p>
+                    <span class="notification-time">08 Mayo, 09:15 AM</span>
+                </div>
+                <button class="mark-read">
+                    <i class="fas fa-check"></i>
+                </button>
+            </div>
+            
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-arrow-up"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>Retiro Completado</h4>
+                    <p>Tu retiro de $350.00 ha sido procesado correctamente.</p>
+                    <span class="notification-time">07 Mayo, 11:30 AM</span>
+                </div>
+            </div>
+        </div>
+        <div class="notification-footer">
+            <button class="mark-all-read">Marcar todas como leídas</button>
+            <a href="notifications.html">Ver todas las notificaciones</a>
+        </div>
+    </div>
+    
+    <!-- Overlay para modals -->
+    <div class="modal-overlay"></div>
+    <div class="dark-overlay"></div>
+    
+    <!-- JavaScript -->
+    <script src="/assets/js/dashboard.js"></script>
+    <script src="/assets/js/settings.js"></script>
+    
+    <script>
+        // Inicialización del gráfico para la sección de referidos
+        document.addEventListener('DOMContentLoaded', function() {
+            // Solo inicializar el gráfico si estamos en la pestaña de referidos
+            if(document.getElementById('referralChart')) {
+                const ctx = document.getElementById('referralChart').getContext('2d');
+                
+                const referralChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May'],
+                        datasets: [{
+                            label: 'Referidos',
+                            data: [3, 5, 7, 4, 5],
+                            backgroundColor: 'rgba(107, 51, 197, 0.2)',
+                            borderColor: 'rgba(107, 51, 197, 1)',
+                            borderWidth: 2,
+                            tension: 0.4,
+                            pointBackgroundColor: 'rgba(107, 51, 197, 1)'
+                        }, {
+                            label: 'Comisiones ($)',
+                            data: [150, 250, 350, 200, 300],
+                            backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                            borderColor: 'rgba(59, 130, 246, 1)',
+                            borderWidth: 2,
+                            tension: 0.4,
+                            pointBackgroundColor: 'rgba(59, 130, 246, 1)',
+                            yAxisID: 'y1'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: {
+                                    color: 'rgba(255, 255, 255, 0.05)'
+                                },
+                                ticks: {
+                                    color: 'rgba(255, 255, 255, 0.7)'
+                                }
+                            },
+                            y1: {
+                                beginAtZero: true,
+                                position: 'right',
+                                grid: {
+                                    display: false
+                                },
+                                ticks: {
+                                    color: 'rgba(59, 130, 246, 0.7)'
+                                }
+                            },
+                            x: {
+                                grid: {
+                                    color: 'rgba(255, 255, 255, 0.05)'
+                                },
+                                ticks: {
+                                    color: 'rgba(255, 255, 255, 0.7)'
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                labels: {
+                                    color: 'rgba(255, 255, 255, 0.7)'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // Navegación entre pestañas de configuración
+            const navItems = document.querySelectorAll('.settings-nav-item');
+            const tabContents = document.querySelectorAll('.settings-tab-content');
+            
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Remover clase active de todos los items
+                    navItems.forEach(navItem => navItem.classList.remove('active'));
+                    
+                    // Añadir clase active al item clicado
+                    this.classList.add('active');
+                    
+                    // Mostrar el contenido correspondiente
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    tabContents.forEach(tab => {
+                        tab.classList.remove('active');
+                        if(tab.id === tabId + '-tab') {
+                            tab.classList.add('active');
+                        }
+                    });
+                });
+            });
+            
+            // Toggle para mostrar/ocultar contraseñas
+            const passwordToggles = document.querySelectorAll('.password-toggle');
+            
+            passwordToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const input = this.previousElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    if(input.type === 'password') {
+                        input.type = 'text';
+                        icon.classList.remove('fa-eye');
+                        icon.classList.add('fa-eye-slash');
+                    } else {
+                        input.type = 'password';
+                        icon.classList.remove('fa-eye-slash');
+                        icon.classList.add('fa-eye');
+                    }
+                });
+            });
+            
+            // Manejo de notificaciones
+            const notificationButton = document.querySelector('.notification-button');
+            const notificationPanel = document.querySelector('.notification-panel');
+            const closePanel = document.querySelector('.close-panel');
+            const darkOverlay = document.querySelector('.dark-overlay');
+            
+            if(notificationButton) {
+                notificationButton.addEventListener('click', function() {
+                    notificationPanel.classList.add('active');
+                    darkOverlay.style.opacity = '1';
+                    darkOverlay.style.visibility = 'visible';
+                    darkOverlay.style.pointerEvents = 'auto';
+                });
+            }
+            
+            if(closePanel) {
+                closePanel.addEventListener('click', function() {
+                    notificationPanel.classList.remove('active');
+                    darkOverlay.style.opacity = '0';
+                    darkOverlay.style.visibility = 'hidden';
+                    darkOverlay.style.pointerEvents = 'none';
+                });
+            }
+            
+            if(darkOverlay) {
+                darkOverlay.addEventListener('click', function() {
+                    notificationPanel.classList.remove('active');
+                    darkOverlay.style.opacity = '0';
+                    darkOverlay.style.visibility = 'hidden';
+                    darkOverlay.style.pointerEvents = 'none';
+                });
+            }
+        });
+    </script>
+</body>
+</html>>
+                                                    

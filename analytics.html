@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Análisis - STELLAR AI</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/sidebar.css">
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/analytics.css">
+</head>
+<body>
+    <!-- Header -->
+    <script src="/assets/js/header.js"></script>
+    
+    <!-- Botón de menú para móviles -->
+    <button id="mobile-menu-button">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <script src="/assets/js/sidebar.js"></script>
+        
+        <main class="main-content">
+            <!-- Header de la página se carga mediante el script -->
+            
+            <!-- Contenido principal -->
+            <div class="content-body">
+                <!-- Resumen de rendimiento -->
+                <div class="overview-cards">
+                    <div class="card stats-card">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>ROI Promedio</h3>
+                            <div class="card-value">15.8%</div>
+                            <div class="card-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+2.3% este mes</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card stats-card">
+                        <div class="card-icon">
+                            <i class="fas fa-money-bill-trend-up"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Ganancias Totales</h3>
+                            <div class="card-value">$3,245.50</div>
+                            <div class="card-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+$520 este mes</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card stats-card">
+                        <div class="card-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Balance Activo</h3>
+                            <div class="card-value">$12,850.75</div>
+                            <div class="card-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+$1,200 respecto al mes anterior</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card stats-card">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Rendimiento Anual</h3>
+                            <div class="card-value">12.4%</div>
+                            <div class="card-change negative">
+                                <i class="fas fa-arrow-down"></i>
+                                <span>-0.8% respecto al año anterior</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gráficos principales -->
+                <div class="charts-section">
+                    <div class="card chart-card">
+                        <div class="card-header">
+                            <h2>Rendimiento Mensual</h2>
+                            <div class="card-actions">
+                                <select class="select-period">
+                                    <option value="3m">Últimos 3 meses</option>
+                                    <option value="6m">Últimos 6 meses</option>
+                                    <option value="1y" selected>Último año</option>
+                                    <option value="all">Todo el tiempo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="performanceChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="card chart-card">
+                        <div class="card-header">
+                            <h2>Distribución de Inversiones</h2>
+                            <div class="card-actions">
+                                <select class="select-view">
+                                    <option value="asset">Por Activo</option>
+                                    <option value="sector" selected>Por Sector</option>
+                                    <option value="risk">Por Riesgo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="distributionChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Análisis Detallado -->
+                <div class="analytics-detailed">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Análisis de Rendimiento Detallado</h2>
+                            <div class="card-actions">
+                                <button class="btn-text">
+                                    <i class="fas fa-download"></i> Exportar Datos
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-container">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Activo</th>
+                                            <th>Tipo</th>
+                                            <th>Sector</th>
+                                            <th>Inversión</th>
+                                            <th>Valor Actual</th>
+                                            <th>ROI</th>
+                                            <th>Tendencia</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="asset-name">
+                                                    <i class="fas fa-building asset-icon"></i>
+                                                    <span>Fondo Tecnológico</span>
+                                                </div>
+                                            </td>
+                                            <td>ETF</td>
+                                            <td>Tecnología</td>
+                                            <td class="amount">$2,500.00</td>
+                                            <td class="amount">$3,125.50</td>
+                                            <td>
+                                                <span class="roi positive">+25.02%</span>
+                                            </td>
+                                            <td>
+                                                <div class="trend-chart">
+                                                    <canvas class="mini-chart" data-values="[12,15,14,18,22,25]"></canvas>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="asset-name">
+                                                    <i class="fas fa-leaf asset-icon"></i>
+                                                    <span>Inversión Verde</span>
+                                                </div>
+                                            </td>
+                                            <td>Fondo</td>
+                                            <td>Energía Limpia</td>
+                                            <td class="amount">$1,800.00</td>
+                                            <td class="amount">$2,070.00</td>
+                                            <td>
+                                                <span class="roi positive">+15.00%</span>
+                                            </td>
+                                            <td>
+                                                <div class="trend-chart">
+                                                    <canvas class="mini-chart" data-values="[10,13,12,15,14,15]"></canvas>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="asset-name">
+                                                    <i class="fas fa-landmark asset-icon"></i>
+                                                    <span>Bonos Estatales</span>
+                                                </div>
+                                            </td>
+                                            <td>Bono</td>
+                                            <td>Gobierno</td>
+                                            <td class="amount">$3,000.00</td>
+                                            <td class="amount">$3,150.00</td>
+                                            <td>
+                                                <span class="roi positive">+5.00%</span>
+                                            </td>
+                                            <td>
+                                                <div class="trend-chart">
+                                                    <canvas class="mini-chart" data-values="[5,5.2,5.3,5.1,5.2,5.0]"></canvas>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="asset-name">
+                                                    <i class="fas fa-microchip asset-icon"></i>
+                                                    <span>Tech Innovation</span>
+                                                </div>
+                                            </td>
+                                            <td>Acción</td>
+                                            <td>Tecnología</td>
+                                            <td class="amount">$1,200.00</td>
+                                            <td class="amount">$1,080.00</td>
+                                            <td>
+                                                <span class="roi negative">-10.00%</span>
+                                            </td>
+                                            <td>
+                                                <div class="trend-chart">
+                                                    <canvas class="mini-chart" data-values="[18,16,14,12,10,9]"></canvas>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="asset-name">
+                                                    <i class="fas fa-shopping-cart asset-icon"></i>
+                                                    <span>Retail Global</span>
+                                                </div>
+                                            </td>
+                                            <td>ETF</td>
+                                            <td>Consumo</td>
+                                            <td class="amount">$2,000.00</td>
+                                            <td class="amount">$2,240.00</td>
+                                            <td>
+                                                <span class="roi positive">+12.00%</span>
+                                            </td>
+                                            <td>
+                                                <div class="trend-chart">
+                                                    <canvas class="mini-chart" data-values="[8,9,10,11,12,12]"></canvas>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Análisis de Riesgo y Rendimiento -->
+                <div class="risk-performance">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Análisis de Riesgo y Rendimiento</h2>
+                        </div>
+                        <div class="card-body">
+                            <div id="riskPerformanceChart">
+                                <canvas id="scatterChart"></canvas>
+                            </div>
+                            <div class="risk-categories">
+                                <div class="risk-category">
+                                    <div class="risk-indicator low"></div>
+                                    <span>Bajo Riesgo</span>
+                                </div>
+                                <div class="risk-category">
+                                    <div class="risk-indicator medium"></div>
+                                    <span>Riesgo Moderado</span>
+                                </div>
+                                <div class="risk-category">
+                                    <div class="risk-indicator high"></div>
+                                    <span>Alto Riesgo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Predicciones y Recomendaciones -->
+                <div class="predictions-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Predicciones y Recomendaciones</h2>
+                            <div class="card-actions">
+                                <span class="last-updated">Última actualización: 11 Mayo, 2025</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="prediction-cards">
+                                <div class="prediction-card">
+                                    <div class="prediction-header">
+                                        <i class="fas fa-chart-line"></i>
+                                        <h3>Tendencia de Mercado</h3>
+                                    </div>
+                                    <div class="prediction-content">
+                                        <p>Basado en el análisis de tendencias recientes, se espera un crecimiento moderado en los mercados tecnológicos durante los próximos 30 días.</p>
+                                        <div class="confidence-meter">
+                                            <span>Confianza:</span>
+                                            <div class="confidence-bar">
+                                                <div class="confidence-level" style="width: 75%"></div>
+                                            </div>
+                                            <span>75%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="prediction-card">
+                                    <div class="prediction-header">
+                                        <i class="fas fa-lightbulb"></i>
+                                        <h3>Recomendación</h3>
+                                    </div>
+                                    <div class="prediction-content">
+                                        <p>Considere aumentar su exposición en el sector de energías renovables, ya que muestra señales de crecimiento sostenible en los próximos trimestres.</p>
+                                        <div class="confidence-meter">
+                                            <span>Confianza:</span>
+                                            <div class="confidence-bar">
+                                                <div class="confidence-level" style="width: 82%"></div>
+                                            </div>
+                                            <span>82%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="prediction-card">
+                                    <div class="prediction-header">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        <h3>Alerta de Riesgo</h3>
+                                    </div>
+                                    <div class="prediction-content">
+                                        <p>La volatilidad en el sector financiero ha aumentado. Se recomienda revisar su exposición a acciones bancarias en el corto plazo.</p>
+                                        <div class="confidence-meter">
+                                            <span>Confianza:</span>
+                                            <div class="confidence-bar">
+                                                <div class="confidence-level" style="width: 68%"></div>
+                                            </div>
+                                            <span>68%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Notification Panel (Hidden by default) -->
+    <div class="notification-panel">
+        <div class="notification-header">
+            <h3>Notificaciones</h3>
+            <button class="close-panel">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="notification-list">
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-coins"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>Nueva Ganancia Acreditada</h4>
+                    <p>Has recibido $42.50 de ganancia diaria.</p>
+                    <span class="notification-time">Hoy, 00:01 AM</span>
+                </div>
+                <button class="mark-read">
+                    <i class="fas fa-check"></i>
+                </button>
+            </div>
+            
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>Nuevo Referido Registrado</h4>
+                    <p>Carlos M. se ha unido usando tu código de referido.</p>
+                    <span class="notification-time">Ayer, 3:45 PM</span>
+                </div>
+                <button class="mark-read">
+                    <i class="fas fa-check"></i>
+                </button>
+            </div>
+            
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>¡Bono Semanal Activado!</h4>
+                    <p>Tu plan Enterprise ha recibido un bono del 10% esta semana.</p>
+                    <span class="notification-time">08 Mayo, 09:15 AM</span>
+                </div>
+                <button class="mark-read">
+                    <i class="fas fa-check"></i>
+                </button>
+            </div>
+            
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-arrow-up"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>Retiro Completado</h4>
+                    <p>Tu retiro de $350.00 ha sido procesado correctamente.</p>
+                    <span class="notification-time">07 Mayo, 11:30 AM</span>
+                </div>
+            </div>
+        </div>
+        <div class="notification-footer">
+            <button class="mark-all-read">Marcar todas como leídas</button>
+            <a href="notifications.html">Ver todas las notificaciones</a>
+        </div>
+    </div>
+    
+            <!-- Footer -->
+            <script src="/assets/js/footer.js"></script>
+        </main>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="/assets/js/dashboard.js"></script>
+    <script src="/assets/js/analytics.js"></script>
+    <script src="/assets/js/sidebar-fix.js"></script>
+    
+    <script>
+        
+    </script>
+</body>
+</html>

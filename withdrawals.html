@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Retiros - STELLAR AI</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/sidebar.css">
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/withdrawals.css">
+</head>
+<body> 
+    <!-- Header -->
+    <script src="/assets/js/header.js"></script>
+    
+    <!-- Botón de menú para móviles -->
+    <button id="mobile-menu-button">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <script src="/assets/js/sidebar.js"></script>
+        
+        <main class="main-content">
+            <!-- Header de la página se carga mediante el script -->
+            
+            <!-- Contenido principal -->
+            <div class="content-body">
+                <!-- Panel de resumen de retiros -->
+                <div class="overview-cards">
+                    <div class="card stats-card">
+                        <div class="card-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Saldo Disponible</h3>
+                            <div class="card-value">$2,450.00</div>
+                            <div class="card-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+$350 este mes</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card stats-card">
+                        <div class="card-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Total Retirado</h3>
+                            <div class="card-value">$8,750.00</div>
+                            <div class="card-change neutral">
+                                <i class="fas fa-minus"></i>
+                                <span>$0 este mes</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card stats-card">
+                        <div class="card-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Tiempo Promedio</h3>
+                            <div class="card-value">24h</div>
+                            <div class="card-change positive">
+                                <i class="fas fa-arrow-down"></i>
+                                <span>-2h respecto al mes anterior</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card stats-card">
+                        <div class="card-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Estado de Cuenta</h3>
+                            <div class="card-value">Verificada</div>
+                            <div class="card-date">
+                                <i class="fas fa-calendar-check"></i>
+                                <span>Última verificación: 02/05/2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Botón para realizar retiro -->
+                <div class="withdraw-action-section">
+                    <button id="withdraw-btn" class="withdraw-btn">
+                        <i class="fas fa-money-bill-wave"></i> Realizar Retiro
+                    </button>
+                </div>
+                
+                <!-- Sección de métodos de pago -->
+                <div class="payment-methods-section">
+                    <div class="card payment-methods-card">
+                        <div class="card-header">
+                            <h2>Métodos de Pago</h2>
+                            <div class="card-actions">
+                                <button id="add-payment-method" class="btn-text">
+                                    <i class="fas fa-plus"></i> Añadir Método
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="payment-methods-container">
+                                <div class="payment-method-item active">
+                                    <div class="payment-method-icon">
+                                        <i class="fab fa-cc-visa"></i>
+                                    </div>
+                                    <div class="payment-method-details">
+                                        <h4>Visa terminada en 4587</h4>
+                                        <p>Banco Nacional • Predeterminada</p>
+                                    </div>
+                                    <div class="payment-method-actions">
+                                        <button class="btn-icon" title="Editar">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </button>
+                                        <button class="btn-icon" title="Eliminar">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="payment-method-item">
+                                    <div class="payment-method-icon">
+                                        <i class="fas fa-university"></i>
+                                    </div>
+                                    <div class="payment-method-details">
+                                        <h4>Cuenta Bancaria ****5732</h4>
+                                        <p>Banco del Estado</p>
+                                    </div>
+                                    <div class="payment-method-actions">
+                                        <button class="btn-icon" title="Editar">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </button>
+                                        <button class="btn-icon" title="Eliminar">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="payment-method-item">
+                                    <div class="payment-method-icon">
+                                        <i class="fab fa-bitcoin"></i>
+                                    </div>
+                                    <div class="payment-method-details">
+                                        <h4>Bitcoin Wallet</h4>
+                                        <p>bc1q...e8f9</p>
+                                    </div>
+                                    <div class="payment-method-actions">
+                                        <button class="btn-icon" title="Editar">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </button>
+                                        <button class="btn-icon" title="Eliminar">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Historial de retiros -->
+                <div class="withdrawal-history-section">
+                    <div class="card withdrawal-history-card">
+                        <div class="card-header">
+                            <h2>Historial de Retiros</h2>
+                            <div class="card-actions">
+                                <select class="select-period">
+                                    <option value="all">Todos los retiros</option>
+                                    <option value="month">Últimos 30 días</option>
+                                    <option value="quarter">Últimos 3 meses</option>
+                                    <option value="year">Último año</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="withdrawal-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Fecha</th>
+                                            <th>Método</th>
+                                            <th>Monto</th>
+                                            <th>Estado</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="date-cell">
+                                                    <div class="date-primary">15 Mar, 2025</div>
+                                                    <div class="date-secondary">14:32</div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="method-info">
+                                                    <i class="fab fa-cc-visa method-icon"></i>
+                                                    <span>Visa ****4587</span>
+                                                </div>
+                                            </td>
+                                            <td class="amount">$1,200.00</td>
+                                            <td>
+                                                <span class="status completed">Completado</span>
+                                            </td>
+                                            <td>
+                                                <div class="table-actions">
+                                                    <button class="btn-icon" title="Ver Detalles">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button class="btn-icon" title="Descargar Recibo">
+                                                        <i class="fas fa-download"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="date-cell">
+                                                    <div class="date-primary">28 Feb, 2025</div>
+                                                    <div class="date-secondary">10:15</div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="method-info">
+                                                    <i class="fas fa-university method-icon"></i>
+                                                    <span>Banco ****5732</span>
+                                                </div>
+                                            </td>
+                                            <td class="amount">$3,500.00</td>
+                                            <td>
+                                                <span class="status completed">Completado</span>
+                                            </td>
+                                            <td>
+                                                <div class="table-actions">
+                                                    <button class="btn-icon" title="Ver Detalles">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button class="btn-icon" title="Descargar Recibo">
+                                                        <i class="fas fa-download"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="date-cell">
+                                                    <div class="date-primary">15 Feb, 2025</div>
+                                                    <div class="date-secondary">09:47</div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="method-info">
+                                                    <i class="fab fa-bitcoin method-icon"></i>
+                                                    <span>Bitcoin Wallet</span>
+                                                </div>
+                                            </td>
+                                            <td class="amount">$2,750.00</td>
+                                            <td>
+                                                <span class="status completed">Completado</span>
+                                            </td>
+                                            <td>
+                                                <div class="table-actions">
+                                                    <button class="btn-icon" title="Ver Detalles">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button class="btn-icon" title="Descargar Recibo">
+                                                        <i class="fas fa-download"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="date-cell">
+                                                    <div class="date-primary">03 Feb, 2025</div>
+                                                    <div class="date-secondary">16:20</div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="method-info">
+                                                    <i class="fab fa-cc-visa method-icon"></i>
+                                                    <span>Visa ****4587</span>
+                                                </div>
+                                            </td>
+                                            <td class="amount">$800.00</td>
+                                            <td>
+                                                <span class="status pending">Pendiente</span>
+                                            </td>
+                                            <td>
+                                                <div class="table-actions">
+                                                    <button class="btn-icon" title="Ver Detalles">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button class="btn-icon" title="Cancelar">
+                                                        <i class="fas fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="date-cell">
+                                                    <div class="date-primary">25 Ene, 2025</div>
+                                                    <div class="date-secondary">11:05</div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="method-info">
+                                                    <i class="fas fa-university method-icon"></i>
+                                                    <span>Banco ****5732</span>
+                                                </div>
+                                            </td>
+                                            <td class="amount">$1,500.00</td>
+                                            <td>
+                                                <span class="status rejected">Rechazado</span>
+                                            </td>
+                                            <td>
+                                                <div class="table-actions">
+                                                    <button class="btn-icon" title="Ver Detalles">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button class="btn-icon" title="Reintentar">
+                                                        <i class="fas fa-redo"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="pagination-container">
+                                <div class="pagination">
+                                    <button class="btn-page" disabled><i class="fas fa-chevron-left"></i></button>
+                                    <button class="btn-page active">1</button>
+                                    <button class="btn-page">2</button>
+                                    <button class="btn-page">3</button>
+                                    <button class="btn-page"><i class="fas fa-chevron-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Preguntas frecuentes sobre retiros -->
+                <div class="withdrawal-faq-section">
+                    <div class="card faq-card">
+                        <div class="card-header">
+                            <h2>Preguntas Frecuentes</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="faq-container">
+                                <div class="faq-item">
+                                    <div class="faq-question">
+                                        <h3>¿Cuánto tiempo tarda en procesarse un retiro?</h3>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p>Los retiros generalmente se procesan en un plazo de 24 horas hábiles. Los retiros a tarjetas de crédito/débito pueden aparecer en su cuenta en 1-3 días hábiles, mientras que las transferencias bancarias pueden tardar entre 2-5 días hábiles, dependiendo de su banco. Las transacciones de criptomonedas normalmente se completan en 1-2 horas tras la aprobación.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">
+                                        <h3>¿Hay límites para los retiros?</h3>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p>Sí, existen límites de retiro que varían según el nivel de verificación de su cuenta y el método de pago:</p>
+                                        <ul>
+                                            <li>Cuentas Básicas: $5,000 por transacción, $10,000 mensuales</li>
+                                            <li>Cuentas Verificadas: $25,000 por transacción, $100,000 mensuales</li>
+                                            <li>Cuentas Premium: Límites personalizados</li>
+                                        </ul>
+                                        <p>Para aumentar sus límites, complete el proceso de verificación en la sección de Configuración.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">
+                                        <h3>¿Hay comisiones por retiro?</h3>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p>STELLAR AI no cobra comisiones por retiros a tarjetas de crédito o transferencias bancarias. Sin embargo, para retiros en criptomonedas, se aplica una pequeña comisión de red que varía según la congestión de la blockchain. Los usuarios de planes Premium disfrutan de retiros gratuitos en todos los métodos de pago.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">
+                                        <h3>¿Puedo cancelar un retiro en proceso?</h3>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p>Solo puede cancelar retiros que aún estén en estado "Pendiente". Una vez que el estado cambia a "En proceso", no es posible cancelarlo. Para cancelar un retiro pendiente, vaya al historial de retiros, localice la transacción y haga clic en el botón de cancelación.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">
+                                        <h3>¿Por qué fue rechazado mi retiro?</h3>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p>Los retiros pueden ser rechazados por varias razones, incluyendo:</p>
+                                        <ul>
+                                            <li>Información de pago incorrecta o desactualizada</li>
+                                            <li>Fondos insuficientes en su cuenta</li>
+                                            <li>Problemas de verificación de identidad</li>
+                                            <li>Restricciones geográficas para ciertos métodos de pago</li>
+                                        </ul>
+                                        <p>Para obtener más detalles sobre un retiro rechazado específico, haga clic en "Ver Detalles" junto a la transacción en el historial de retiros.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <script src="/assets/js/footer.js"></script>
+        </main>
+    </div>
+    
+    <!-- Modal para realizar retiro -->
+    <div id="withdraw-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Realizar Retiro</h2>
+                <button class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="withdrawal-form">
+                    <div class="form-group">
+                        <label for="withdrawal-amount">Monto a Retirar</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                            <input type="number" id="withdrawal-amount" min="50" step="0.01" placeholder="0.00">
+                        </div>
+                        <div class="input-notes">
+                            <span>Mínimo: $50.00</span>
+                            <span>Disponible: $2,450.00</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="withdrawal-method">Método de Pago</label>
+                        <div class="payment-method-selector">
+                            <div class="payment-option active" data-method="card">
+                                <i class="fab fa-cc-visa"></i>
+                                <span>Visa ****4587</span>
+                            </div>
+                            <div class="payment-option" data-method="bank">
+                                <i class="fas fa-university"></i>
+                                <span>Banco ****5732</span>
+                            </div>
+                            <div class="payment-option" data-method="crypto">
+                                <i class="fab fa-bitcoin"></i>
+                                <span>Bitcoin</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="withdrawal-description">Descripción (Opcional)</label>
+                        <textarea id="withdrawal-description" placeholder="Añade una nota a este retiro..."></textarea>
+                    </div>
+                    <div class="withdrawal-summary">
+                        <div class="summary-row">
+                            <span>Monto:</span>
+                            <span id="summary-amount">$0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Comisión:</span>
+                            <span id="summary-fee">$0.00</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total a recibir:</span>
+                            <span id="summary-total">$0.00</span>
+                        </div>
+                    </div>
+                    <div class="withdrawal-disclaimer">
+                        <i class="fas fa-info-circle"></i>
+                        <p>Los retiros se procesan en un plazo de 24 horas hábiles. Al continuar, acepta nuestros <a href="#">términos y condiciones</a>.</p>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn-cancel">Cancelar</button>
+                        <button class="btn-confirm">Confirmar Retiro</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal para añadir método de pago -->
+    <div id="payment-method-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Añadir Método de Pago</h2>
+                <button class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="payment-method-tabs">
+                    <button class="tab-btn active" data-tab="card-tab">
+                        <i class="fas fa-credit-card"></i> Tarjeta
+                    </button>
+                    <button class="tab-btn" data-tab="bank-tab">
+                        <i class="fas fa-university"></i> Banco
+                    </button>
+                    <button class="tab-btn" data-tab="crypto-tab">
+                        <i class="fab fa-bitcoin"></i> Cripto
+                    </button>
+                </div>
+                
+                <div class="tab-content">
+                    <!-- Pestaña de Tarjeta -->
+                    <div id="card-tab" class="tab-pane active">
+                        <div class="form-group">
+                            <label for="card-number">Número de Tarjeta</label>
+                            <input type="text" id="card-number" placeholder="XXXX XXXX XXXX XXXX">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="card-expiry">Fecha de Expiración</label>
+                                <input type="text" id="card-expiry" placeholder="MM/AA">
+                            </div>
+                            <div class="form-group">
+                                <label for="card-cvv">CVV</label>
+                                <input type="text" id="card-cvv" placeholder="XXX">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="card-name">Nombre en la Tarjeta</label>
+                            <input type="text" id="card-name" placeholder="Nombre como aparece en la tarjeta">
+                        </div>
+                    </div>
+                    
+                    <!-- Pestaña de Banco -->
+                    <div id="bank-tab" class="tab-pane">
+                        <div class="form-group">
+                            <label for="bank-name">Nombre del Banco</label>
+                            <input type="text" id="bank-name" placeholder="Ej: Banco Nacional">
+                        </div>
+                        <div class="form-group">
+                            <label for="account-number">Número de Cuenta</label>
+                            <input type="text" id="account-number" placeholder="Ingrese su número de cuenta">
+                        </div>
+                        <div class="form-group">
+                            <label for="account-holder">Titular de la Cuenta</label>
+                            <input type="text" id="account-holder" placeholder="Nombre del titular">
+                        </div>
+                    </div>
+                    
+                    <!-- Pestaña de Cripto -->
+                    <div id="crypto-tab" class="tab-pane">
+                        <div class="form-group">
+                            <label for="crypto-type">Tipo de Criptomoneda</label>
+                            <select id="crypto-type">
+                                <option value="bitcoin">Bitcoin (BTC)</option>
+                                <option value="ethereum">Ethereum (ETH)</option>
+                                <option value="usdt">Tether (USDT)</option>
+                                <option value="usdc">USD Coin (USDC)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="wallet-address">Dirección de Wallet</label>
+                            <input type="text" id="wallet-address" placeholder="Ingrese la dirección de su wallet">
+                        </div>
+                        <div class="crypto-note">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <p>Verifique cuidadosamente la dirección de su wallet. Las transacciones de criptomonedas son irreversibles.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="default-payment">
+                        <span class="checkmark"></span>
+                        Establecer como método de pago predeterminado
+                    </label>
+                </div>
+                
+                <div class="form-actions">
+                    <button class="btn-cancel">Cancelar</button>
+                    <button class="btn-confirm">Guardar Método</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Notification Panel (Hidden by default) -->
+    <!-- Notification Panel (Hidden by default) -->
+    <div class="notification-panel">
+        <div class="notification-header">
+            <h3>Notificaciones</h3>
+            <button class="close-panel">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="notification-list">
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-coins"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>Nueva Ganancia Acreditada</h4>
+                    <p>Has recibido $42.50 de ganancia diaria.</p>
+                    <span class="notification-time">Hoy, 00:01 AM</span>
+                </div>
+                <button class="mark-read">
+                    <i class="fas fa-check"></i>
+                </button>
+            </div>
+            
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>Nuevo Referido Registrado</h4>
+                    <p>Carlos M. se ha unido usando tu código de referido.</p>
+                    <span class="notification-time">Ayer, 3:45 PM</span>
+                </div>
+                <button class="mark-read">
+                    <i class="fas fa-check"></i>
+                </button>
+            </div>
+            
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>¡Bono Semanal Activado!</h4>
+                    <p>Tu plan Enterprise ha recibido un bono del 10% esta semana.</p>
+                    <span class="notification-time">08 Mayo, 09:15 AM</span>
+                </div>
+                <button class="mark-read">
+                    <i class="fas fa-check"></i>
+                </button>
+            </div>
+            
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-arrow-up"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>Retiro Completado</h4>
+                    <p>Tu retiro de $350.00 ha sido procesado correctamente.</p>
+                    <span class="notification-time">07 Mayo, 11:30 AM</span>
+                </div>
+            </div>
+        </div>
+        <div class="notification-footer">
+            <button class="mark-all-read">Marcar todas como leídas</button>
+            <a href="notifications.html">Ver todas las notificaciones</a>
+        </div>
+    </div>
+    
+    <!-- Overlay para modals -->
+    <div class="modal-overlay"></div>
+    <div class="dark-overlay"></div>
+    
+    <!-- JavaScript -->
+    <script src="/assets/js/dashboard.js"></script>
+    <script src="/assets/js/withdrawals.js"></script>
+</body>
+</body>
+</html>

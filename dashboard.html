@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STELLAR AI - Dashboard</title>
+    <link rel="stylesheet" href="/assets/css/dashboard.css">
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/sidebar.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+    <!-- Añadir este HTML justo después de abrir el body -->
+    <script src="/assets/js/header.js"></script>
+    <button id="mobile-menu-button">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div class="dashboard-container">
+        <!-- La barra lateral será generada dinámicamente por sidebar.js -->
+        <script src="/assets/js/sidebar.js"></script>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            
+            
+            <div class="content-body">
+                <!-- Overview Cards -->
+                <section class="overview-cards">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Balance Total</h3>
+                            <div class="card-value">$6,843.25</div>
+                            <div class="card-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                5.8% última semana
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Ganancias Acumuladas</h3>
+                            <div class="card-value">$2,143.80</div>
+                            <div class="card-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                12.3% último mes
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Referidos Activos</h3>
+                            <div class="card-value">23</div>
+                            <div class="card-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                2 nuevos esta semana
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Próximo Pago</h3>
+                            <div class="card-value">$385.20</div>
+                            <div class="card-date">
+                                <i class="fas fa-calendar"></i>
+                                15 Mayo, 2025
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Charts Section -->
+                <section class="charts-section">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Rendimiento Mensual</h3>
+                            <div class="chart-options">
+                                <select>
+                                    <option>Últimos 12 meses</option>
+                                    <option>Últimos 6 meses</option>
+                                    <option>Últimos 3 meses</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-body">
+                            <canvas id="performance-chart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Distribución de Inversiones</h3>
+                            <div class="chart-options">
+                                <select>
+                                    <option>Por Plan</option>
+                                    <option>Por Fecha</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-body">
+                            <canvas id="distribution-chart"></canvas>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Active Plans & Recent Activities -->
+                <section class="plans-activities">
+                    <div class="active-plans">
+                        <div class="section-header">
+                            <h3>Planes Activos</h3>
+                            <a href="investments.html" class="view-all">Ver todos <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="plans-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Plan</th>
+                                        <th>Inversión</th>
+                                        <th>ROI Diario</th>
+                                        <th>Estado</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Growth</td>
+                                        <td>$2,000.00</td>
+                                        <td>$24.00 (1.2%)</td>
+                                        <td><span class="status active">Activo</span></td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button class="btn-icon" title="Ver Detalles">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                                <button class="btn-icon" title="Reinvertir">
+                                                    <i class="fas fa-sync-alt"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Starter</td>
+                                        <td>$500.00</td>
+                                        <td>$4.00 (0.8%)</td>
+                                        <td><span class="status active">Activo</span></td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button class="btn-icon" title="Ver Detalles">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                                <button class="btn-icon" title="Reinvertir">
+                                                    <i class="fas fa-sync-alt"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Enterprise</td>
+                                        <td>$5,000.00</td>
+                                        <td>$90.00 (1.8%)</td>
+                                        <td><span class="status boosted">Boosted +10%</span></td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button class="btn-icon" title="Ver Detalles">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                                <button class="btn-icon" title="Reinvertir">
+                                                    <i class="fas fa-sync-alt"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="recent-activities">
+                        <div class="section-header">
+                            <h3>Actividad Reciente</h3>
+                            <a href="activities.html" class="view-all">Ver todas <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="activities-list">
+                            <div class="activity-item">
+                                <div class="activity-icon deposit">
+                                    <i class="fas fa-arrow-down"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <h4>Depósito Recibido</h4>
+                                    <p>Se ha confirmado tu depósito de $500</p>
+                                    <span class="activity-time">Hoy, 10:25 AM</span>
+                                </div>
+                                <div class="activity-amount deposit">+$500.00</div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon earning">
+                                    <i class="fas fa-coins"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <h4>Ganancia Diaria</h4>
+                                    <p>Has recibido tu ganancia diaria</p>
+                                    <span class="activity-time">Hoy, 00:01 AM</span>
+                                </div>
+                                <div class="activity-amount earning">+$42.50</div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon referral">
+                                    <i class="fas fa-user-plus"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <h4>Nuevo Referido</h4>
+                                    <p>Carlos M. se ha unido usando tu código</p>
+                                    <span class="activity-time">Ayer, 3:45 PM</span>
+                                </div>
+                                <div class="activity-amount referral">+$25.00</div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon withdrawal">
+                                    <i class="fas fa-arrow-up"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <h4>Retiro Procesado</h4>
+                                    <p>Tu solicitud de retiro ha sido procesada</p>
+                                    <span class="activity-time">07 Mayo, 11:30 AM</span>
+                                </div>
+                                <div class="activity-amount withdrawal">-$350.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Quick Actions & Referral -->
+                <section class="quick-actions-referral">
+                    <div class="quick-actions">
+                        <div class="section-header">
+                            <h3>Acciones Rápidas</h3>
+                        </div>
+                        <div class="actions-grid">
+                            <a href="new-investment.html" class="action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                                <h4>Nueva Inversión</h4>
+                            </a>
+                            
+                            <a href="withdraw.html" class="action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                </div>
+                                <h4>Solicitar Retiro</h4>
+                            </a>
+                            
+                            <a href="referrals.html" class="action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-user-plus"></i>
+                                </div>
+                                <h4>Invitar Referidos</h4>
+                            </a>
+                            
+                            <a href="support.html" class="action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <h4>Soporte Técnico</h4>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="referral-card">
+                        <div class="referral-header">
+                            <h3>Tu Link de Referido</h3>
+                            <div class="referral-stats">
+                                <div class="stat">
+                                    <div class="stat-value">23</div>
+                                    <div class="stat-label">Referidos</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-value">$1,245</div>
+                                    <div class="stat-label">Ingresos</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="referral-body">
+                            <div class="referral-link-container">
+                                <input type="text" value="https://stellar-ai.com/ref/usuario123" readonly>
+                                <button class="copy-btn">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <div class="share-buttons">
+                                <button class="share-btn facebook"><i class="fab fa-facebook-f"></i></button>
+                                <button class="share-btn twitter"><i class="fab fa-twitter"></i></button>
+                                <button class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></button>
+                                <button class="share-btn telegram"><i class="fab fa-telegram-plane"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            
+        </main>
+    </div>
+    
+    <!-- Notification Panel (Hidden by default) -->
+    <div class="notification-panel">
+        <div class="notification-header">
+            <h3>Notificaciones</h3>
+            <button class="close-panel">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="notification-list">
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-coins"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>Nueva Ganancia Acreditada</h4>
+                    <p>Has recibido $42.50 de ganancia diaria.</p>
+                    <span class="notification-time">Hoy, 00:01 AM</span>
+                </div>
+                <button class="mark-read">
+                    <i class="fas fa-check"></i>
+                </button>
+            </div>
+            
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>Nuevo Referido Registrado</h4>
+                    <p>Carlos M. se ha unido usando tu código de referido.</p>
+                    <span class="notification-time">Ayer, 3:45 PM</span>
+                </div>
+                <button class="mark-read">
+                    <i class="fas fa-check"></i>
+                </button>
+            </div>
+            
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>¡Bono Semanal Activado!</h4>
+                    <p>Tu plan Enterprise ha recibido un bono del 10% esta semana.</p>
+                    <span class="notification-time">08 Mayo, 09:15 AM</span>
+                </div>
+                <button class="mark-read">
+                    <i class="fas fa-check"></i>
+                </button>
+            </div>
+            
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-arrow-up"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>Retiro Completado</h4>
+                    <p>Tu retiro de $350.00 ha sido procesado correctamente.</p>
+                    <span class="notification-time">07 Mayo, 11:30 AM</span>
+                </div>
+            </div>
+        </div>
+        <div class="notification-footer">
+            <button class="mark-all-read">Marcar todas como leídas</button>
+            <a href="notifications.html">Ver todas las notificaciones</a>
+        </div>
+    </div>
+    
+    <!-- Dark Overlay -->
+    <div class="dark-overlay"></div>
+    
+    <!-- Scripts -->
+    <script src="/assets/js/dashboard.js"></script>
+    <script src="/assets/js/footer.js"></script>
+    <script>// Solución inmediata para el problema del sidebar en móviles
+// Incluye este script justo antes del cierre del body
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleccionamos o creamos el botón del menú móvil
+    const mobileMenuBtn = document.getElementById('mobile-menu-button') || createMobileMenuButton();
+    
+    // Nos aseguramos de que el overlay exista
+    ensureDarkOverlayExists();
+    
+    // Configuramos correctamente los eventos
+    setupMobileSidebarEvents(mobileMenuBtn);
+    
+    // Ajustamos el sidebar según el tamaño de pantalla
+    adjustForScreenSize();
+    
+    // Ajustamos cuando cambia el tamaño de la ventana
+    window.addEventListener('resize', adjustForScreenSize);
+});
+
+// Crear el botón del menú móvil si no existe
+function createMobileMenuButton() {
+    console.log('Creando botón de menú móvil');
+    
+    const btn = document.createElement('button');
+    btn.id = 'mobile-menu-button';
+    btn.innerHTML = '<i class="fas fa-bars"></i>';
+    
+    // Estilos para el botón
+    btn.style.position = 'fixed';
+    btn.style.top = '15px';
+    btn.style.right = '15px';
+    btn.style.zIndex = '9999';
+    btn.style.width = '45px';
+    btn.style.height = '45px';
+    btn.style.borderRadius = '50%';
+    btn.style.background = 'var(--light-purple, #6b33c5)';
+    btn.style.color = 'white';
+    btn.style.border = 'none';
+    btn.style.display = 'none';
+    btn.style.alignItems = 'center';
+    btn.style.justifyContent = 'center';
+    btn.style.cursor = 'pointer';
+    btn.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)';
+    
+    document.body.appendChild(btn);
+    return btn;
+}
+
+// Asegurarse de que el overlay oscuro exista
+function ensureDarkOverlayExists() {
+    let overlay = document.querySelector('.dark-overlay');
+    
+    if (!overlay) {
+        console.log('Creando dark overlay');
+        
+        overlay = document.createElement('div');
+        overlay.className = 'dark-overlay';
+        
+        // Estilos para el overlay
+        overlay.style.position = 'fixed';
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+        overlay.style.right = '0';
+        overlay.style.bottom = '0';
+        overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        overlay.style.zIndex = '1500';
+        overlay.style.opacity = '0';
+        overlay.style.visibility = 'hidden';
+        overlay.style.transition = 'opacity 0.3s ease, visibility 0.3s ease';
+        
+        document.body.appendChild(overlay);
+    }
+    
+    return overlay;
+}
+
+// Configurar eventos para el sidebar en móviles
+function setupMobileSidebarEvents(mobileBtn) {
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.dark-overlay');
+    
+    if (!sidebar || !overlay || !mobileBtn) {
+        console.error('No se encontraron elementos necesarios');
+        return;
+    }
+    
+    // Limpiar eventos existentes (para evitar duplicados)
+    const newMobileBtn = mobileBtn.cloneNode(true);
+    mobileBtn.parentNode.replaceChild(newMobileBtn, mobileBtn);
+    
+    const newOverlay = overlay.cloneNode(true);
+    overlay.parentNode.replaceChild(newOverlay, overlay);
+    
+    // Evento para el botón móvil
+    newMobileBtn.addEventListener('click', function() {
+        console.log('Botón móvil clickeado');
+        toggleSidebar();
+    });
+    
+    // Evento para cerrar al hacer clic en el overlay
+    newOverlay.addEventListener('click', function() {
+        console.log('Overlay clickeado');
+        closeSidebar();
+    });
+    
+    // Opcionalmente, eventos para enlaces del sidebar
+    const sidebarLinks = document.querySelectorAll('.sidebar-menu a');
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                console.log('Enlace del sidebar clickeado en móvil');
+                closeSidebar();
+            }
+        });
+    });
+}
+
+// Función para alternar el estado del sidebar
+function toggleSidebar() {
+    const isMobile = window.innerWidth <= 768;
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.dark-overlay');
+    
+    if (!sidebar || !overlay) return;
+    
+    if (isMobile) {
+        const isOpen = sidebar.style.left === '0px' || 
+                       sidebar.style.transform === 'translateX(0px)' || 
+                       sidebar.style.transform === 'translateX(0%)' ||
+                       document.body.classList.contains('sidebar-open');
+        
+        if (isOpen) {
+            closeSidebar();
+        } else {
+            openSidebar();
+        }
+    } else {
+        // En desktop, solo alternamos la clase original
+        document.body.classList.toggle('sidebar-collapsed');
+        adjustMainContentMargin();
+    }
+}
+
+// Función para abrir el sidebar
+function openSidebar() {
+    console.log('Abriendo sidebar');
+    
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.dark-overlay');
+    
+    if (!sidebar || !overlay) return;
+    
+    // Primero restauramos cualquier estilo previo
+    sidebar.style.transform = '';
+    sidebar.style.left = '';
+    
+    // Aplicamos estilos sin conflictos
+    sidebar.style.left = '0';
+    
+    // Clases para compatibilidad
+    document.body.classList.add('sidebar-open');
+    
+    // Mostrar overlay
+    overlay.style.opacity = '1';
+    overlay.style.visibility = 'visible';
+    
+    // Prevenir scroll
+    document.body.style.overflow = 'hidden';
+}
+
+// Función para cerrar el sidebar
+function closeSidebar() {
+    console.log('Cerrando sidebar');
+    
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.dark-overlay');
+    
+    if (!sidebar || !overlay) return;
+    
+    // Restauramos cualquier estilo previo
+    sidebar.style.transform = '';
+    
+    // Aplicamos estilos
+    sidebar.style.left = '-100%';
+    
+    // Clases para compatibilidad
+    document.body.classList.remove('sidebar-open');
+    document.body.classList.remove('sidebar-collapsed'); // Para asegurar en móvil
+    
+    // Ocultar overlay
+    overlay.style.opacity = '0';
+    overlay.style.visibility = 'hidden';
+    
+    // Restaurar scroll
+    document.body.style.overflow = '';
+}
+
+// Ajustar el sidebar según el tamaño de pantalla
+function adjustForScreenSize() {
+    const isMobile = window.innerWidth <= 768;
+    const mobileBtn = document.getElementById('mobile-menu-button');
+    const sidebar = document.querySelector('.sidebar');
+    
+    if (!mobileBtn || !sidebar) return;
+    
+    if (isMobile) {
+        // Mostrar botón móvil
+        mobileBtn.style.display = 'flex';
+        
+        // Ajustar sidebar para móviles
+        sidebar.style.left = '-100%';
+        
+        // Asegurar que main-content no tenga margen
+        adjustMainContentMargin(true);
+    } else {
+        // Ocultar botón móvil
+        mobileBtn.style.display = 'none';
+        
+        // Restaurar sidebar para desktop
+        sidebar.style.left = '';
+        sidebar.style.transform = '';
+        
+        // Restaurar margin de main-content
+        adjustMainContentMargin();
+        
+        // Asegurar que no hay overflow blocked
+        document.body.style.overflow = '';
+    }
+    
+    // Cerrar overlay si existe
+    const overlay = document.querySelector('.dark-overlay');
+    if (overlay) {
+        overlay.style.opacity = '0';
+        overlay.style.visibility = 'hidden';
+    }
+}
+
+// Ajustar el margen del contenido principal
+function adjustMainContentMargin(forceZero) {
+    const mainContent = document.querySelector('.main-content');
+    if (!mainContent) return;
+    
+    if (forceZero) {
+        mainContent.style.marginLeft = '0';
+    } else {
+        // En escritorio, depende del estado del sidebar
+        mainContent.style.marginLeft = document.body.classList.contains('sidebar-collapsed') ?
+            'var(--sidebar-collapsed-width, 80px)' :
+            'var(--sidebar-width, 260px)';
+    }
+}</script>
+</body>
+</html>

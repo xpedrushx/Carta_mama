@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Programa de Referidos - STELLAR AI</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/referrals.css">
+    <link rel="stylesheet" href="/assets/css/sidebar.css">
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/withdrawals.css">
+    
+
+</head>
+<body> 
+    <!-- Header -->
+    <script src="/assets/js/header.js"></script>
+    
+    <!-- Botón de menú para móviles -->
+    <button id="mobile-menu-button">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <script src="/assets/js/sidebar.js"></script>
+        
+        <main class="main-content">
+            <!-- Header de la página -->
+    
+            
+            <!-- Contenido principal -->
+            <div class="content-body">
+                <!-- Panel de resumen de referidos -->
+                <div class="overview-cards">
+                    <div class="card stats-card">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Total de Referidos</h3>
+                            <div class="card-value">12</div>
+                            <div class="card-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>3 nuevos este mes</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card stats-card">
+                        <div class="card-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Referidos Activos</h3>
+                            <div class="card-value">8</div>
+                            <div class="card-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>2 activaciones recientes</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card stats-card">
+                        <div class="card-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Recompensas Ganadas</h3>
+                            <div class="card-value">$350.00</div>
+                            <div class="card-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>$75.00 este mes</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card stats-card">
+                        <div class="card-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Bonificación Actual</h3>
+                            <div class="card-value">5%</div>
+                            <div class="card-date">
+                                <i class="fas fa-clock"></i>
+                                <span>Válida hasta 30 Mayo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Compartir programa de referidos -->
+                <div class="referral-sharing-section">
+                    <div class="card referral-card">
+                        <div class="card-header">
+                            <h2>Invita a tus amigos</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="referral-content">
+                                <div class="referral-illustration">
+                                    <img src="/assets/images/referral-illustration.svg" alt="Programa de Referidos" onerror="this.src='/assets/images/referral-placeholder.png'; this.onerror=null;">
+                                </div>
+                                <div class="referral-info">
+                                    <h3>¡Recomienda STELLAR AI y gana!</h3>
+                                    <p>Por cada amigo que se registre y realice su primera inversión, obtendrás <strong>5% de su inversión inicial</strong> como recompensa.</p>
+                                    <ul class="referral-benefits">
+                                        <li><i class="fas fa-check"></i> Tu amigo recibe $50 de bonificación</li>
+                                        <li><i class="fas fa-check"></i> Tú ganas un 5% de su inversión inicial</li>
+                                        <li><i class="fas fa-check"></i> 1% adicional de todas sus ganancias durante 1 año</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="referral-divider">
+                                <span>Tu enlace único de referido</span>
+                            </div>
+
+                            <div class="referral-link-container">
+                                <input type="text" id="referral-link" value="https://stellar.ai/ref/usuario123" readonly>
+                                <button id="copy-btn" class="copy-btn">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                                <div id="copy-message" class="copy-message">¡Enlace copiado!</div>
+                            </div>
+
+                            <div class="share-methods">
+                                <h4>Compartir vía</h4>
+                                <div class="share-buttons">
+                                    <button class="share-btn whatsapp" data-tooltip="WhatsApp">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </button>
+                                    <button class="share-btn telegram" data-tooltip="Telegram">
+                                        <i class="fab fa-telegram-plane"></i>
+                                    </button>
+                                    <button class="share-btn facebook" data-tooltip="Facebook">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </button>
+                                    <button class="share-btn twitter" data-tooltip="Twitter">
+                                        <i class="fab fa-twitter"></i>
+                                    </button>
+                                    <button class="share-btn email" data-tooltip="Correo">
+                                        <i class="fas fa-envelope"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Progreso y niveles de referido -->
+                <div class="referral-progress-section">
+                    <div class="card referral-progress-card">
+                        <div class="card-header">
+                            <h2>Tu Programa de Nivel</h2>
+                            <div class="card-actions">
+                                <button class="btn-text">Ver beneficios</button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="current-level">
+                                <div class="level-indicator">
+                                    <div class="level-badge">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="level-info">
+                                        <h3>Nivel Plata</h3>
+                                        <p>8 de 10 referidos para el siguiente nivel</p>
+                                    </div>
+                                </div>
+                                <div class="level-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 80%;"></div>
+                                    </div>
+                                    <div class="progress-labels">
+                                        <span>Plata</span>
+                                        <span>Oro</span>
+                                        <span>Platino</span>
+                                        <span>Diamante</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="level-benefits">
+                                <h4>Beneficios actuales</h4>
+                                <div class="benefits-grid">
+                                    <div class="benefit-item">
+                                        <div class="benefit-icon">
+                                            <i class="fas fa-percentage"></i>
+                                        </div>
+                                        <div class="benefit-detail">
+                                            <h5>5% de Recompensa</h5>
+                                            <p>Por cada referido</p>
+                                        </div>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <div class="benefit-icon">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div class="benefit-detail">
+                                            <h5>Soporte Prioritario</h5>
+                                            <p>Respuesta en 12h</p>
+                                        </div>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <div class="benefit-icon">
+                                            <i class="fas fa-gift"></i>
+                                        </div>
+                                        <div class="benefit-detail">
+                                            <h5>Bonos Mensuales</h5>
+                                            <p>Acceso a promociones</p>
+                                        </div>
+                                    </div>
+                                    <div class="benefit-item locked">
+                                        <div class="benefit-icon">
+                                            <i class="fas fa-unlock"></i>
+                                        </div>
+                                        <div class="benefit-detail">
+                                            <h5>Bonos de Nivel Oro</h5>
+                                            <p>Faltan 2 referidos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Historial de referidos -->
+                <div class="referral-history-section">
+                    <div class="card referral-history-card">
+                        <div class="card-header">
+                            <h2>Historial de Referidos</h2>
+                            <div class="card-actions">
+                                <select class="select-period">
+                                    <option value="all">Todos los referidos</option>
+                                    <option value="month">Últimos 30 días</option>
+                                    <option value="quarter">Últimos 3 meses</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="referral-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Usuario</th>
+                                            <th>Fecha</th>
+                                            <th>Estado</th>
+                                            <th>Inversión</th>
+                                            <th>Recompensa</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="user-info-cell">
+                                                    <div class="user-avatar-small">
+                                                        <img src="https://via.placeholder.com/30" alt="Avatar">
+                                                    </div>
+                                                    <span>Carlos Méndez</span>
+                                                </div>
+                                            </td>
+                                            <td>05 Mayo, 2025</td>
+                                            <td><span class="status active">Activo</span></td>
+                                            <td>$1,500.00</td>
+                                            <td class="reward">$75.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="user-info-cell">
+                                                    <div class="user-avatar-small">
+                                                        <img src="https://via.placeholder.com/30" alt="Avatar">
+                                                    </div>
+                                                    <span>Laura Torres</span>
+                                                </div>
+                                            </td>
+                                            <td>22 Abril, 2025</td>
+                                            <td><span class="status active">Activo</span></td>
+                                            <td>$2,000.00</td>
+                                            <td class="reward">$100.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="user-info-cell">
+                                                    <div class="user-avatar-small">
+                                                        <img src="https://via.placeholder.com/30" alt="Avatar">
+                                                    </div>
+                                                    <span>Miguel Santos</span>
+                                                </div>
+                                            </td>
+                                            <td>15 Abril, 2025</td>
+                                            <td><span class="status pending">Pendiente</span></td>
+                                            <td>--</td>
+                                            <td class="reward pending">Pendiente</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="user-info-cell">
+                                                    <div class="user-avatar-small">
+                                                        <img src="https://via.placeholder.com/30" alt="Avatar">
+                                                    </div>
+                                                    <span>Ana Gómez</span>
+                                                </div>
+                                            </td>
+                                            <td>02 Abril, 2025</td>
+                                            <td><span class="status active">Activo</span></td>
+                                            <td>$3,000.00</td>
+                                            <td class="reward">$150.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="user-info-cell">
+                                                    <div class="user-avatar-small">
+                                                        <img src="https://via.placeholder.com/30" alt="Avatar">
+                                                    </div>
+                                                    <span>Roberto Díaz</span>
+                                                </div>
+                                            </td>
+                                            <td>20 Marzo, 2025</td>
+                                            <td><span class="status expired">Expirado</span></td>
+                                            <td>$500.00</td>
+                                            <td class="reward">$25.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="pagination-container">
+                                <div class="pagination">
+                                    <button class="btn-page" disabled><i class="fas fa-chevron-left"></i></button>
+                                    <button class="btn-page active">1</button>
+                                    <button class="btn-page">2</button>
+                                    <button class="btn-page">3</button>
+                                    <button class="btn-page"><i class="fas fa-chevron-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Preguntas frecuentes -->
+                <div class="referral-faq-section">
+                    <div class="card faq-card">
+                        <div class="card-header">
+                            <h2>Preguntas Frecuentes</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="faq-container">
+                                <div class="faq-item">
+                                    <div class="faq-question">
+                                        <h3>¿Cómo funciona el programa de referidos?</h3>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p>Nuestro programa de referidos te permite ganar recompensas por invitar a tus amigos a unirse a STELLAR AI. Cuando un amigo se registra usando tu enlace de referido y realiza su primera inversión, recibes un 5% del monto invertido como recompensa directa en tu cuenta.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">
+                                        <h3>¿Cuándo recibo mis recompensas?</h3>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p>Las recompensas se acreditan automáticamente a tu cuenta en un plazo de 48 horas después de que tu referido haya completado su primera inversión. Recibirás una notificación cuando tu recompensa haya sido acreditada.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">
+                                        <h3>¿Hay un límite de referidos que puedo invitar?</h3>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p>No hay límite en la cantidad de amigos que puedes referir. Puedes invitar a tantos amigos como desees y ganar recompensas por cada uno que se registre y realice su primera inversión.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">
+                                        <h3>¿Qué son los niveles de referidos?</h3>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p>Los niveles de referidos son un sistema de recompensas adicionales basado en la cantidad de referidos activos que tienes. A medida que aumenta tu número de referidos, asciendes de nivel y desbloqueas beneficios adicionales como mayores porcentajes de recompensa, acceso a eventos exclusivos y servicios premium.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">
+                                        <h3>¿Puedo retirar mis recompensas?</h3>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p>Sí, las recompensas de referidos se acreditan directamente a tu saldo disponible y puedes retirarlas siguiendo el proceso habitual de retiro de fondos, o reinvertirlas en cualquiera de nuestros planes de inversión.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <div class="content-footer">
+                <p>© 2025 STELLAR AI. Todos los derechos reservados.</p>
+                <div class="footer-links">
+                    <a href="#">Términos y Condiciones</a>
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Soporte</a>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Notification Panel (Hidden by default) -->
+    <div class="notification-panel">
+        <div class="notification-header">
+            <h3>Notificaciones</h3>
+            <button class="close-panel">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="notification-list">
+            <!-- Notifications content -->
+        </div>
+        <div class="notification-footer">
+            <button class="mark-all-read">Marcar todas como leídas</button>
+            <a href="notifications.html">Ver todas</a>
+        </div>
+    </div>
+    <div class="dark-overlay"></div>
+    
+    <!-- JavaScript -->
+    <script src="/assets/js/dashboard.js"></script>
+    <script src="/assets/js/referrals.js"></script>
+    <script src="/assets/js/sidebar-fix.js"></script>
+</body>
+</html>

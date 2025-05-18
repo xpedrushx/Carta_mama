@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inversiones - STELLAR AI</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/inversiones.css">
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/sidebar.css">
+</head>
+<body> 
+    <button id="mobile-menu-button">
+        <i class="fas fa-bars"></i>
+    </button>
+    <!-- Header -->
+    <script src="/assets/js/header.js"></script>
+    <div class="dashboard-container">
+    <!-- Sidebar -->
+        <script src="/assets/js/sidebar.js"></script>
+    <main class="main-content">
+        
+
+   
+    
+        <!-- Top Summary Cards -->
+        <div class="stats-cards">
+            <div class="card stat-card">
+                <div class="card-icon primary">
+                    <i class="fas fa-money-bill-wave"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Capital Total Invertido</h3>
+                    <h2>$5,250.00</h2>
+                    <p class="trend up">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>8.3% desde el último mes</span>
+                    </p>
+                </div>
+            </div>
+            <div class="card stat-card">
+                <div class="card-icon accent">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Rendimiento Promedio</h3>
+                    <h2>12.7%</h2>
+                    <p class="trend up">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>2.1% desde el último mes</span>
+                    </p>
+                </div>
+            </div>
+            <div class="card stat-card">
+                <div class="card-icon success">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Planes Activos</h3>
+                    <h2>3</h2>
+                    <p class="trend neutral">
+                        <i class="fas fa-minus"></i>
+                        <span>Sin cambios este mes</span>
+                    </p>
+                </div>
+            </div>
+            <div class="card stat-card">
+                <div class="card-icon warning">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Próximo Vencimiento</h3>
+                    <h2>18 Mayo</h2>
+                    <p class="countdown">
+                        <i class="far fa-clock"></i>
+                        <span>En 8 días</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="content-grid">
+            <!-- Investment Plans Cards -->
+            <section class="card large-card">
+                <div class="card-header">
+                    <h2>Mis Inversiones Activas</h2>
+                    <div class="card-actions">
+                        <button class="btn-outline">
+                            <i class="fas fa-filter"></i>
+                            <span>Filtrar</span>
+                        </button>
+                        <button class="btn-primary">
+                            <i class="fas fa-plus"></i>
+                            <span>Nueva Inversión</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Contenido principal: Detalle de inversiones -->
+        <div class="investment-detail">
+            <!-- Plan Premium -->
+            <div class="investment-plan">
+                <div class="investment-plan-header">
+                    <div class="plan-icon premium-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <div class="plan-title">Plan Premium AI</div>
+                </div>
+                
+                <div class="plan-dates">
+                    <div class="plan-date">
+                        <i class="far fa-calendar-alt"></i>
+                        Iniciado: 05 Enero, 2025
+                    </div>
+                    <div class="plan-date">
+                        <i class="fas fa-calendar-check"></i>
+                        Vence: 05 Julio, 2025
+                    </div>
+                </div>
+                
+                <div class="plan-info">
+                    <div class="plan-info-item">
+                        <div class="plan-info-item-label">Capital</div>
+                        <div class="plan-info-item-value">$3,000.00</div>
+                    </div>
+                    
+                    <div class="plan-info-item">
+                        <div class="plan-info-item-label">Rendimiento</div>
+                        <div class="plan-info-item-value">15.8%</div>
+                    </div>
+                    
+                    <div class="plan-info-item">
+                        <div class="plan-info-item-label">Ganancia</div>
+                        <div class="plan-info-item-value">$1,422.00</div>
+                    </div>
+                    
+                    <div class="plan-info-item">
+                        <div class="plan-info-item-label">Estado</div>
+                        <div class="plan-status status-active">Activo</div>
+                    </div>
+                </div>
+                
+                <div class="plan-actions">
+                    <div class="action-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="action-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <div class="action-icon">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Plan Growth -->
+            <!-- Plan Premium -->
+<div class="investment-plan premium">
+    <div class="investment-plan-header">
+        <div class="plan-icon premium-icon">
+            <i class="fas fa-gem"></i>
+        </div>
+        <div class="plan-title">Plan Premium AI</div>
+    </div>
+    
+    <div class="plan-dates">
+        <div class="plan-date">
+            <i class="far fa-calendar-alt"></i>
+            <span>Iniciado: 05 Enero, 2025</span>
+        </div>
+        <div class="plan-date">
+            <i class="fas fa-calendar-check"></i>
+            <span>Vence: 05 Julio, 2025</span>
+        </div>
+    </div>
+    
+    <div class="plan-info">
+        <div class="plan-info-item">
+            <div class="plan-info-item-label">Capital</div>
+            <div class="plan-info-item-value">$3,000.00</div>
+        </div>
+        
+        <div class="plan-info-item">
+            <div class="plan-info-item-label">Rendimiento</div>
+            <div class="plan-info-item-value">15.8%</div>
+        </div>
+        
+        <div class="plan-info-item">
+            <div class="plan-info-item-label">Ganancia</div>
+            <div class="plan-info-item-value">$1,422.00</div>
+        </div>
+        
+        <div class="plan-info-item">
+            <div class="plan-info-item-label">Estado</div>
+            <div class="plan-status status-active">Activo</div>
+        </div>
+    </div>
+    
+    <div class="plan-actions">
+        <div class="action-icon" title="Ver detalles">
+            <i class="fas fa-eye"></i>
+        </div>
+        <div class="action-icon" title="Reinvertir">
+            <i class="fas fa-sync-alt"></i>
+        </div>
+        <div class="action-icon" title="Más opciones">
+            <i class="fas fa-ellipsis-v"></i>
+        </div>
+    </div>
+</div>
+
+<!-- Plan Growth -->
+<div class="investment-plan growth">
+    <div class="investment-plan-header">
+        <div class="plan-icon growth-icon">
+            <i class="fas fa-rocket"></i>
+        </div>
+        <div class="plan-title">Plan Growth Tech</div>
+    </div>
+    
+    <div class="plan-dates">
+        <div class="plan-date">
+            <i class="far fa-calendar-alt"></i>
+            <span>Iniciado: 15 Febrero, 2025</span>
+        </div>
+        <div class="plan-date">
+            <i class="fas fa-calendar-check"></i>
+            <span>Vence: 15 Mayo, 2025</span>
+        </div>
+    </div>
+    
+    <div class="plan-info">
+        <div class="plan-info-item">
+            <div class="plan-info-item-label">Capital</div>
+            <div class="plan-info-item-value">$1,500.00</div>
+        </div>
+        
+        <div class="plan-info-item">
+            <div class="plan-info-item-label">Rendimiento</div>
+            <div class="plan-info-item-value">12.3%</div>
+        </div>
+        
+        <div class="plan-info-item">
+            <div class="plan-info-item-label">Ganancia</div>
+            <div class="plan-info-item-value">$553.50</div>
+        </div>
+        
+        <div class="plan-info-item">
+            <div class="plan-info-item-label">Estado</div>
+            <div class="plan-status status-upcoming">Próximo vencimiento</div>
+        </div>
+    </div>
+    
+    <div class="plan-actions">
+        <div class="action-icon" title="Ver detalles">
+            <i class="fas fa-eye"></i>
+        </div>
+        <div class="action-icon" title="Reinvertir">
+            <i class="fas fa-sync-alt"></i>
+        </div>
+        <div class="action-icon" title="Más opciones">
+            <i class="fas fa-ellipsis-v"></i>
+        </div>
+    </div>
+</div>
+
+<!-- Plan Standard -->
+<div class="investment-plan standard">
+    <div class="investment-plan-header">
+        <div class="plan-icon standard-icon">
+            <i class="fas fa-chart-bar"></i>
+        </div>
+        <div class="plan-title">Plan Standard Global</div>
+    </div>
+    
+    <div class="plan-dates">
+        <div class="plan-date">
+            <i class="far fa-calendar-alt"></i>
+            <span>Iniciado: 10 Marzo, 2025</span>
+        </div>
+        <div class="plan-date">
+            <i class="fas fa-calendar-check"></i>
+            <span>Vence: 10 Junio, 2025</span>
+        </div>
+    </div>
+    
+    <div class="plan-info">
+        <div class="plan-info-item">
+            <div class="plan-info-item-label">Capital</div>
+            <div class="plan-info-item-value">$750.00</div>
+        </div>
+        
+        <div class="plan-info-item">
+            <div class="plan-info-item-label">Rendimiento</div>
+            <div class="plan-info-item-value">8.5%</div>
+        </div>
+        
+        <div class="plan-info-item">
+            <div class="plan-info-item-label">Ganancia</div>
+            <div class="plan-info-item-value">$168.75</div>
+        </div>
+        
+        <div class="plan-info-item">
+            <div class="plan-info-item-label">Estado</div>
+            <div class="plan-status status-active">Activo</div>
+        </div>
+    </div>
+    
+    <div class="plan-actions">
+        <div class="action-icon" title="Ver detalles">
+            <i class="fas fa-eye"></i>
+        </div>
+        <div class="action-icon" title="Reinvertir">
+            <i class="fas fa-sync-alt"></i>
+        </div>
+        <div class="action-icon" title="Más opciones">
+            <i class="fas fa-ellipsis-v"></i>
+        </div>
+    </div>
+</div>
+                <div class="card-footer">
+                    <div class="pagination">
+                        <button class="btn-icon" disabled>
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="btn-page active">1</button>
+                        <button class="btn-page">2</button>
+                        <button class="btn-page">3</button>
+                        <button class="btn-icon">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Investment Performance -->
+            <section class="card">
+                <div class="card-header">
+                    <h2>Rendimiento por Plan</h2>
+                    <div class="card-actions">
+                        <select class="select-period">
+                            <option value="30">Últimos 30 días</option>
+                            <option value="60">Últimos 60 días</option>
+                            <option value="90">Últimos 90 días</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <!-- Aquí irá el gráfico, se implementará con JS -->
+                        <canvas id="performanceChart" class="chart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Available Plans -->
+            <section class="card">
+                <div class="card-header">
+                    <h2>Planes Disponibles</h2>
+                    <div class="card-actions">
+                        <button class="btn-text">Ver todos</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="available-plans">
+                        <div class="plan-card premium-plan">
+                            <div class="plan-header">
+                                <div class="plan-icon">
+                                    <i class="fas fa-gem"></i>
+                                </div>
+                                <div class="plan-title">
+                                    <h3>Premium AI</h3>
+                                    <p>Inteligencia Artificial Avanzada</p>
+                                </div>
+                            </div>
+                            <div class="plan-features">
+                                <div class="feature">
+                                    <span class="feature-value">15-18%</span>
+                                    <span class="feature-label">Rendimiento Anual</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-value">6-12</span>
+                                    <span class="feature-label">Meses</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-value">$3,000</span>
+                                    <span class="feature-label">Inversión Mínima</span>
+                                </div>
+                            </div>
+                            <div class="plan-footer">
+                                <button class="btn-primary btn-full">Invertir Ahora</button>
+                            </div>
+                        </div>
+                        <div class="plan-card growth-plan">
+                            <div class="plan-header">
+                                <div class="plan-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <div class="plan-title">
+                                    <h3>Growth Tech</h3>
+                                    <p>Tecnología de Crecimiento</p>
+                                </div>
+                            </div>
+                            <div class="plan-features">
+                                <div class="feature">
+                                    <span class="feature-value">10-14%</span>
+                                    <span class="feature-label">Rendimiento Anual</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-value">3-9</span>
+                                    <span class="feature-label">Meses</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-value">$1,000</span>
+                                    <span class="feature-label">Inversión Mínima</span>
+                                </div>
+                            </div>
+                            <div class="plan-footer">
+                                <button class="btn-primary btn-full">Invertir Ahora</button>
+                            </div>
+                        </div>
+                        <div class="plan-card standard-plan">
+                            <div class="plan-header">
+                                <div class="plan-icon">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <div class="plan-title">
+                                    <h3>Standard Global</h3>
+                                    <p>Inversión Global Diversificada</p>
+                                </div>
+                            </div>
+                            <div class="plan-features">
+                                <div class="feature">
+                                    <span class="feature-value">8-12%</span>
+                                    <span class="feature-label">Rendimiento Anual</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-value">3-6</span>
+                                    <span class="feature-label">Meses</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-value">$500</span>
+                                    <span class="feature-label">Inversión Mínima</span>
+                                </div>
+                            </div>
+                            <div class="plan-footer">
+                                <button class="btn-primary btn-full">Invertir Ahora</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <script src="/assets/js/footer.js"></script>
+    </main>
+</div>
+    <!-- Notification Panel (Hidden by default) -->
+    <div class="notification-panel">
+        <div class="notification-header">
+            <h3>Notificaciones</h3>
+            <button class="close-panel">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="notification-list">
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-coins"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>Nueva Ganancia Acreditada</h4>
+                    <p>Has recibido $42.50 de ganancia diaria.</p>
+                    <span class="notification-time">Hoy, 00:01 AM</span>
+                </div>
+                <button class="mark-read">
+                    <i class="fas fa-check"></i>
+                </button>
+            </div>
+            
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>Nuevo Referido Registrado</h4>
+                    <p>Carlos M. se ha unido usando tu código de referido.</p>
+                    <span class="notification-time">Ayer, 3:45 PM</span>
+                </div>
+                <button class="mark-read">
+                    <i class="fas fa-check"></i>
+                </button>
+            </div>
+            
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>¡Bono Semanal Activado!</h4>
+                    <p>Tu plan Enterprise ha recibido un bono del 10% esta semana.</p>
+                    <span class="notification-time">08 Mayo, 09:15 AM</span>
+                </div>
+                <button class="mark-read">
+                    <i class="fas fa-check"></i>
+                </button>
+            </div>
+            
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-arrow-up"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>Retiro Completado</h4>
+                    <p>Tu retiro de $350.00 ha sido procesado correctamente.</p>
+                    <span class="notification-time">07 Mayo, 11:30 AM</span>
+                </div>
+            </div>
+        </div>
+        <div class="notification-footer">
+            <button class="mark-all-read">Marcar todas como leídas</button>
+            <a href="notifications.html">Ver todas las notificaciones</a>
+        </div>
+    </div>
+    <script src="/assets/js/inversiones.js"></script>
+    <script src="/assets/js/notifications-handler.js"></script>
+</body>
+</html>
