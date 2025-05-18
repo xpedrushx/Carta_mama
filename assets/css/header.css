@@ -1,0 +1,238 @@
+.content-header {
+    height: var(--header-height);
+    background: rgba(40, 16, 77, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    top: 0;
+    z-index: 100;
+}
+
+body.light-theme .content-header {
+    background: white;
+    border-bottom: 1px solid var(--light-border);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.header-left h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.header-left p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+body.light-theme .header-left p {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.header-left .highlight {
+    color: var(--light-blue);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.date-time {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+}
+
+body.light-theme .date-time {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 250px;
+}
+
+body.light-theme .search-bar {
+    background: #f1f3f6;
+}
+
+.search-bar input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 10px 15px;
+    color: white;
+    font-size: 14px;
+    outline: none;
+}
+
+body.light-theme .search-bar input {
+    color: var(--light-text);
+}
+
+.search-bar input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+body.light-theme .search-bar input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.search-bar button {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+body.light-theme .search-bar button {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.search-bar button:hover {
+    color: white;
+}
+
+body.light-theme .search-bar button:hover {
+    color: var(--light-text);
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.notification-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--button-bg);
+    color: var(--button-color);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.notification-btn:hover {
+    background: var(--button-hover-bg);
+    color: var(--button-hover-color);
+}
+
+body.light-theme .notification-btn {
+    background: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.7);
+}
+
+body.light-theme .notification-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: var(--light-text);
+}
+
+.notification-btn .notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+
+.avatar-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+    padding: 5px;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.avatar-dropdown:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+body.light-theme .avatar-dropdown:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.avatar-dropdown img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--light-purple);
+}
+
+.avatar-dropdown i {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+body.light-theme .avatar-dropdown i {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(40, 16, 77, 0.95);
+    border-radius: 8px;
+    width: 200px;
+    padding: 10px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 1000;
+}
+
+body.light-theme .dropdown-menu {
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+body.light-theme .dropdown-menu a {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.dropdown-menu a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+body.light-theme .dropdown-menu a:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--light-text);
+}
+
+.dropdown-menu a i {
+    font-size: 16px;
+}

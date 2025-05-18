@@ -1,0 +1,432 @@
+/* === SIDEBAR STYLES === */
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: rgba(40, 16, 77, 0.8);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: var(--transition);
+    z-index: 1000;
+}
+
+body.light-theme .sidebar {
+    background-color: var(--light-sidebar);
+    border-right: 1px solid var(--light-border);
+}
+
+.sidebar-collapsed .sidebar {
+    width: var(--sidebar-collapsed-width);
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.light-theme .sidebar-header {
+    border-bottom: 1px solid var(--light-border);
+}
+
+.sidebar .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-collapsed .sidebar .logo-text {
+    display: none;
+}
+
+.logo-icon {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.planet {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: var(--gradient);
+    border-radius: 50%;
+    top: 7px;
+    left: 2px;
+    box-shadow: 0 0 10px rgba(107, 51, 197, 0.5);
+}
+
+.satellite {
+    position: absolute;
+    width: 12px;
+    height: 8px;
+    background: #ffffff;
+    border-radius: 2px;
+    top: 3px;
+    left: 27px;
+    transform: rotate(45deg);
+}
+
+body.light-theme .satellite {
+    background: var(--light-text);
+}
+
+.panel-left, .panel-right {
+    position: absolute;
+    width: 15px;
+    height: 4px;
+    background: linear-gradient(90deg, #6b33c5, #3b82f6);
+    top: 5px;
+}
+
+.panel-left {
+    left: 17px;
+    transform: rotate(45deg);
+}
+
+.panel-right {
+    left: 34px;
+    transform: rotate(-45deg);
+}
+
+.star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #ffffff;
+    border-radius: 50%;
+    top: 2px;
+    left: 12px;
+    box-shadow: 0 0 10px #ffffff;
+}
+
+body.light-theme .star {
+    background: var(--light-text);
+    box-shadow: 0 0 10px var(--light-text);
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: 700;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 0.5px;
+}
+
+.sidebar-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--button-bg);
+    color: var(--button-color);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.user-profile {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.light-theme .user-profile {
+    border-bottom: 1px solid var(--light-border);
+}
+
+.sidebar-collapsed .user-profile {
+    justify-content: center;
+}
+
+.user-avatar {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--light-purple);
+}
+
+.user-status {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    bottom: 0;
+    right: 0;
+    border: 2px solid rgba(40, 16, 77, 0.8);
+}
+
+body.light-theme .user-status {
+    border-color: var(--light-sidebar);
+}
+
+.user-status.online {
+    background-color: var(--success-color);
+}
+
+.user-status.away {
+    background-color: var(--warning-color);
+}
+
+.user-status.offline {
+    background-color: var(--danger-color);
+}
+
+.user-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.sidebar-collapsed .user-info {
+    display: none;
+}
+
+.user-info h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.user-info p {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+body.light-theme .user-info p {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.sidebar-menu {
+    padding: 20px 0;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+}
+
+.sidebar-menu li {
+    margin-bottom: 5px;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: var(--transition);
+    border-left: 3px solid transparent;
+    position: relative;
+    overflow: visible;
+}
+
+body.light-theme .sidebar-menu a {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.sidebar-menu a:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+body.light-theme .sidebar-menu a:hover {
+    color: var(--light-text);
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-menu li.active a {
+    color: white;
+    border-left-color: var(--light-blue);
+    background: rgba(59, 130, 246, 0.1);
+}
+
+body.light-theme .sidebar-menu li.active a {
+    color: var(--light-text);
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.sidebar-menu a i {
+    font-size: 18px;
+    width: 20px;
+    margin-right: 15px;
+    text-align: center;
+}
+
+.sidebar-collapsed .sidebar-menu a span {
+    display: none;
+}
+
+.sidebar-menu li a span {
+    display: inline-block;
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 15px;
+}
+
+.sidebar-menu .notification-badge {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sidebar-footer {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: auto;
+}
+
+body.light-theme .sidebar-footer {
+    border-top: 1px solid var(--light-border);
+}
+
+.sidebar-collapsed .sidebar-footer {
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.theme-toggle,
+.support-link,
+.logout-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--button-bg);
+    color: var(--button-color);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.theme-toggle:hover,
+.support-link:hover,
+.logout-link:hover {
+    background: var(--button-hover-bg);
+    color: var(--button-hover-color);
+}
+
+body.light-theme .theme-toggle,
+body.light-theme .support-link,
+body.light-theme .logout-link {
+    background: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.7);
+}
+
+body.light-theme .theme-toggle:hover,
+body.light-theme .support-link:hover,
+body.light-theme .logout-link:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: var(--light-text);
+}
+
+/* === RESPONSIVE SIDEBAR === */
+@media (max-width: 768px) {
+    /* Botón móvil para la sidebar */
+    #mobile-menu-button {
+        display: flex;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 9999;
+        background-color: var(--light-purple);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    #mobile-menu-button i {
+        font-size: 24px;
+    }
+    
+    /* Comportamiento del sidebar en móvil */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Escondido por defecto */
+        width: 280px !important;
+        max-width: 85vw; /* Limitar ancho en pantallas muy pequeñas */
+        height: 100vh;
+        z-index: 2000;
+        transform: none; /* Usar left en lugar de transform */
+        transition: left 0.3s ease-in-out;
+    }
+    
+    /* Cuando el sidebar está visible */
+    body.sidebar-open .sidebar {
+        left: 0;
+    }
+    
+    /* Ocultar botón de toggle interno (opcional) */
+    .sidebar-toggle {
+        display: none !important;
+    }
+    
+    /* Asegurar que el texto se muestre en móvil */
+    .sidebar-collapsed .sidebar-menu a span,
+    body.sidebar-open .sidebar-menu a span {
+        display: inline-block !important;
+    }
+    
+    /* Overlay para cuando el sidebar está abierto */
+    .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1500;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    
+    body.sidebar-open .sidebar-overlay {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* Adicional: Asegurar que el botón se vea mejor en temas claros */
+body.light-theme #mobile-menu-button {
+    background-color: var(--light-purple);
+    color: white;
+}

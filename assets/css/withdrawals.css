@@ -1,0 +1,3015 @@
+/* payment-methods.css - Estilos específicos para la pantalla de métodos de pago */
+
+:root {
+    --dark-purple: #1a0933;
+    --mid-purple: #33156b;
+    --light-purple: #6b33c5;
+    --deep-blue: #1e3a8a;
+    --light-blue: #3b82f6;
+    --gradient: linear-gradient(135deg, var(--light-purple), var(--light-blue));
+    --sidebar-width: 260px;
+    --sidebar-collapsed-width: 80px;
+    --header-height: 70px;
+    --card-bg: rgba(51, 21, 107, 0.3);
+    --card-border: rgba(255, 255, 255, 0.05);
+    --success-color: #4CAF50;
+    --warning-color: #FFC107;
+    --danger-color: #F44336;
+    --info-color: #2196F3;
+    --transition: all 0.3s ease;
+
+    /* Light theme variables */
+    --light-bg: #f8f9fa;
+    --light-text: #333;
+    --light-card-bg: #fff;
+    --light-sidebar: #f1f3f6;
+    --light-border: rgba(0, 0, 0, 0.1);
+
+    /* Button variables */
+    --button-bg: rgba(255, 255, 255, 0.05);
+    --button-hover-bg: var(--gradient);
+    --button-color: rgba(255, 255, 255, 0.7);
+    --button-hover-color: white;
+}
+* {
+      margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--dark-purple);
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.main-content {
+    padding: 20px;
+}
+
+/* Encabezado con botón de realizar retiro */
+.header-retiro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.header-retiro h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Estilos específicos para la pantalla mostrada en la captura */
+.payment-methods-container {
+    background-color: var(--mid-purple);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--card-border);
+    margin-bottom: 30px;
+}
+
+/* Título de Métodos de Pago */
+.payment-methods-container h2 {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+/* Botón de añadir método */
+button[type="button"] {
+    background: var(--button-bg);
+    color: var(--button-color);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+button[type="button"]:hover {
+    background: var(--button-hover-bg);
+    color: var(--button-hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para cada método de pago */
+.payment-method {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    transition: var(--transition);
+}
+
+.payment-method:hover {
+    background: rgba(107, 51, 197, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.payment-method-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.payment-method-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+.payment-method-details {
+    flex: 1;
+}
+
+.payment-method-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: #fff;
+}
+
+.payment-method-subtitle {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+}
+
+.payment-method-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-btn, .delete-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.edit-btn:hover, .delete-btn:hover {
+    background: var(--gradient);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Estilo específico para tu HTML actual */
+/* Estos selectores intentan coincidir con los elementos de tu captura de pantalla */
+
+h1 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Para el botón "Añadir Método" */
+button {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+button:hover {
+    background: var(--gradient);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para los iconos específicos vistos en la captura */
+.visa-icon, 
+[class*="fa-cc-visa"] {
+    color: #1434CB;
+}
+
+.bank-icon,
+[class*="fa-university"] {
+    color: var(--info-color);
+}
+
+.crypto-icon,
+[class*="fa-bitcoin"] {
+    color: #F7931A;
+}
+
+/* Contenedor para la lista de métodos de pago */
+.payment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Estilo para método activo/predeterminado */
+.payment-method.active,
+.payment-method.default {
+    border-left: 4px solid var(--light-purple);
+    background: rgba(107, 51, 197, 0.1);
+}
+
+/* Estilo para icono de edición */
+[class*="fa-pencil"], 
+[class*="fa-edit"],
+[class*="pencil"] {
+    color: var(--info-color);
+}
+
+/* Estilo para icono de eliminación */
+[class*="fa-trash"], 
+[class*="fa-delete"],
+[class*="delete"] {
+    color: var(--danger-color);
+}
+
+/* Estilos basados en exactamente lo que veo en la captura */
+img[alt="Realizar Retiro"] {
+    height: 25px;
+    margin-right: 10px;
+}
+
+.container-custom {
+    background-color: var(--mid-purple);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+/* Estilos muy específicos para que coincidan con la estructura HTML vista en la captura */
+.visa-card-title,
+.bank-account-title,
+.bitcoin-wallet-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin: 0 0 5px 0;
+}
+
+.bank-name,
+.wallet-address {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+}
+
+/* Layouts específicos */
+.method-row {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    transition: var(--transition);
+}
+
+.method-row:hover {
+    transform: translateY(-3px);
+    background: rgba(107, 51, 197, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.method-icon {
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+
+.method-details {
+    flex: 1;
+}
+
+.method-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-button {
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.action-button:hover {
+    background: var(--gradient);
+    transform: translateY(-2px);
+}
+
+.action-button img {
+    width: 16px;
+    height: 16px;
+}
+/* Botones de formulario */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn-cancel {
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+body.light-theme .btn-cancel {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--light-border);
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.btn-cancel:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+body.light-theme .btn-cancel:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: var(--light-text);
+}
+
+.btn-confirm {
+    padding: 12px 28px;
+    background: var(--gradient);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(107, 51, 197, 0.3);
+}
+
+.btn-confirm:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(107, 51, 197, 0.5);
+}
+@media (max-width: 991px) {
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .sidebar-collapsed .main-content {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .overview-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .modal {
+        width: 90%;
+        max-height: 80vh;
+    }
+    
+    .withdrawal-table {
+        overflow-x: auto;
+    }
+    
+    table {
+        width: 800px;
+    }
+    
+    .payment-method-selector {
+        flex-direction: column;
+    }
+    
+    .content-body {
+        padding: 15px;
+    }
+    
+    .card, .stats-card, .payment-methods-card, .withdrawal-history-card, .faq-card {
+        padding: 15px;
+    }
+    
+    .card-header, .section-header {
+        padding: 15px 20px;
+    }
+    
+    .card-body {
+        padding: 15px 20px;
+    }
+    
+    .modal-header {
+        padding: 15px 20px;
+    }
+    
+    .modal-body {
+        padding: 20px;
+    }
+}
+
+/* Para dispositivos muy pequeños */
+@media (max-width: 480px) {
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .payment-method-tabs {
+        flex-direction: column;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn-cancel, .btn-confirm {
+        width: 100%;
+    }
+    
+    .card-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .card-value {
+        font-size: 20px;
+    }
+    
+    .payment-method-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .payment-method-icon {
+        margin: 0 0 10px 0;
+    }
+    
+    .payment-method-details {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+}
+
+/* Botón hamburguesa para móviles */
+#mobile-menu-button {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #mobile-menu-button {
+        display: flex;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 9999;
+        background: var(--gradient);
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    #mobile-menu-button i {
+        font-size: 24px;
+        color: white;
+    }
+    
+    #mobile-menu-button:hover {
+        transform: rotate(90deg);
+    }
+}/* withdrawals.css - Estilos para la página de retiros de STELLAR AI */
+/* Botones de formulario */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn-cancel {
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+body.light-theme .btn-cancel {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--light-border);
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.btn-cancel:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+body.light-theme .btn-cancel:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: var(--light-text);
+}
+
+.btn-confirm {
+    padding: 12px 28px;
+    background: var(--gradient);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(107, 51, 197, 0.3);
+}
+
+.btn-confirm:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(107, 51, 197, 0.5);
+}
+
+/* Estilos específicos para la vista actual */
+/* Contenedor principal para la pantalla de métodos de pago */
+.payment-methods-panel {
+    background-color: var(--dark-purple);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+/* Título principal */
+.payment-methods-panel h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 25px;
+}
+
+/* Botón de añadir método */
+.payment-methods-panel .btn-add-method {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-bottom: 20px;
+}
+
+.payment-methods-panel .btn-add-method:hover {
+    background: var(--gradient);
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.payment-methods-panel .btn-add-method i {
+    font-size: 16px;
+}
+
+/* Lista de métodos de pago */
+.payment-methods-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    transition: var(--transition);
+}
+
+.payment-method:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background: rgba(107, 51, 197, 0.1);
+}
+
+.payment-method.active {
+    background: rgba(107, 51, 197, 0.15);
+    border: 1px solid rgba(107, 51, 197, 0.3);
+}
+
+.payment-method-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.payment-method-logo img {
+    max-width: 25px;
+    max-height: 25px;
+}
+
+.payment-method-info {
+    flex: 1;
+}
+
+.payment-method-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.payment-method-desc {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.payment-method-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.action-btn:hover {
+    background: var(--gradient);
+    color: white;
+}
+
+@media (max-width: 991px) {
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .sidebar-collapsed .main-content {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .overview-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .modal {
+        width: 90%;
+        max-height: 80vh;
+    }
+    
+    .withdrawal-table {
+        overflow-x: auto;
+    }
+    
+    table {
+        width: 800px;
+    }
+    
+    .payment-method-selector {
+        flex-direction: column;
+    }
+    
+    .content-body {
+        padding: 15px;
+    }
+    
+    .card, .stats-card, .payment-methods-card, .withdrawal-history-card, .faq-card {
+        padding: 15px;
+    }
+    
+    .card-header, .section-header {
+        padding: 15px 20px;
+    }
+    
+    .card-body {
+        padding: 15px 20px;
+    }
+    
+    .modal-header {
+        padding: 15px 20px;
+    }
+    
+    .modal-body {
+        padding: 20px;
+    }
+}
+
+/* Para dispositivos muy pequeños */
+@media (max-width: 480px) {
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .payment-method-tabs {
+        flex-direction: column;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn-cancel, .btn-confirm {
+        width: 100%;
+    }
+    
+    .card-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .card-value {
+        font-size: 20px;
+    }
+    
+    .payment-method-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .payment-method-icon {
+        margin: 0 0 10px 0;
+    }
+    
+    .payment-method-details {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+}
+
+/* Botón hamburguesa para móviles */
+#mobile-menu-button {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #mobile-menu-button {
+        display: flex;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 9999;
+        background: var(--gradient);
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    #mobile-menu-button i {
+        font-size: 24px;
+        color: white;
+    }
+    
+    #mobile-menu-button:hover {
+        transform: rotate(90deg);
+    }
+}/* withdrawals.css - Estilos para la página de retiros de STELLAR AI */
+
+/* Variables globales de color */
+:root {
+    --primary-color: #3772ff;
+    --primary-hover: #2860e5;
+    --primary-light: #edf2ff;
+    --secondary-color: #0ca678;
+    --danger-color: #e53e3e;
+    --warning-color: #f59f00;
+    --success-color: #0ca678;
+    --text-primary: #1a202c;
+    --text-secondary: #4a5568;
+    --text-tertiary: #718096;
+    --border-color: #e2e8f0;
+    --bg-main: #f8fafc;
+    --bg-card: #ffffff;
+    --bg-modal: #ffffff;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+}
+
+/* Contenedor principal */
+.main-content {
+    flex: 1;
+    padding: 24px;
+    margin-left: 260px; /* Espacio para el sidebar */
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+}
+
+.content-body {
+    padding-top: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Media query para modo móvil */
+@media (max-width: 991px) {
+    .main-content {
+        margin-left: 0;
+        padding: 16px;
+    }
+}
+
+
+
+.card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Tarjetas de resumen */
+/* Overview Cards */
+.overview-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+body.light-theme .card {
+    background: var(--light-card-bg);
+    border: 1px solid var(--light-border);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-color: rgba(107, 51, 197, 0.3);
+}
+
+body.light-theme .card:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(107, 51, 197, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+body.light-theme .card-icon {
+    background: rgba(107, 51, 197, 0.1);
+}
+
+.card-icon i {
+    font-size: 22px;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.card-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.card-info h3 {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 5px;
+}
+
+body.light-theme .card-info h3 {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.card-value {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-change {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.card-change.positive {
+    color: var(--success-color);
+}
+
+.card-change.negative {
+    color: var(--danger-color);
+}
+
+.card-date {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+body.light-theme .card-date {
+    color: rgba(0, 0, 0, 0.5);
+}
+/* Sección de botón de retiro */
+.withdraw-action-section {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.withdraw-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s, transform 0.2s;
+    box-shadow: var(--shadow-md);
+}
+
+.withdraw-btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.withdraw-btn:active {
+    transform: translateY(0);
+}
+
+.withdraw-btn i {
+    font-size: 16px;
+}
+
+/* Métodos de pago */
+.payment-methods-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.payment-method-item {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    transition: all 0.2s;
+}
+
+.payment-method-item.active {
+    border-color: var(--primary-color);
+    background-color: var(--primary-light);
+}
+
+.payment-method-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f4f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-right: 16px;
+    color: var(--text-secondary);
+}
+
+.payment-method-details {
+    flex: 1;
+}
+
+.payment-method-details h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: var(--text-primary);
+}
+
+.payment-method-details p {
+    font-size: 14px;
+    color: var(--text-tertiary);
+    margin: 0;
+}
+
+.payment-method-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-tertiary);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-icon:hover {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-text {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: transparent;
+    border: none;
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    transition: background-color 0.2s;
+}
+
+.btn-text:hover {
+    background-color: var(--primary-light);
+}
+
+/* Historial de retiros */
+.withdrawal-table {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th {
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+table td {
+    padding: 16px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+.date-cell {
+    display: flex;
+    flex-direction: column;
+}
+
+.date-primary {
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.date-secondary {
+    font-size: 12px;
+    color: var(--text-tertiary);
+}
+
+.method-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.method-icon {
+    font-size: 16px;
+    color: var(--text-secondary);
+}
+
+.amount {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);;
+}
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status.completed {
+    background-color: rgba(12, 166, 120, 0.1);
+    color: var(--success-color);
+}
+
+.status.pending {
+    background-color: rgba(245, 159, 0, 0.1);
+    color: var(--warning-color);
+}
+
+.status.rejected {
+    background-color: rgba(229, 62, 62, 0.1);
+    color: var(--danger-color);
+}
+
+.table-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* Paginación */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.pagination {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-page {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-page.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.btn-page:hover:not(.active):not([disabled]) {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-page[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Preguntas frecuentes */
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-item {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    cursor: pointer;
+    background-color: var(--dark-purple);
+    transition: background-color 0.2s;
+}
+
+
+.faq-question h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.faq-question i {
+    font-size: 14px;
+    color: var(--text-tertiary);
+    transition: transform 0.3s;
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    padding: 0 20px 20px;
+    max-height: 500px;
+    background-color: var(--dark-purple);
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer p {
+    margin-top: 0;
+    color: var(--text-secondary);
+}
+
+.faq-answer ul {
+    margin-top: 8px;
+    padding-left: 20px;
+    color: var(--text-secondary);
+}
+
+.faq-answer li {
+    margin-bottom: 4px;
+}
+
+/* Modales */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    background-color: var(--dark-purple);
+    border-radius: var(--radius-lg);
+    z-index: 1001;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    display: none;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    color: var(rgba(255, 255, 255, 0.8));
+}
+
+.modal-close {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-tertiary);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.modal-close:hover {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.modal-body {
+    padding: 24px;
+    overflow-y: auto;
+}
+
+/* Formulario de retiro */
+.withdrawal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-row {
+    display: flex;
+    gap: 16px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(rgba(255, 255, 255, 0.8));
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-tertiary);
+}
+
+.input-with-icon input {
+    padding-left: 36px;
+}
+
+input, select, textarea {
+    width: 95%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    transition: border-color 0.2s;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: var(--dark-purple);
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.input-notes {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--text-tertiary);
+    margin-top: 4px;
+}
+
+/* Selector de método de pago */
+.payment-method-selector {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.payment-option {
+    flex: 1;
+    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.payment-option:hover {
+    border-color: var(--primary-color);
+}
+
+.payment-option.active {
+    border-color: var(--primary-color);
+
+}
+
+.payment-option i {
+    font-size: 24px;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.payment-option span {
+    font-size: 14px;
+    color: white;
+    font-weight: 500;
+}
+
+body.light-theme .payment-option span {
+    color: var(--light-text);
+}
+
+/* Resumen de retiro */
+.withdrawal-summary {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.light-theme .withdrawal-summary {
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid var(--light-border);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+body.light-theme .summary-row {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.summary-row.total {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+}
+
+body.light-theme .summary-row.total {
+    border-top: 1px solid var(--light-border);
+    color: var(--light-text);
+}
+
+/* Disclaimer */
+.withdrawal-disclaimer {
+    display: flex;
+    gap: 12px;
+    background: rgba(107, 51, 197, 0.1);
+    border-radius: 12px;
+    padding: 15px;
+    border: 1px solid rgba(107, 51, 197, 0.2);
+}
+
+body.light-theme .withdrawal-disclaimer {
+    background: rgba(107, 51, 197, 0.05);
+}
+
+.withdrawal-disclaimer i {
+    color: var(--light-purple);
+    font-size: 16px;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.withdrawal-disclaimer p {
+    margin: 0;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+}
+
+body.light-theme .withdrawal-disclaimer p {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.withdrawal-disclaimer a {
+    color: var(--light-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.withdrawal-disclaimer a:hover {
+    text-decoration: underline;
+}
+
+/* Tabs para añadir método de pago */
+.payment-method-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+body.light-theme .tab-btn {
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid var(--light-border);
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.tab-btn:hover {
+    background: rgba(107, 51, 197, 0.1);
+    color: white;
+}
+
+body.light-theme .tab-btn:hover {
+    background: rgba(107, 51, 197, 0.05);
+    color: var(--light-text);
+}
+
+.tab-btn.active {
+    background: var(--gradient);
+    color: white;
+    border-color: transparent;
+}
+
+.tab-btn i {
+    font-size: 16px;
+}
+
+.tab-content {
+    margin-bottom: 25px;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Checkbox personalizado */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    user-select: none;
+}
+
+body.light-theme .checkbox-container {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+body.light-theme .checkmark {
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--light-border);
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background: rgba(107, 51, 197, 0.1);
+    border-color: rgba(107, 51, 197, 0.3);
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background: var(--gradient);
+    border-color: transparent;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Nota para criptomonedas */
+.crypto-note {
+    display: flex;
+    gap: 12px;
+    background: rgba(255, 193, 7, 0.1);
+    border-radius: 12px;
+    padding: 15px;
+    border: 1px solid rgba(255, 193, 7, 0.2);
+    margin-top: 15px;
+}
+
+body.light-theme .crypto-note {
+    background: rgba(255, 193, 7, 0.05);
+}
+
+.crypto-note i {
+    color: var(--warning-color);
+    font-size: 16px;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.crypto-note p {
+    margin: 0;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+}
+
+body.light-theme .crypto-note p {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+/* Resumen de retiro */
+.withdrawal-summary {
+    background-color: var(--dark-purple);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+
+}
+.summary-row span {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+}
+.summary-row.total {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-color);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Disclaimer */
+.withdrawal-disclaimer {
+    display: flex;
+    gap: 12px;
+    background-color: #f0f9ff;
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+}
+
+.withdrawal-disclaimer i {
+    color: var(--primary-color);
+    font-size: 16px;
+    margin-top: 3px;
+}
+
+.withdrawal-disclaimer p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.withdrawal-disclaimer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.withdrawal-disclaimer a:hover {
+    text-decoration: underline;
+}
+
+/* Tabs para añadir método de pago */
+.payment-method-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background-color: transparent;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.tab-btn:hover {
+    color: var(--primary-color);
+    background-color: var(--primary-light);
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+    background-color: var(--primary-light);
+    font-weight: 600;
+}
+
+.tab-btn i {
+    font-size: 16px;
+}
+
+.tab-content {
+    margin-bottom: 24px;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+/* Checkbox personalizado */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+    padding-left: 24px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--text-primary);
+    user-select: none;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    border-color: var(--primary-color);
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Nota para criptomonedas */
+.crypto-note {
+    display: flex;
+    gap: 12px;
+    background-color: #fff9db;
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    margin-top: 12px;
+}
+
+.crypto-note i {
+    color: var(--warning-color);
+    font-size: 16px;
+    margin-top: 3px;
+}
+
+.crypto-note p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+/* Botones de formulario */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.btn-cancel {
+    padding: 12px 24px;
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-cancel:hover {
+    border-color: var(--text-secondary);
+    color: var(--text-primary);
+}
+
+.btn-confirm {
+    padding: 12px 24px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--radius-md);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-confirm:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Media queries */
+@media (max-width: 1199px) {
+    .overview-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .overview-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .modal {
+        width: 90%;
+        max-height: 80vh;
+    }
+    
+    .withdrawal-table {
+        overflow-x: auto;
+    }
+    
+    table {
+        width: 800px;
+    }
+    
+    .payment-method-selector {
+        flex-direction: column;
+    }
+}
+
+/* Para dispositivos muy pequeños */
+@media (max-width: 480px) {
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn-cancel, .btn-confirm {
+        width: 100%;
+    }
+}
+
+/* Dark mode (opcional para implementar en el futuro) */
+
+.content-footer {
+    background: rgba(40, 16, 77, 0.8);
+    padding: 20px 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+body.light-theme .content-footer {
+    background: var(--light-card-bg);
+    border-top: 1px solid var(--light-border);
+}
+
+.content-footer p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+body.light-theme .content-footer p {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--light-blue);
+    text-decoration: none;
+    font-size: 14px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+body.light-theme .footer-links a:hover {
+    color: var(--light-text);
+}
+
+/* Agregar separadores visuales entre enlaces */
+.footer-links a:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 12px;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+body.light-theme .footer-links a:not(:last-child)::after {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos responsive para el footer */
+@media (max-width: 768px) {
+    .content-footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .footer-links {
+        justify-content: center;
+    }
+}
+
+/* Asegurar que los enlaces del pie de página tengan el aspecto correcto */
+footer a, .content-footer a {
+    color: var(--light-blue) !important;
+    text-decoration: none;
+    margin: 0 10px;
+    position: relative;
+    font-size: 14px;
+}
+
+footer a:hover, .content-footer a:hover {
+    text-decoration: underline;
+}
+/* Para móviles */
+@media (max-width: 575px) {
+/* Ajustes específicos para móviles */
+    .content-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        height: auto;
+    }
+    
+    .header-left h1 {
+        font-size: 20px;
+    }
+    
+    .header-left p {
+        font-size: 12px;
+    }
+    
+    .header-right {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding-top: 10px;
+    }
+    
+    .search-bar {
+        width: 100%;
+        margin: 5px 0;
+    }
+    
+    .user-menu {
+        width: 100%;
+        justify-content: space-between;
+    }
+.notification-panel {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Oculto por defecto */
+    width: 380px;
+    height: 100vh;
+    background: rgba(40, 16, 77, 0.98);
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 2000;
+    transition: right 0.3s ease-in-out;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3);
+    color: #fff; /* Asegurar que el texto en el panel de notificaciones sea visible */
+}
+body.light-theme .notification-panel {
+    background: white;
+    border-left: 1px solid var(--light-border);
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+}
+.notification-panel.active {
+    right: 0;
+}
+.notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: sticky;
+    top: 0;
+    background: inherit;
+    z-index: 10;
+}
+body.light-theme .notification-header {
+    border-bottom: 1px solid var(--light-border);
+}
+
+.notification-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.close-panel {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+body.light-theme .close-panel {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.close-panel:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+body.light-theme .close-panel:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--light-text);
+}
+
+.notification-list {
+    padding: 10px 0;
+}
+
+.notification-item {
+    padding: 15px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    transition: var(--transition);
+}
+
+body.light-theme .notification-item {
+    border-bottom: 1px solid var(--light-border);
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+body.light-theme .notification-item:hover {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.notification-item.unread {
+    background: rgba(107, 51, 197, 0.1);
+}
+
+body.light-theme .notification-item.unread {
+    background: rgba(107, 51, 197, 0.05);
+}
+
+.notification-item.unread:hover {
+    background: rgba(107, 51, 197, 0.15);
+}
+
+body.light-theme .notification-item.unread:hover {
+    background: rgba(107, 51, 197, 0.08);
+}
+
+.notification-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+body.light-theme .notification-icon {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.notification-icon i {
+    font-size: 16px;
+    color: var(--light-blue);
+}
+
+.notification-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.notification-content h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.notification-content p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+body.light-theme .notification-content p {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.notification-time {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+body.light-theme .notification-time {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.mark-read {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+body.light-theme .mark-read {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.mark-read:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--success-color);
+}
+
+body.light-theme .mark-read:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.notification-footer {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: inherit;
+    position: sticky;
+    bottom: 0;
+}
+
+body.light-theme .notification-footer {
+    border-top: 1px solid var(--light-border);
+}
+
+.mark-all-read {
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+body.light-theme .mark-all-read {
+    background: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.mark-all-read:hover {
+    background: var(--gradient);
+    color: white;
+}
+
+.notification-footer a {
+    color: var(--light-blue);
+    font-size: 13px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.notification-footer a:hover {
+    text-decoration: underline;
+}
+
+.dark-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1500;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    pointer-events: none; /* Evitar que interfiera cuando no está activo */
+}
+
+    .payment-methods-container {
+        flex-direction: column;
+        padding: 0;
+        overflow: hidden;
+        background: var(--dark-purple);
+    }
+    
+    .payment-methods-sidebar {
+        flex: none;
+        padding: 20px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        background: var(--mid-purple);
+    }
+    
+    .payment-methods-content {
+        padding: 15px;
+        background: var(--mid-purple);
+    }
+    
+    .payment-methods-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .payment-method {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background: var(--mid-purple);
+        border: 1px solid var(--card-border);
+        border-radius: 12px;
+        padding: 20px 15px;
+        transition: var(--transition);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+    
+    .payment-method.active {
+        background: #fff;
+        color: var(--text-primary);
+        border-color: #fff;
+    }
+    
+    .payment-method-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 15px;
+    }
+    
+    .payment-method.active .payment-method-icon {
+        background: #f8f9ff;
+    }
+    
+    .payment-method-details {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    
+    .payment-method.active .payment-method-title {
+        color: #333;
+    }
+    
+    .payment-method.active .payment-method-subtitle {
+        color: rgba(0, 0, 0, 0.6);
+    }
+    
+    .payment-method-title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+    
+    .payment-method-subtitle {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.6);
+    }
+    
+    .payment-method-status {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.5);
+        margin-bottom: 10px;
+    }
+    
+    .payment-method.active .payment-method-status {
+        color: rgba(0, 0, 0, 0.4);
+    }
+    
+    .payment-method-actions {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+    
+    .btn-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7);
+        border: none;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+    
+    .payment-method.active .btn-icon {
+        background: rgba(0, 0, 0, 0.05);
+        color: rgba(0, 0, 0, 0.5);
+    }
+    
+    .payment-method.active .edit-btn {
+        color: var(--info-color);
+    }
+    
+    .payment-method.active .delete-btn {
+        color: var(--danger-color);
+    }
+    /* Historial de retiros en móvil */
+    /* Historial de retiros en móvil */
+    .withdrawal-history-content {
+        padding: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .withdrawal-table-container {
+        width: 100%;
+        overflow-x: hidden;
+    }
+    
+    .withdrawal-table {
+        overflow-x: auto;
+        margin-bottom: 25px;
+    }
+    
+    .withdrawal-table thead {
+        display: none;
+    }
+    
+    .withdrawal-table tbody {
+        width: 100%;
+    }
+    
+    .withdrawal-table tbody tr {
+        display: flex;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .withdrawal-table tbody tr:last-child {
+        border-bottom: none;
+    }
+    
+    .withdrawal-table td {
+        padding: 15px;
+        border-bottom: none;
+        vertical-align: middle;
+    }
+    
+    .withdrawal-table td:first-child {
+        /* Fecha */
+        flex: 0 0 40%;
+    }
+    
+    .withdrawal-table td:nth-child(2) {
+        /* Método */
+        flex: 0 0 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .withdrawal-table td:nth-child(3) {
+        /* Monto */
+        flex: 0 0 40%;
+        text-align: right;
+    }
+    
+    .withdrawal-table td:nth-child(4),
+    .withdrawal-table td:nth-child(5) {
+        /* Estado y Acciones - ocultos en móvil */
+        display: none;
+    }
+    
+    .withdrawal-date {
+        font-size: 14px;
+        font-weight: 500;
+    }
+    
+    .withdrawal-time {
+        font-size: 12px;
+        margin-top: 4px;
+        color: rgba(255, 255, 255, 0.6);
+    }
+    
+    .withdrawal-method {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .withdrawal-method img {
+        width: 30px;
+        height: 20px;
+        object-fit: contain;
+    }
+    
+    .withdrawal-method i {
+        font-size: 24px;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .withdrawal-amount {
+        font-size: 16px;
+        font-weight: 600;
+        color: white;
+    }
+    
+    /* Paginación */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        padding: 15px 0;
+        gap: 8px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: var(--mid-purple);
+    }
+    
+    .pagination-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+    
+    .pagination-btn.prev,
+    .pagination-btn.next {
+        background-color: rgba(255, 255, 255, 0.05);
+        color: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .pagination-btn.number {
+        background-color: rgba(255, 255, 255, 0.05);
+        color: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .pagination-btn.active {
+        background-color: var(--light-blue);
+        color: white;
+        border: none;
+    }
+    
+}
+.withdrawal-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.notification-panel {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Oculto por defecto */
+    width: 380px;
+    height: 100vh;
+    background: rgba(40, 16, 77, 0.98);
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 2000;
+    transition: right 0.3s ease-in-out;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3);
+    color: #fff; /* Asegurar que el texto en el panel de notificaciones sea visible */
+}
+body.light-theme .notification-panel {
+    background: white;
+    border-left: 1px solid var(--light-border);
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+}
+.notification-panel.active {
+    right: 0;
+}
+.notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: sticky;
+    top: 0;
+    background: inherit;
+    z-index: 10;
+}
+body.light-theme .notification-header {
+    border-bottom: 1px solid var(--light-border);
+}
+
+.notification-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.close-panel {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+body.light-theme .close-panel {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.close-panel:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+body.light-theme .close-panel:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--light-text);
+}
+
+.notification-list {
+    padding: 10px 0;
+}
+
+.notification-item {
+    padding: 15px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    transition: var(--transition);
+}
+
+body.light-theme .notification-item {
+    border-bottom: 1px solid var(--light-border);
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+body.light-theme .notification-item:hover {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.notification-item.unread {
+    background: rgba(107, 51, 197, 0.1);
+}
+
+body.light-theme .notification-item.unread {
+    background: rgba(107, 51, 197, 0.05);
+}
+
+.notification-item.unread:hover {
+    background: rgba(107, 51, 197, 0.15);
+}
+
+body.light-theme .notification-item.unread:hover {
+    background: rgba(107, 51, 197, 0.08);
+}
+
+.notification-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+body.light-theme .notification-icon {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.notification-icon i {
+    font-size: 16px;
+    color: var(--light-blue);
+}
+
+.notification-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.notification-content h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.notification-content p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+body.light-theme .notification-content p {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.notification-time {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+body.light-theme .notification-time {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.mark-read {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+body.light-theme .mark-read {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.mark-read:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--success-color);
+}
+
+body.light-theme .mark-read:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.notification-footer {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: inherit;
+    position: sticky;
+    bottom: 0;
+}
+
+body.light-theme .notification-footer {
+    border-top: 1px solid var(--light-border);
+}
+
+.mark-all-read {
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+body.light-theme .mark-all-read {
+    background: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.mark-all-read:hover {
+    background: var(--gradient);
+    color: white;
+}
+
+.notification-footer a {
+    color: var(--light-blue);
+    font-size: 13px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.notification-footer a:hover {
+    text-decoration: underline;
+}
+

@@ -1,0 +1,2690 @@
+/* settings.css - Estilos para la página de configuración de STELLAR AI */
+
+:root {
+    --dark-purple: #1a0933;
+    --mid-purple: #33156b;
+    --light-purple: #6b33c5;
+    --deep-blue: #1e3a8a;
+    --light-blue: #3b82f6;
+    --gradient: linear-gradient(135deg, var(--light-purple), var(--light-blue));
+    --sidebar-width: 260px;
+    --sidebar-collapsed-width: 80px;
+    --header-height: 70px;
+    --card-bg: rgba(51, 21, 107, 0.3);
+    --card-border: rgba(255, 255, 255, 0.05);
+    --success-color: #4CAF50;
+    --warning-color: #FFC107;
+    --danger-color: #F44336;
+    --info-color: #2196F3;
+    --transition: all 0.3s ease;
+
+    /* Light theme variables */
+    --light-bg: #f8f9fa;
+    --light-text: #333;
+    --light-card-bg: #fff;
+    --light-sidebar: #f1f3f6;
+    --light-border: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--dark-purple);
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.main-content {
+    flex: 1;
+    padding: 5px;
+    margin-left: 260px; /* Espacio para el sidebar */
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+}
+
+.content-body {
+    padding-top: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    gap: 25px;
+}
+
+/* Navegación de configuración */
+.settings-navigation {
+    width: 300px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 90px;
+    height: calc(100vh - 90px - 24px);
+}
+
+.settings-navigation-inner {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.settings-nav-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.settings-nav-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.settings-nav-links {
+    list-style: none;
+    padding: 10px 0;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.settings-nav-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    gap: 12px;
+    cursor: pointer;
+    transition: var(--transition);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.settings-nav-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+.settings-nav-item.active {
+    background: var(--gradient);
+    color: white;
+}
+
+.settings-nav-item i {
+    font-size: 18px;
+    width: 24px;
+    text-align: center;
+}
+
+.settings-nav-item span {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.settings-nav-footer {
+    padding: 15px 20px;
+    border-top: 1px solid var(--card-border);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-support, .btn-logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--card-border);
+}
+
+.btn-support:hover, .btn-logout:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.btn-logout {
+    color: var(--danger-color);
+}
+
+.btn-logout:hover {
+    background: rgba(244, 67, 54, 0.1);
+    color: var(--danger-color);
+}
+
+/* Contenido de configuración */
+.settings-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.settings-tab-content {
+    display: none;
+}
+
+.settings-tab-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.settings-tab-header {
+    margin-bottom: 25px;
+}
+
+.settings-tab-header h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.settings-tab-header p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Tarjetas de configuración */
+.settings-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    transition: var(--transition);
+}
+
+.settings-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.settings-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.settings-card-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.settings-card-body {
+    padding: 20px;
+}
+
+/* Botones y controles */
+.btn-text {
+    background: none;
+    border: none;
+    color: var(--light-blue);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: var(--transition);
+}
+
+.btn-text:hover {
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.btn-text.danger {
+    color: var(--danger-color);
+}
+
+.btn-text.danger:hover {
+    background: rgba(244, 67, 54, 0.1);
+}
+
+.btn-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-icon:hover {
+    background: var(--gradient);
+    color: white;
+    border-color: transparent;
+}
+
+.btn-icon:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.4);
+    border: 1px solid var(--card-border);
+}
+
+.btn-icon-small {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-icon-small:hover {
+    background: var(--gradient);
+    color: white;
+    border-color: transparent;
+}
+
+.btn-outline {
+    padding: 10px 16px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.btn-outline-danger {
+    padding: 10px 16px;
+    border-radius: 10px;
+    background: rgba(244, 67, 54, 0.05);
+    border: 1px solid rgba(244, 67, 54, 0.3);
+    color: var(--danger-color);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.btn-outline-danger:hover {
+    background: rgba(244, 67, 54, 0.1);
+}
+
+.btn-danger {
+    padding: 10px 16px;
+    border-radius: 10px;
+    background: var(--danger-color);
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.btn-danger:hover {
+    background: #d32f2f;
+    box-shadow: 0 5px 15px rgba(244, 67, 54, 0.3);
+}
+
+.btn-confirm {
+    padding: 12px 24px;
+    background: var(--gradient);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(107, 51, 197, 0.3);
+}
+
+.btn-confirm:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(107, 51, 197, 0.5);
+}
+
+.btn-cancel {
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-cancel:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Formularios */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    transition: var(--transition);
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--light-purple);
+    background: rgba(107, 51, 197, 0.1);
+}
+
+input:disabled, select:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* Password input */
+.password-input {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.password-toggle:hover {
+    color: white;
+}
+
+/* Password strength */
+.password-strength {
+    margin-top: 10px;
+}
+
+.strength-meter {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.meter-segment {
+    height: 4px;
+    flex: 1;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+}
+
+.meter-segment.weak.active {
+    background: var(--danger-color);
+}
+
+.meter-segment.medium.active {
+    background: var(--warning-color);
+}
+
+.meter-segment.strong.active {
+    background: var(--success-color);
+}
+
+.meter-segment.very-strong.active {
+    background: #00C853;
+}
+
+.strength-text {
+    font-size: 12px;
+    color: var(--danger-color);
+}
+
+.password-requirements {
+    list-style: none;
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+}
+
+.password-requirements li {
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.password-requirements li i {
+    font-size: 12px;
+}
+
+.password-requirements li i.fa-times {
+    color: var(--danger-color);
+}
+
+.password-requirements li i.fa-check {
+    color: var(--success-color);
+}
+
+.requirement-met {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Toggle switch */
+.toggle-switch {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.toggle-label {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.toggle-slider {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: var(--transition);
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.toggle-switch input:checked + .toggle-slider {
+    background: var(--gradient);
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+    transform: translateX(24px);
+}
+
+/* Checkbox */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 10px;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.checkbox-container:hover .checkmark {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background: var(--gradient);
+    border-color: transparent;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Badges */
+.card-badge {
+    padding: 4px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.card-badge.success {
+    background: rgba(76, 175, 80, 0.15);
+    color: var(--success-color);
+}
+
+.card-badge.warning {
+    background: rgba(255, 193, 7, 0.15);
+    color: var(--warning-color);
+}
+
+.card-badge.danger {
+    background: rgba(244, 67, 54, 0.15);
+    color: var(--danger-color);
+}
+
+.status-badge {
+    padding: 3px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-badge.success {
+    background: rgba(76, 175, 80, 0.15);
+    color: var(--success-color);
+}
+
+.status-badge.warning {
+    background: rgba(255, 193, 7, 0.15);
+    color: var(--warning-color);
+}
+
+.status-badge.danger {
+    background: rgba(244, 67, 54, 0.15);
+    color: var(--danger-color);
+}
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status.completed {
+    background-color: rgba(12, 166, 120, 0.1);
+    color: var(--success-color);
+}
+
+.status.pending {
+    background-color: rgba(245, 159, 0, 0.1);
+    color: var(--warning-color);
+}
+
+.status.rejected {
+    background-color: rgba(229, 62, 62, 0.1);
+    color: var(--danger-color);
+}
+
+/* Perfil */
+.profile-image-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid rgba(107, 51, 197, 0.3);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-upload-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.profile-image:hover .profile-upload-overlay {
+    opacity: 1;
+}
+
+.btn-upload-photo {
+    padding: 8px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-upload-photo:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Zona de peligro */
+.danger-zone {
+    border: 1px solid rgba(244, 67, 54, 0.2);
+}
+
+.danger-zone .settings-card-header {
+    border-bottom: 1px solid rgba(244, 67, 54, 0.2);
+}
+
+.danger-zone .settings-card-header h3 {
+    color: var(--danger-color);
+}
+
+.danger-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.danger-action:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.danger-action-info h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.danger-action-info p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 70%;
+}
+
+/* Autenticación de dos factores */
+.two-factor-info {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.two-factor-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(107, 51, 197, 0.1);
+    color: var(--light-purple);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.two-factor-details {
+    flex: 1;
+}
+
+.two-factor-details p {
+    margin-bottom: 8px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.two-factor-methods {
+    margin-bottom: 25px;
+}
+
+.method-selector {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.method-option {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.method-option i {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.method-option span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.method-option:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.method-option.active {
+    background: var(--gradient);
+    border-color: transparent;
+}
+
+.method-option.active i,
+.method-option.active span {
+    color: white;
+}
+
+.backup-codes {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.backup-codes h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.backup-codes p {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.backup-codes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.backup-code {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    font-family: monospace;
+    letter-spacing: 1px;
+    font-size: 13px;
+}
+
+.backup-code.used {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+.form-actions-2fa {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+/* Sesiones activas */
+.sessions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.session-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 15px;
+    transition: var(--transition);
+}
+
+.session-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.session-item.current {
+    background: rgba(107, 51, 197, 0.1);
+    border-color: rgba(107, 51, 197, 0.2);
+}
+
+.session-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--light-blue);
+    flex-shrink: 0;
+}
+
+.session-info {
+    flex: 1;
+}
+
+.session-info h4 {
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.session-info p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 5px;
+}
+
+.session-time {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Canales de notificación */
+.notification-channels {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.channel-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+}
+
+.channel-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.channel-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--light-blue);
+}
+
+.channel-details h4 {
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.channel-details p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.channel-status {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Preferencias de notificaciones */
+.notification-panel {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Oculto por defecto */
+    width: 380px;
+    height: 100vh;
+    background: rgba(40, 16, 77, 0.98);
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 2000;
+    transition: right 0.3s ease-in-out;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3);
+    color: #fff; /* Asegurar que el texto en el panel de notificaciones sea visible */
+}
+body.light-theme .notification-panel {
+    background: white;
+    border-left: 1px solid var(--light-border);
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+}
+.notification-panel.active {
+    right: 0;
+}
+.notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: sticky;
+    top: 0;
+    background: inherit;
+    z-index: 10;
+}
+body.light-theme .notification-header {
+    border-bottom: 1px solid var(--light-border);
+}
+
+.notification-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.close-panel {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+body.light-theme .close-panel {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.close-panel:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+body.light-theme .close-panel:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--light-text);
+}
+
+.notification-list {
+    padding: 10px 0;
+}
+
+.notification-item {
+    padding: 15px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    transition: var(--transition);
+}
+
+body.light-theme .notification-item {
+    border-bottom: 1px solid var(--light-border);
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+body.light-theme .notification-item:hover {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.notification-item.unread {
+    background: rgba(107, 51, 197, 0.1);
+}
+
+body.light-theme .notification-item.unread {
+    background: rgba(107, 51, 197, 0.05);
+}
+
+.notification-item.unread:hover {
+    background: rgba(107, 51, 197, 0.15);
+}
+
+body.light-theme .notification-item.unread:hover {
+    background: rgba(107, 51, 197, 0.08);
+}
+
+.notification-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+body.light-theme .notification-icon {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.notification-icon i {
+    font-size: 16px;
+    color: var(--light-blue);
+}
+
+.notification-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.notification-content h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.notification-content p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+body.light-theme .notification-content p {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.notification-time {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+body.light-theme .notification-time {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.mark-read {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+body.light-theme .mark-read {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.mark-read:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--success-color);
+}
+
+body.light-theme .mark-read:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.notification-footer {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: inherit;
+    position: sticky;
+    bottom: 0;
+}
+
+body.light-theme .notification-footer {
+    border-top: 1px solid var(--light-border);
+}
+
+.mark-all-read {
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+body.light-theme .mark-all-read {
+    background: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.mark-all-read:hover {
+    background: var(--gradient);
+    color: white;
+}
+
+.notification-footer a {
+    color: var(--light-blue);
+    font-size: 13px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.notification-footer a:hover {
+    text-decoration: underline;
+}@media (max-width: 768px) {
+    #mobile-menu-button {
+        display: flex;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 9999;
+        background-color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #mobile-menu-button i {
+        font-size: 24px;
+        color: #333;
+    }
+}
+/* Correcciones para el footer */
+.content-footer {
+    background: rgba(40, 16, 77, 0.8);
+    padding: 20px 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+body.light-theme .content-footer {
+    background: var(--light-card-bg);
+    border-top: 1px solid var(--light-border);
+}
+
+.content-footer p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+body.light-theme .content-footer p {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--light-blue);
+    text-decoration: none;
+    font-size: 14px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+body.light-theme .footer-links a:hover {
+    color: var(--light-text);
+}
+
+/* Agregar separadores visuales entre enlaces */
+.footer-links a:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 12px;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+body.light-theme .footer-links a:not(:last-child)::after {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos responsive para el footer */
+@media (max-width: 768px) {
+    .content-footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .footer-links {
+        justify-content: center;
+    }
+}
+
+/* Asegurar que los enlaces del pie de página tengan el aspecto correcto */
+footer a, .content-footer a {
+    color: var(--light-blue) !important;
+    text-decoration: none;
+    margin: 0 10px;
+    position: relative;
+    font-size: 14px;
+}
+
+footer a:hover, .content-footer a:hover {
+    text-decoration: underline;
+}
+/* Correcciones específicas para el sidebar en móviles */
+
+/* Base de ajustes para el sidebar en todos los dispositivos móviles */
+@media (max-width: 991px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Ocultar sidebar por defecto */
+        width: 260px;
+        height: 100vh;
+        z-index: 1000;
+        transition: left 0.3s ease;
+        box-shadow: 3px 0 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .sidebar.sidebar-active {
+        left: 0; /* Mostrar cuando se active */
+    }
+    
+    /* Overlay para cuando el sidebar está visible */
+    .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        display: none;
+    }
+    
+    .sidebar-overlay.active {
+        display: block;
+    }
+    
+    /* Ajuste del contenido principal cuando el sidebar está oculto */
+    .main-content {
+        margin-left: 0 !important;
+        width: 100%;
+        padding: 10px;
+    }
+    
+    /* Botón de menú para abrir el sidebar */
+    #mobile-menu-button {
+        display: flex;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 1001;
+        background: var(--gradient);
+        border: none;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    #mobile-menu-button i {
+        font-size: 20px;
+    }
+}
+
+/* Ajustes específicos para teléfonos en modo vertical */
+@media (max-width: 576px) {
+    .sidebar {
+        width: 80%; /* Hacer el sidebar más ancho en móviles pequeños */
+    }
+    
+    .content-body {
+        padding: 10px 5px;
+    }
+    
+    /* Ajustar el layout de la página de configuración */
+    .settings-navigation {
+        display: none; /* Ocultar navegación lateral en móviles */
+    }
+    
+    .mobile-settings-tabs {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 10px 5px;
+        margin-bottom: 15px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+    }
+    
+    .mobile-settings-tabs::-webkit-scrollbar {
+        display: none; /* Chrome, Safari */
+    }
+    
+    .mobile-tab-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        margin-right: 8px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--card-border);
+        border-radius: 8px;
+        color: rgba(255, 255, 255, 0.7);
+        white-space: nowrap;
+        font-size: 13px;
+    }
+    
+    .mobile-tab-button.active {
+        background: var(--gradient);
+        color: white;
+        border-color: transparent;
+    }
+    
+    .mobile-tab-button i {
+        font-size: 14px;
+    }
+    
+    /* Asegurar que el contenido principal ocupe todo el ancho */
+    .settings-content {
+        width: 100%;
+    }
+    
+    /* Ajustar estilos de las tarjetas */
+    .settings-card {
+        margin-bottom: 15px;
+    }
+    
+    .settings-card-header {
+        padding: 15px;
+    }
+    
+    .settings-card-body {
+        padding: 15px;
+    }
+    /* Arreglo para el header en móviles */
+    .content-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        height: auto;
+    }
+    
+    .header-left {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    
+    .header-right {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding-top: 10px;
+    }
+        .user-menu {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    
+    .search-bar {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    /* Arreglo para el título y usuario */
+    .header-left h1 {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+    
+    .header-left p {
+        font-size: 12px;
+    }
+    
+    /* Arreglo para iconos y controles del header */
+    .user-menu {
+
+        top: 10px;
+        right: 15px;
+    }
+    .main-content {
+        margin-left: 0;
+        padding: 16px;
+    }
+
+}
+
+/* Ajuste para dispositivos muy pequeños */
+@media (max-width: 360px) {
+    .sidebar {
+        width: 85%; /* Sidebar aún más ancho */
+    }
+    
+    .settings-card-header {
+        padding: 12px;
+    }
+    
+    .settings-card-body {
+        padding: 12px;
+    }
+    
+    /* Reducir tamaño de textos */
+    .settings-tab-header h2 {
+        font-size: 18px;
+    }
+    
+    .settings-tab-header p {
+        font-size: 13px;
+    }
+    
+    .settings-card-header h3 {
+        font-size: 16px;
+    }
+}
+
+
+/* Fix adicional para contenido principal */
+.main-content {
+    position: relative; /* Para posicionamiento correcto */
+    z-index: 1;
+}
+
+/* Fix para evitar que el contenido se solape con el header */
+@media (max-width: 991px) {
+    .content-body {
+        margin-top: var(--header-height);
+    }
+}
+
+/* Media queries para diseño responsive */
+
+/* Tablet y dispositivos medianos */
+@media (max-width: 1024px) {
+    .main-content {
+        margin-left: 0;
+        padding: 15px;
+    }
+    
+    .content-body {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .settings-navigation {
+        width: 100%;
+        position: relative;
+        top: 0;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    
+    .settings-navigation-inner {
+        height: auto;
+    }
+    
+    .settings-nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        padding: 10px;
+        overflow-x: auto;
+    }
+    
+    .settings-nav-item {
+        flex: 0 0 auto;
+        border-radius: 10px;
+        padding: 8px 12px;
+    }
+    
+    .settings-nav-footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .btn-support, .btn-logout {
+        flex: 1;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .method-selector {
+        flex-direction: column;
+    }
+    
+    .backup-codes-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .form-actions-2fa {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .form-actions-2fa button {
+        width: 100%;
+    }
+    
+    .two-factor-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .danger-action {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .danger-action-info p {
+        max-width: 100%;
+    }
+}
+
+/* Móviles y dispositivos pequeños */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 10px;
+    }
+    
+    .settings-tab-header h2 {
+        font-size: 20px;
+    }
+    
+    .settings-tab-header p {
+        font-size: 14px;
+    }
+    
+    .settings-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .settings-card-body {
+        padding: 15px;
+    }
+    
+    .card-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+    
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+    
+    .form-actions button {
+        width: 100%;
+    }
+    
+    .method-option {
+        padding: 10px;
+    }
+    
+    .backup-codes-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .channel-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .channel-status {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .session-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .session-actions {
+        align-self: flex-end;
+        margin-top: -40px;
+    }
+    
+    /* Tabla responsive */
+    .transactions-table, 
+    .referrals-table {
+        overflow-x: auto;
+    }
+    
+    table {
+        min-width: 650px;
+    }
+    
+    /* Ajustes para el modo móvil del panel de notificaciones */
+    .notification-panel {
+        width: 100%;
+        right: -100%;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .settings-nav-links {
+        flex-direction: column;
+        padding: 5px 10px;
+    }
+    
+    .settings-nav-item {
+        width: 100%;
+    }
+    
+    .settings-nav-footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .profile-image-section {
+        margin-bottom: 15px;
+    }
+    
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .backup-codes-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .api-key-item {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .api-key-info {
+        width: 100%;
+    }
+    
+    .api-key-actions {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .verification-progress .progress-step {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 10px;
+    }
+    
+    .step-info {
+        text-align: center;
+    }
+    
+    .step-status {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+    
+    /* Ajustes adicionales para tablas en móviles pequeños */
+    .transactions-table table,
+    .referrals-table table {
+        display: block;
+    }
+    
+    .transactions-table thead,
+    .referrals-table thead {
+        display: none;
+    }
+    
+    .transactions-table tbody,
+    .referrals-table tbody {
+        display: block;
+    }
+    
+    .transactions-table tr,
+    .referrals-table tr {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+        border: 1px solid var(--card-border);
+        border-radius: 10px;
+        padding: 10px;
+    }
+    
+    .transactions-table td,
+    .referrals-table td {
+        display: flex;
+        flex-direction: column;
+        border: none;
+        padding: 8px 10px;
+        width: 50%;
+        position: relative;
+    }
+    
+    .transactions-table td:before,
+    .referrals-table td:before {
+        content: attr(data-label);
+        font-weight: 600;
+        margin-bottom: 5px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    /* Ajustes para la navegación móvil */
+    .mobile-settings-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--mid-purple);
+        border-top: 1px solid var(--card-border);
+        z-index: 999;
+        padding: 10px;
+        display: flex;
+        justify-content: space-around;
+        box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .mobile-nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 10px;
+    }
+    
+    .mobile-nav-item i {
+        font-size: 18px;
+    }
+    
+    .mobile-nav-item.active {
+        color: var(--light-blue);
+    }
+    
+    /* Ajuste para el botón de menú móvil */
+    #mobile-menu-button {
+        display: flex;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 9999;
+        background: var(--gradient);
+        border: none;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    #mobile-menu-button i {
+        font-size: 20px;
+        color: white;
+    }
+    
+    #mobile-menu-button:hover {
+        transform: rotate(90deg);
+    }
+    
+    /* Estilos para el sidebar en móvil */
+    .sidebar-mobile {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        height: 100vh;
+        background: var(--mid-purple);
+        z-index: 1000;
+        transition: left 0.3s ease;
+        overflow-y: auto;
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .sidebar-mobile.active {
+        left: 0;
+    }
+    
+    /* Overlay para cuando el sidebar está abierto */
+    .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        display: none;
+    }
+    
+    .sidebar-overlay.active {
+        display: block;
+    }
+    
+    /* Ajustes para modales en móvil */
+    .modal {
+        width: 95%;
+        max-width: none;
+    }
+    
+    .modal-body {
+        padding: 15px;
+        max-height: 70vh;
+    }
+    
+    /* Correcciones específicas para componentes en móvil */
+    .theme-options,
+    .color-options {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .theme-option,
+    .color-option {
+        flex: 0 0 45%;
+    }
+    
+    .referral-link {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .btn-copy {
+        width: 100%;
+    }
+    
+    .social-buttons {
+        justify-content: center;
+    }
+    
+    .stats-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Ajustes para el panel de preferencias */
+    .toggle-switch {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .notification-preferences-list .preference-item {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .preference-channels {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
+
+/* Ajustes específicos para la rotación del dispositivo */
+@media (max-height: 600px) and (orientation: landscape) {
+    .settings-navigation {
+        display: none;
+    }
+    
+    .settings-content {
+        margin-bottom: 80px; /* Espacio para el menú de navegación móvil */
+    }
+    
+    .mobile-settings-nav {
+        display: flex;
+    }
+}
+
+/* Ajustes para dispositivos de alta densidad de píxeles */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .profile-image,
+    .session-icon,
+    .channel-icon,
+    .two-factor-icon {
+        border-width: 0.5px;
+    }
+    
+    .settings-card,
+    .backup-code,
+    .method-option {
+        border-width: 0.5px;
+    }
+}
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 1400px) {
+    .settings-navigation {
+        width: 320px;
+    }
+    
+    .content-body {
+        gap: 30px;
+    }
+    
+    .settings-card-body {
+        padding: 25px;
+    }
+}
+
+/* Ajustes específicos para Safari en iOS */
+@supports (-webkit-touch-callout: none) {
+    input, 
+    select, 
+    textarea {
+        font-size: 16px; /* Evita el zoom automático en campos de formulario en iOS */
+    }
+    
+    .toggle-slider:before {
+        transform: translateZ(0); /* Mejora el rendimiento de las animaciones */
+    }
+}
+
+/* Estilos para dispositivos táctiles */
+@media (hover: none) {
+    .btn-icon:hover,
+    .btn-text:hover,
+    .settings-nav-item:hover {
+        /* Eliminar efectos hover en dispositivos táctiles */
+        transform: none;
+        background: initial;
+    }
+    
+    /* Estilo "tap" para elementos interactivos */
+    .btn-icon:active,
+    .btn-text:active,
+    .settings-nav-item:active {
+        opacity: 0.7;
+    }
+}
+
+/* Correcciones para el layout en orientación vertical */
+@media (max-width: 991px) {
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .sidebar-collapsed .main-content {
+        margin-left: 0;
+    }
+    
+    .two-factor-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .two-factor-icon {
+        margin-bottom: 10px;
+    }
+}
+
+/* Soporte específico para navegadores antiguos */
+@supports not (display: grid) {
+    .backup-codes-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .backup-code {
+        flex: 0 0 calc(50% - 10px);
+        margin: 5px;
+    }
+}
+
+/* Ajustes específicos para modo oscuro del sistema */
+@media (prefers-color-scheme: dark) {
+    body:not(.light-theme) {
+        /* Conservar el tema oscuro cuando coincide con la preferencia del sistema */
+    }
+}
+
+/* Ajustes para dispositivos con notch (como iPhone X o más recientes) */
+@supports (padding-top: env(safe-area-inset-top)) {
+    .notification-panel {
+        padding-top: env(safe-area-inset-top);
+    }
+    
+    .mobile-settings-nav {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+/* Fix para altura 100vh en móviles */
+@supports (-webkit-touch-callout: none) {
+    .main-content {
+        min-height: -webkit-fill-available;
+    }
+    
+    .settings-navigation {
+        height: calc(100vh - 90px - 24px);
+        height: calc((var(--vh, 1vh) * 100) - 90px - 24px);
+    }
+    
+    .mobile-nav-item i {
+        font-size: 18px;
+    }
+    
+    .mobile-nav-item.active {
+        color: var(--light-blue);
+    }
+    
+    /* Ajuste para el botón de menú móvil */
+    #mobile-menu-button {
+        display: flex;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 9999;
+        background: var(--gradient);
+        border: none;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    #mobile-menu-button i {
+        font-size: 20px;
+        color: white;
+    }
+    
+    #mobile-menu-button:hover {
+        transform: rotate(90deg);
+    }
+    
+    /* Estilos para el sidebar en móvil */
+    .sidebar-mobile {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        height: 100vh;
+        background: var(--mid-purple);
+        z-index: 1000;
+        transition: left 0.3s ease;
+        overflow-y: auto;
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .sidebar-mobile.active {
+        left: 0;
+    }
+    
+    /* Overlay para cuando el sidebar está abierto */
+    .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        display: none;
+    }
+    
+    .sidebar-overlay.active {
+        display: block;
+    }
+    
+    /* Ajustes para modales en móvil */
+    .modal {
+        width: 95%;
+        max-width: none;
+    }
+    
+    .modal-body {
+        padding: 15px;
+        max-height: 70vh;
+    }
+    
+    /* Correcciones específicas para componentes en móvil */
+    .theme-options,
+    .color-options {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .theme-option,
+    .color-option {
+        flex: 0 0 45%;
+    }
+    
+    .referral-link {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .btn-copy {
+        width: 100%;
+    }
+    
+    .social-buttons {
+        justify-content: center;
+    }
+    
+    .stats-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Ajustes para el panel de preferencias */
+    .toggle-switch {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .notification-preferences-list .preference-item {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .preference-channels {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
+
+/* Ajustes específicos para la rotación del dispositivo */
+@media (max-height: 600px) and (orientation: landscape) {
+    .settings-navigation {
+        display: none;
+    }
+    
+    .settings-content {
+        margin-bottom: 80px; /* Espacio para el menú de navegación móvil */
+    }
+    
+    .mobile-settings-nav {
+        display: flex;
+    }
+}
+
+/* Ajustes para dispositivos de alta densidad de píxeles */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .profile-image,
+    .session-icon,
+    .channel-icon,
+    .two-factor-icon {
+        border-width: 0.5px;
+    }
+    
+    .settings-card,
+    .backup-code,
+    .method-option {
+        border-width: 0.5px;
+    }
+}
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 1400px) {
+    .settings-navigation {
+        width: 320px;
+    }
+    
+    .content-body {
+        gap: 30px;
+    }
+    
+    .settings-card-body {
+        padding: 25px;
+    }
+}
+
+/* Ajustes específicos para Safari en iOS */
+@supports (-webkit-touch-callout: none) {
+    input, 
+    select, 
+    textarea {
+        font-size: 16px; /* Evita el zoom automático en campos de formulario en iOS */
+    }
+    
+    .toggle-slider:before {
+        transform: translateZ(0); /* Mejora el rendimiento de las animaciones */
+    }
+}
+
+/* Estilos para dispositivos táctiles */
+@media (hover: none) {
+    .btn-icon:hover,
+    .btn-text:hover,
+    .settings-nav-item:hover {
+        /* Eliminar efectos hover en dispositivos táctiles */
+        transform: none;
+        background: initial;
+    }
+    
+    /* Estilo "tap" para elementos interactivos */
+    .btn-icon:active,
+    .btn-text:active,
+    .settings-nav-item:active {
+        opacity: 0.7;
+    }
+}
+
+/* Correcciones para el layout en orientación vertical */
+@media (max-width: 991px) {
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .sidebar-collapsed .main-content {
+        margin-left: 0;
+    }
+    
+    .two-factor-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .two-factor-icon {
+        margin-bottom: 10px;
+    }
+}
+
+/* Soporte específico para navegadores antiguos */
+@supports not (display: grid) {
+    .backup-codes-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .backup-code {
+        flex: 0 0 calc(50% - 10px);
+        margin: 5px;
+    }
+}
+
+/* Ajustes específicos para modo oscuro del sistema */
+@media (prefers-color-scheme: dark) {
+    body:not(.light-theme) {
+        /* Conservar el tema oscuro cuando coincide con la preferencia del sistema */
+    }
+}
+
+/* Ajustes para dispositivos con notch (como iPhone X o más recientes) */
+@supports (padding-top: env(safe-area-inset-top)) {
+    .notification-panel {
+        padding-top: env(safe-area-inset-top);
+    }
+    
+    .mobile-settings-nav {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+/* Fix para altura 100vh en móviles */
+@supports (-webkit-touch-callout: none) {
+    .main-content {
+        min-height: -webkit-fill-available;
+    }
+    
+    .settings-navigation {
+        height: calc(100vh - 90px - 24px);
+        height: calc((var(--vh, 1vh) * 100) - 90px - 24px);
+    }
+}/* settings.css - Estilos para la página de configuración de STELLAR AI */
+
+/* Estilos específicos para el sidebar de configuración */
+:root {
+    --dark-purple: #1a0933;
+    --mid-purple: #33156b;
+    --light-purple: #6b33c5;
+    --deep-blue: #1e3a8a;
+    --light-blue: #3b82f6;
+    --gradient: linear-gradient(135deg, var(--light-purple), var(--light-blue));
+    --danger-color: #F44336;
+    --transition: all 0.3s ease;
+}
+
+/* Estructura del sidebar de configuración */
+.settings-sidebar {
+    background: var(--dark-purple);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Título del sidebar */
+.settings-sidebar-header {
+    padding: 20px;
+}
+
+.settings-sidebar-header h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Lista de enlaces de navegación */
+.settings-nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Cada ítem de navegación */
+.settings-nav-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.settings-nav-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+.settings-nav-item.active {
+    background: var(--gradient);
+    color: white;
+}
+
+/* Iconos en los ítems */
+.settings-nav-item i {
+    font-size: 18px;
+    margin-right: 15px;
+    width: 24px;
+    text-align: center;
+}
+
+/* Botones de soporte y cerrar sesión */
+.settings-nav-footer {
+    padding: 15px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-support {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-support:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.btn-logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--danger-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-logout:hover {
+    background: rgba(244, 67, 54, 0.1);
+}
+
+.btn-support i, .btn-logout i {
+    margin-right: 8px;
+}
+
+/* Botón para mostrar el sidebar en móviles */
+.toggle-sidebar-btn {
+    display: none; /* Por defecto oculto, solo visible en móviles */
+    top: 15px;
+    right: 15px;
+    z-index: 1001;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--gradient);
+    color: white;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay para cuando se muestra el sidebar en móviles */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    /* En móviles el sidebar está oculto por defecto */
+    .settings-sidebar {
+        position: fixed;
+        top: 0;
+        left: -300px; /* Ocultar sidebar fuera de la pantalla */
+        z-index: 1000;
+        width: 280px;
+        max-width: 85%;
+        transition: left 0.3s ease;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+        height: 100%;
+        overflow-y: auto;
+    }
+    
+    /* Clase que se añade para mostrar el sidebar */
+    .settings-sidebar.active {
+        left: 0;
+    }
+    
+    /* Mostrar el botón de toggle en móviles */
+    .toggle-sidebar-btn {
+        display: flex;
+    }
+    
+    /* Cuando el sidebar está activo, mostrar el overlay */
+    .sidebar-overlay.active {
+        display: block;
+    }
+    
+    .settings-nav-item {
+        padding: 12px 15px;
+    }
+}

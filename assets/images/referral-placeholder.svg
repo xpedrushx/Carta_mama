@@ -1,0 +1,69 @@
+<!-- 
+Este código SVG sirve como una imagen de marcador de posición para el programa de referidos.
+Puedes guardarlo como "referral-placeholder.svg" en tu directorio de imágenes.
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300" width="500" height="300">
+  <!-- Fondo con gradiente -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6b33c5" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <linearGradient id="icon-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd700" />
+      <stop offset="100%" stop-color="#ff8c00" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Fondo redondeado -->
+  <rect width="500" height="300" rx="15" fill="#1a0933" />
+  
+  <!-- Elementos decorativos de fondo -->
+  <circle cx="100" cy="50" r="80" fill="url(#bg-gradient)" opacity="0.1" />
+  <circle cx="400" cy="250" r="100" fill="url(#bg-gradient)" opacity="0.1" />
+  
+  <!-- Iconos de personas conectadas -->
+  <g transform="translate(250, 150) scale(0.8)">
+    <!-- Persona central -->
+    <circle cx="0" cy="0" r="40" fill="#6b33c5" />
+    <circle cx="0" cy="-15" r="15" fill="#ffffff" />
+    <rect x="-20" y="5" width="40" height="30" rx="10" fill="#ffffff" />
+    
+    <!-- Conexiones -->
+    <line x1="30" y1="-30" x2="70" y2="-70" stroke="#3b82f6" stroke-width="3" />
+    <line x1="30" y1="30" x2="70" y2="70" stroke="#3b82f6" stroke-width="3" />
+    <line x1="-30" y1="-30" x2="-70" y2="-70" stroke="#3b82f6" stroke-width="3" />
+    <line x1="-30" y1="30" x2="-70" y2="70" stroke="#3b82f6" stroke-width="3" />
+    
+    <!-- Persona arriba derecha -->
+    <circle cx="90" cy="-90" r="25" fill="#3b82f6" />
+    <circle cx="90" cy="-100" r="10" fill="#ffffff" />
+    <rect x="77.5" y="-85" width="25" height="20" rx="7" fill="#ffffff" />
+    
+    <!-- Persona abajo derecha -->
+    <circle cx="90" cy="90" r="25" fill="#3b82f6" />
+    <circle cx="90" cy="80" r="10" fill="#ffffff" />
+    <rect x="77.5" y="95" width="25" height="20" rx="7" fill="#ffffff" />
+    
+    <!-- Persona arriba izquierda -->
+    <circle cx="-90" cy="-90" r="25" fill="#3b82f6" />
+    <circle cx="-90" cy="-100" r="10" fill="#ffffff" />
+    <rect x="-102.5" y="-85" width="25" height="20" rx="7" fill="#ffffff" />
+    
+    <!-- Persona abajo izquierda -->
+    <circle cx="-90" cy="90" r="25" fill="#3b82f6" />
+    <circle cx="-90" cy="80" r="10" fill="#ffffff" />
+    <rect x="-102.5" y="95" width="25" height="20" rx="7" fill="#ffffff" />
+  </g>
+  
+  <!-- Icono de moneda en la parte superior -->
+  <g transform="translate(250, 50)">
+    <circle cx="0" cy="0" r="25" fill="url(#icon-gradient)" />
+    <text x="0" y="7" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="white">$</text>
+  </g>
+  
+  <!-- Texto de referido -->
+  <text x="250" y="250" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="white">Programa de Referidos</text>
+  <text x="250" y="275" font-family="Arial" font-size="16" text-anchor="middle" fill="white" opacity="0.8">Invita y gana recompensas</text>
+</svg>

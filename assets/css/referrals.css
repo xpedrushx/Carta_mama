@@ -1,0 +1,1552 @@
+/* === REFERRALS CSS === */
+
+/* Colores y variables generales del programa de referidos */
+:root {
+    --referral-primary: var(--light-purple);
+    --referral-secondary: var(--light-blue);
+    --referral-gradient: linear-gradient(135deg, var(--light-purple), var(--light-blue));
+    --silver-color: #C0C0C0;
+    --gold-color: #FFD700;
+    --platinum-color: #E5E4E2;
+    --diamond-color: #B9F2FF;
+    --dark-purple: #1a0933;
+    --mid-purple: #33156b;
+    --light-purple: #6b33c5;
+    --deep-blue: #1e3a8a;
+    --light-blue: #3b82f6;
+    --gradient: linear-gradient(135deg, var(--light-purple), var(--light-blue));
+    --sidebar-width: 260px;
+    --sidebar-collapsed-width: 80px;
+    --header-height: 70px;
+    --card-bg: rgba(51, 21, 107, 0.3);
+    --card-border: rgba(255, 255, 255, 0.05);
+    --success-color: #4CAF50;
+    --warning-color: #FFC107;
+    --danger-color: #F44336;
+    --info-color: #2196F3;
+    --transition: all 0.3s ease;
+
+    /* Light theme variables */
+    --light-bg: #f8f9fa;
+    --light-text: #333;
+    --light-card-bg: #fff;
+    --light-sidebar: #f1f3f6;
+    --light-border: rgba(0, 0, 0, 0.1);
+
+    /* Button variables */
+    /* Button variables */
+    --button-bg: rgba(255, 255, 255, 0.05);
+    --button-hover-bg: var(--gradient);
+    --button-color: rgba(255, 255, 255, 0.7);
+    --button-hover-color: white;
+}
+
+/* Stats Cards de Referidos */
+.stats-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    border: 1px solid var(--card-border);
+    transition: var(--transition);
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-color: rgba(107, 51, 197, 0.3);
+}
+
+body.light-theme .stats-card {
+    background: var(--light-card-bg);
+    border: 1px solid var(--light-border);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .stats-card:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Secciones específicas de referidos */
+.referral-sharing-section,
+.referral-progress-section,
+.referral-history-section,
+.referral-faq-section {
+    margin-top: 30px;
+}
+
+/* Tarjeta de compartir enlace de referido */
+.referral-card .card-body {
+    padding: 25px;
+}
+
+.referral-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.referral-illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.referral-illustration img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.referral-info h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    background: var(--referral-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.referral-info p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+body.light-theme .referral-info p {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.referral-benefits {
+    list-style: none;
+    margin-left: 5px;
+}
+
+.referral-benefits li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.referral-benefits li i {
+    color: var(--success-color);
+    font-size: 14px;
+}
+
+.referral-divider {
+    position: relative;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.referral-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+}
+
+body.light-theme .referral-divider::before {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.referral-divider span {
+    position: relative;
+    background: var(--card-bg);
+    padding: 0 15px;
+    z-index: 2;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+body.light-theme .referral-divider span {
+    background: var(--light-card-bg);
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* Contenedor del enlace de referido */
+.referral-link-container {
+    display: flex;
+    position: relative;
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+body.light-theme .referral-link-container {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.referral-link-container input {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+body.light-theme .referral-link-container input {
+    background: rgba(0, 0, 0, 0.02);
+    color: var(--light-text);
+}
+
+.copy-btn {
+    padding: 0 20px;
+    background: var(--referral-gradient);
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copy-btn:hover {
+    background: linear-gradient(135deg, var(--light-blue), var(--light-purple));
+}
+
+.copy-btn.copied {
+    background: var(--success-color);
+}
+
+.copy-message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--success-color);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 10;
+}
+
+.copy-message.show {
+    transform: translateY(0);
+}
+
+/* Botones de compartir */
+.share-methods {
+    margin-top: 30px;
+}
+
+.share-methods h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+body.light-theme .share-methods h4 {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.share-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.share-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+/* Removed invalid CSS outside of a selector */
+
+
+.share-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.share-btn.whatsapp {
+    background: #25D366;
+}
+
+.share-btn.telegram {
+    background: #0088cc;
+}
+
+.share-btn.facebook {
+    background: #3b5998;
+}
+
+.share-btn.twitter {
+    background: #1DA1F2;
+}
+
+.share-btn.email {
+    background: #D44638;
+}
+
+.share-btn::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.share-btn:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Tarjeta de progreso de nivel */
+.referral-progress-card .card-body {
+    padding: 25px;
+}
+
+.current-level {
+    margin-bottom: 25px;
+}
+
+.level-indicator {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.level-badge {
+    width: 60px;
+    height: 60px;
+    background: var(--silver-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.level-info h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.level-info p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+body.light-theme .level-info p {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.level-progress {
+    margin-bottom: 30px;
+}
+
+.progress-bar {
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+body.light-theme .progress-bar {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--referral-gradient);
+    border-radius: 5px;
+    transition: width 1s ease;
+}
+
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+body.light-theme .progress-labels {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.level-benefits h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.benefit-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+
+body.light-theme .benefit-item {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.benefit-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-3px);
+}
+
+body.light-theme .benefit-item:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.benefit-item.locked {
+    opacity: 0.6;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+body.light-theme .benefit-item.locked {
+    opacity: 0.6;
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.benefit-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--referral-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.benefit-item.locked .benefit-icon {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+body.light-theme .benefit-item.locked .benefit-icon {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.benefit-detail h5 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.benefit-detail p {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+body.light-theme .benefit-detail p {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* Tabla de historial de referidos */
+.referral-table {
+    overflow-x: auto;
+    margin-bottom: 25px;
+}
+
+.referral-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.referral-table th,
+.referral-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.light-theme .referral-table th,
+body.light-theme .referral-table td {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.referral-table th {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    white-space: nowrap;
+}
+
+body.light-theme .referral-table th {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.referral-table tr:last-child td {
+    border-bottom: none;
+}
+
+.referral-table tr:hover td {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+body.light-theme .referral-table tr:hover td {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.user-info-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-avatar-small {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user-avatar-small img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status.active {
+    background: rgba(76, 175, 80, 0.15);
+    color: var(--success-color);
+}
+
+.status.pending {
+    background: rgba(255, 193, 7, 0.15);
+    color: var(--warning-color);
+}
+
+.status.expired {
+    background: rgba(244, 67, 54, 0.15);
+    color: var(--danger-color);
+}
+
+.reward {
+    font-weight: 600;
+    color: var(--success-color);
+}
+
+.reward.pending {
+    color: var(--warning-color);
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Preguntas frecuentes */
+.faq-container {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+body.light-theme .faq-item {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.faq-item:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.light-theme .faq-item:hover {
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+body.light-theme .faq-question {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.faq-question h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.faq-question i {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    padding: 20px;
+    max-height: 500px;
+}
+
+.faq-answer p {
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+body.light-theme .faq-answer p {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+/* Media queries para responsive */
+@media (max-width: 1200px) {
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .referral-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .referral-illustration {
+        order: -1;
+        margin-bottom: 20px;
+    }
+    
+    .referral-illustration img {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .referral-table th,
+    .referral-table td {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .user-info-cell span {
+        max-width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    .share-buttons {
+        gap: 10px;
+    }
+    
+    .share-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-body {
+        padding: 15px;
+    }
+    
+    .referral-link-container {
+        flex-direction: column;
+    }
+    
+    .referral-link-container input {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    body.light-theme .referral-link-container input {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .copy-btn {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .level-badge {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .faq-question h3 {
+        font-size: 14px;
+    }
+    
+    .referral-table {
+        font-size: 12px;
+    }
+}
+#mobile-menu-button {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #mobile-menu-button {
+        display: flex;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 9999;
+        background-color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #mobile-menu-button i {
+        font-size: 24px;
+        color: #333;
+    }
+}
+
+        /* Contenedor de referidos con efecto de tarjeta */
+        .referral-container {
+            background-color: rgba(40, 16, 77, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(107, 51, 197, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Efecto de gradiente en esquina */
+        .referral-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+
+        /* Encabezado de sección */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .section-header h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        /* Flexbox para contenido principal */
+        .referral-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        /* Contenedor de imagen */
+        .referral-image {
+            flex: 0 0 250px;
+            text-align: center;
+        }
+
+        .referral-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contenedor de información */
+        .referral-info {
+            flex: 1;
+        }
+
+        .referral-info h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .referral-info p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .highlight {
+            color: var(--light-blue);
+            font-weight: 700;
+        }
+
+        /* Lista de beneficios */
+        .benefits-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .benefits-list li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px 0;
+            font-size: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .benefits-list li:last-child {
+            border-bottom: none;
+        }
+
+        .benefits-list li i {
+            color: var(--success-color);
+            font-size: 16px;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(76, 175, 80, 0.1);
+            border-radius: 50%;
+            padding: 12px;
+        }
+
+        /* Separador */
+        .referral-divider {
+            position: relative;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .referral-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 1;
+        }
+
+        .referral-divider span {
+            position: relative;
+            background: rgba(40, 16, 77, 0.7);
+            padding: 0 20px;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            z-index: 2;
+        }
+
+        /* Enlace de referido */
+        .referral-link-container {
+            display: flex;
+            margin: 25px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .referral-link-container input {
+            flex: 1;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-right: none;
+            color: white;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .referral-link-container input:focus {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .copy-btn {
+            background: var(--gradient);
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 0 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .copy-btn:hover {
+            background-image: linear-gradient(135deg, var(--light-blue), var(--light-purple));
+            box-shadow: 0 0 20px rgba(107, 51, 197, 0.5);
+        }
+
+        .copy-message {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--success-color);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+            z-index: 10;
+        }
+
+        .copy-message.show {
+            transform: translateY(0);
+        }
+
+        /* Compartir en redes sociales */
+        .share-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .share-section h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 24px;
+            color: white;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .share-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .share-btn::after {
+            content: attr(data-label);
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            white-space: nowrap;
+            color: rgba(255, 255, 255, 0.7);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .share-btn:hover::after {
+            opacity: 1;
+        }
+
+        .share-btn.whatsapp { background-color: #25D366; }
+        .share-btn.telegram { background-color: #0088cc; }
+        .share-btn.facebook { background-color: #1877F2; }
+        .share-btn.twitter { background-color: #1DA1F2; }
+        .share-btn.email { background-color: #D44638; }
+
+        /* Animación de brillos para el enlace */
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px rgba(107, 51, 197, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(107, 51, 197, 0.8); }
+            100% { box-shadow: 0 0 5px rgba(107, 51, 197, 0.5); }
+        }
+
+        .referral-link-container:focus-within {
+            animation: glow 2s infinite;
+        }
+
+        /* Media queries */
+        @media (max-width: 992px) {
+            .referral-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+
+            .referral-image {
+                flex: 0 0 auto;
+                width: 200px;
+            }
+
+            .referral-info {
+                text-align: center;
+            }
+
+            .benefits-list li {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content-body {
+                padding: 20px;
+            }
+
+            .referral-container {
+                padding: 20px;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .referral-link-container {
+                flex-direction: column;
+            }
+
+            .referral-link-container input {
+                border-right: 1px solid rgba(255, 255, 255, 0.1);
+                border-bottom: none;
+                padding: 15px;
+            }
+
+            .copy-btn {
+                padding: 12px;
+                justify-content: center;
+            }
+
+            .share-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+/* Estilos mejorados para botones en STELLAR AI */
+
+/* Botón estándar mejorado */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    outline: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Botón principal con gradiente */
+.btn-primary {
+    background: linear-gradient(135deg, #6b33c5, #3b82f6);
+    color: white;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 6px 15px rgba(107, 51, 197, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(107, 51, 197, 0.4);
+}
+
+/* Botón secundario con borde */
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Botón con efecto de brillo al hover */
+.btn-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-shine::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0) 40%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0) 60%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.8s;
+}
+
+.btn-shine:hover::after {
+    opacity: 1;
+    transform: rotate(45deg) translate(100%, 100%);
+}
+
+/* Botón texto simple */
+.btn-text {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex
+;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s, transform 0.2s;
+    box-shadow: var(--shadow-md);
+}
+
+
+.btn-text:hover {
+    background: rgba(59, 130, 246, 0.1);
+    text-decoration: underline;
+}
+
+/* Botones con iconos */
+.btn-icon-left i, 
+.btn-icon-right i {
+    font-size: 16px;
+}
+
+.btn-icon-left i {
+    margin-right: 6px;
+}
+
+.btn-icon-right i {
+    margin-left: 6px;
+}
+
+/* Tamaños de botones */
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 8px;
+}
+
+.btn-lg {
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 12px;
+}
+
+/* Botón con contorno */
+.btn-outline {
+    background: transparent;
+    border: 2px solid #6b33c5;
+    color: #6b33c5;
+}
+
+.btn-outline:hover {
+    background: rgba(107, 51, 197, 0.1);
+    color: #6b33c5;
+}
+
+/* Botón con efecto de partículas (para botones premium) */
+@keyframes particle-animation {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty));
+        opacity: 0;
+    }
+}
+
+.btn-premium {
+    background: linear-gradient(135deg, #7e3fc1, #3b82f6);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: visible;
+}
+
+.btn-premium:hover {
+    background: linear-gradient(135deg, #8347c9, #4d8ef8);
+    box-shadow: 0 6px 15px rgba(107, 51, 197, 0.6);
+}
+
+.btn-premium:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #7e3fc1, #3b82f6);
+    z-index: -1;
+    filter: blur(15px);
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+/* Variaciones de colores */
+.btn-success {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    color: white;
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #FFC107, #F57C00);
+    color: white;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #F44336, #C62828);
+    color: white;
+}
+
+.btn-info {
+    background: linear-gradient(135deg, #2196F3, #1565C0);
+    color: white;
+}
+
+/* Modo Light Theme */
+body.light-theme .btn-secondary {
+    background: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .btn-secondary:hover {
+    background: rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+body.light-theme .btn-text {
+    color: #3b82f6;
+}
+
+body.light-theme .btn-text:hover {
+    background: rgba(59, 130, 246, 0.1);
+}
+
+/* Aplicaciones específicas */
+.btn-benefits {
+    background: linear-gradient(135deg, #6b33c5, #3b82f6);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-benefits:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(107, 51, 197, 0.5);
+}
+
+.btn-benefits:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(107, 51, 197, 0.4);
+}
+
+.btn-benefits i {
+    font-size: 16px;
+}
+
+/* Botón específico para Ver Beneficios */
+.view-benefits-btn {
+    position: relative;
+    background: linear-gradient(135deg, #6b33c5, #3b82f6);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    overflow: hidden;
+}
+
+.view-benefits-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(107, 51, 197, 0.5);
+}
+
+.view-benefits-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0) 40%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0) 60%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.8s;
+}
+
+.view-benefits-btn:hover::after {
+    opacity: 1;
+    transform: rotate(45deg) translate(100%, 100%);
+}
+
+.view-benefits-btn i {
+    font-size: 16px;
+}
+/* Botón de añadir método */
+button[type="button"] {
+    background: var(--button-bg);
+    color: var(--button-color);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+button[type="button"]:hover {
+    background: var(--button-hover-bg);
+    color: var(--button-hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+/* Para el botón "Añadir Método" */
+button {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+button:hover {
+    background: var(--gradient);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}.action-button {
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.action-button:hover {
+    background: var(--gradient);
+    transform: translateY(-2px);
+}
+
+.action-button img {
+    width: 16px;
+    height: 16px;
+}
+input, select, textarea {
+    width: 95%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    transition: border-color 0.2s;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: var(--dark-purple);
+}@media (max-width: 768px) {
+    #mobile-menu-button {
+        display: flex
+;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 9999;
+        background: var(--gradient);
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        transition: var(--transition);
+    }
+}
+@media (max-width: 575px) {
+    .content-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        height: auto;
+    }
+}.content-header {
+    height: var(--header-height);
+    background: rgba(40, 16, 77, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex
+;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    top: 0;
+    z-index: 100;
+}
+@media (max-width: 575px) {
+    .content-body {
+        padding: 10px;
+        gap: 15px;
+    }
+}
